@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withSidebar } from 'vitepress-sidebar';
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+const vitePressOptions = {
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
   themeConfig: {
@@ -11,18 +12,17 @@ export default defineConfig({
       { text: 'Examples', link: '/markdown-examples' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
   }
-})
+}
+
+const vitePressSidebarOptions = {
+  // VitePress Sidebar's options here...
+  documentRootPath: '/',
+  collapsed: false,
+  capitalizeFirst: true
+};
+
+export default defineConfig(withSidebar(vitePressOptions, vitePressSidebarOptions));
