@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
-import { withSidebar } from 'vitepress-sidebar';
+import { withSidebar } from 'vitepress-sidebar'
+import taskLists from 'markdown-it-task-lists'
 
 // https://vitepress.dev/reference/site-config
 const vitePressOptions = {
@@ -15,7 +16,12 @@ const vitePressOptions = {
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
-  }
+  },
+  markdown: {
+    config: (md) => {
+        md.use(taskLists, { label: true })
+    }
+}
 }
 
 const vitePressSidebarOptions = {
