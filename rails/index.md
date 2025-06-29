@@ -12,6 +12,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Railsアプリケーションの国際化(i18n)対応](/rails/01-rails-basics/34-rails-i18n)
 - [x] [Railsにおける設定管理: credentials, Figaro, dotenvの比較と実践](/rails/01-rails-basics/36-rails-config-management)
 - [x] [Railsのロギング設定をカスタマイズして、本番環境のデバッグを効率化する](/rails/01-rails-basics/62-rails-logging-customize)
+- [x] [Rails 8の新機能と変更点を総まとめ: 開発者が知るべきポイント](/rails/01-rails-basics/67-rails8-new-features)
 
 ### 2. Active Record / データベース
 - [x] [Active Recordの基本: `has_many` / `belongs_to` を使って記事とコメント機能を実装する](/rails/02-active-record-database/03-active-record-associations)
@@ -22,6 +23,8 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Railsにおけるマルチデータベース接続のセットアップと活用法](/rails/02-active-record-database/48-rails-multi-db)
 - [x] [PostgreSQLの高度な機能（JSONB、Window関数など）をRailsで活用する](/rails/02-active-record-database/49-postgresql-advanced)
 - [x] [`scenic` gemを使ったデータベースビューの管理](/rails/02-active-record-database/50-scenic-gem-guide)
+- [x] [Rails 8のSolid Queueで実現するジョブキューの新しいアプローチ](/rails/02-active-record-database/68-solid-queue-rails8)
+- [x] [Active Record Encryptionを使った機密データの暗号化](/rails/02-active-record-database/69-active-record-encryption)
 
 ### 3. View / フロントエンド
 - [x] [Viewの基本: `form_with` を使って安全なフォームを作成する方法](/rails/03-view-frontend/07-rails-form-with)
@@ -36,9 +39,12 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Tailwind CSSをRails 7で使うためのモダンなセットアップ](/rails/03-view-frontend/55-tailwind-css-rails7)
 - [x] [Import mapsを理解する: JavaScriptの依存関係をシンプルに管理](/rails/03-view-frontend/56-import-maps-guide)
 - [x] [Phlexを使った高速なViewレンダリング](/rails/03-view-frontend/66-phlex-fast-views)
+- [x] [Rails 8のインライン実行でJavaScriptとCSSの扱いがどう変わるか](/rails/03-view-frontend/70-rails8-inline-execution)
+- [x] [Turbo Streamsでリアルタイム更新を実現する高度なテクニック](/rails/03-view-frontend/71-advanced-turbo-streams)
 
 ### 4. Controller / ルーティング
 - [x] [もう怖くない！Railsのルーティング (`routes.rb`) 完全ガイド](/rails/04-controller-routing/04-rails-routing-guide)
+- [x] [Rails 8のコントローラレイヤー改善と新しいレスポンス処理](/rails/04-controller-routing/72-rails8-controller-improvements)
 
 ### 5. テスト
 - [x] [Rails標準のテストフレームワーク「Minitest」ではじめるテスト駆動開発（TDD）](/rails/05-testing/13-minitest-tdd-intro)
@@ -46,6 +52,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [System Spec（E2Eテスト）をCapybaraで書く実践ガイド](/rails/05-testing/51-capybara-system-spec)
 - [x] [テストカバレッジをSimpleCovで計測し、品質を可視化する](/rails/05-testing/52-simplecov-test-coverage)
 - [x] [`VCR`や`WebMock`を使った外部API連携のテスト戦略](/rails/05-testing/53-vcr-webmock-testing)
+- [x] [Rails 8時代のテスト戦略: 新機能を活用したテストの書き方](/rails/05-testing/73-rails8-testing-strategy)
 
 ### 6. パフォーマンス
 - [x] [N+1問題はこれで解決！Bullet gemの導入と実践的な使い方](/rails/06-performance/09-n-plus-one-with-bullet)
@@ -53,6 +60,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [パフォーマンスチューニング: Railsアプリケーションのボトルネックを特定し、改善する実践テクニック](/rails/06-performance/20-performance-tuning)
 - [x] [Railsアプリケーションのメモリ使用量を調査・最適化する方法](/rails/06-performance/43-rails-memory-optimization)
 - [x] [SentryやNew Relicを使ったエラー監視とパフォーマンスモニタリング](/rails/06-performance/61-sentry-newrelic-monitoring)
+- [x] [Rails 8のパフォーマンス改善: ベンチマークから見る実際の効果](/rails/06-performance/74-rails8-performance-improvements)
 
 ### 7. アーキテクチャ / 設計
 - [x] [サービスクラス（Service Object）を導入してFat Controllerを解消する](/rails/07-architecture-design/08-service-objects-for-fat-controllers)
@@ -90,6 +98,8 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [RailsとRedis: キャッシュ、セッションストア、Sidekiqでの活用法](/rails/12-gems-libraries/41-rails-redis-use-cases)
 - [x] [Ransackを使った高度な検索機能の実装](/rails/12-gems-libraries/44-ransack-advanced-search)
 - [x] [Dry-rbエコシステム（dry-validation, dry-structなど）の紹介](/rails/12-gems-libraries/58-dry-rb-ecosystem)
+- [x] [Shopify LiquidテンプレートエンジンをRailsで活用する](/rails/12-gems-libraries/75-shopify-liquid-rails)
 
 ### 13. その他
 - [x] [Rackミドルウェアを自作してリクエスト/レスポンスをカスタマイズする](/rails/13-others/21-custom-rack-middleware)
+- [x] [Rails開発者のためのDocker最適化テクニック集](/rails/13-others/76-docker-optimization-rails)
