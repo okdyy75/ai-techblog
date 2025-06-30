@@ -13,6 +13,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Railsにおける設定管理: credentials, Figaro, dotenvの比較と実践](/rails/01-rails-basics/36-rails-config-management)
 - [x] [Railsのロギング設定をカスタマイズして、本番環境のデバッグを効率化する](/rails/01-rails-basics/62-rails-logging-customize)
 - [x] [Rails 8の新機能と変更点を総まとめ: 開発者が知るべきポイント](/rails/01-rails-basics/67-rails8-new-features)
+- [x] [Rails初心者のためのMVCアーキテクチャ完全理解ガイド](/rails/01-rails-basics/77-mvc-architecture-guide)
 
 ### 2. Active Record / データベース
 - [x] [Active Recordの基本: `has_many` / `belongs_to` を使って記事とコメント機能を実装する](/rails/02-active-record-database/03-active-record-associations)
@@ -25,6 +26,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [`scenic` gemを使ったデータベースビューの管理](/rails/02-active-record-database/50-scenic-gem-guide)
 - [x] [Rails 8のSolid Queueで実現するジョブキューの新しいアプローチ](/rails/02-active-record-database/68-solid-queue-rails8)
 - [x] [Active Record Encryptionを使った機密データの暗号化](/rails/02-active-record-database/69-active-record-encryption)
+- [x] [データベース移行のベストプラクティス: ゼロダウンタイム・デプロイメント](/rails/02-active-record-database/78-zero-downtime-migrations)
 
 ### 3. View / フロントエンド
 - [x] [Viewの基本: `form_with` を使って安全なフォームを作成する方法](/rails/03-view-frontend/07-rails-form-with)
