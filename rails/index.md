@@ -43,6 +43,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Phlexを使った高速なViewレンダリング](/rails/03-view-frontend/66-phlex-fast-views)
 - [x] [Rails 8のインライン実行でJavaScriptとCSSの扱いがどう変わるか](/rails/03-view-frontend/70-rails8-inline-execution)
 - [x] [Turbo Streamsでリアルタイム更新を実現する高度なテクニック](/rails/03-view-frontend/71-advanced-turbo-streams)
+- [x] [`Motion UI`と`Turbo`を連携させたリッチなUIアニメーション](/rails/03-view-frontend/88-motion-ui-turbo-guide)
 
 ### 4. Controller / ルーティング
 - [x] [もう怖くない！Railsのルーティング (`routes.rb`) 完全ガイド](/rails/04-controller-routing/04-rails-routing-guide)
@@ -55,6 +56,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [テストカバレッジをSimpleCovで計測し、品質を可視化する](/rails/05-testing/52-simplecov-test-coverage)
 - [x] [`VCR`や`WebMock`を使った外部API連携のテスト戦略](/rails/05-testing/53-vcr-webmock-testing)
 - [x] [Rails 8時代のテスト戦略: 新機能を活用したテストの書き方](/rails/05-testing/73-rails8-testing-strategy)
+- [x] [`RSpec Mocks`の高度な使い方: `double`, `spy`, `stub`の活用](/rails/05-testing/87-rspec-mocks-guide)
 
 ### 6. パフォーマンス
 - [x] [N+1問題はこれで解決！Bullet gemの導入と実践的な使い方](/rails/06-performance/09-n-plus-one-with-bullet)
@@ -63,23 +65,27 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Railsアプリケーションのメモリ使用量を調査・最適化する方法](/rails/06-performance/43-rails-memory-optimization)
 - [x] [SentryやNew Relicを使ったエラー監視とパフォーマンスモニタリング](/rails/06-performance/61-sentry-newrelic-monitoring)
 - [x] [Rails 8のパフォーマンス改善: ベンチマークから見る実際の効果](/rails/06-performance/74-rails8-performance-improvements)
+- [x] [`rack-mini-profiler`による開発中のパフォーマンス計測](/rails/06-performance/86-rack-mini-profiler-guide)
 
 ### 7. アーキテクチャ / 設計
 - [x] [サービスクラス（Service Object）を導入してFat Controllerを解消する](/rails/07-architecture-design/08-service-objects-for-fat-controllers)
 - [x] [Rails Engineを作成して、再利用可能なコンポーネントを開発する](/rails/07-architecture-design/19-rails-engines)
 - [x] [Trailblazerアーキテクチャを導入して大規模Railsアプリケーションを構築する](/rails/07-architecture-design/57-trailblazer-architecture)
 - [x] [Railsアプリケーションにおけるマイクロサービス化への道筋](/rails/07-architecture-design/59-rails-microservices)
+- [x] [Railsにおけるドメイン駆動設計(DDD)入門](/rails/07-architecture-design/85-rails-ddd-guide)
 
 ### 8. デプロイ / DevOps
 - [x] [Docker Composeを使ったRails開発環境の構築とメリット](/rails/08-deployment-devops/24-docker-compose-rails-development)
 - [x] [Render.comへRailsアプリケーションをデプロイする2025年版ガイド](/rails/08-deployment-devops/26-deploy-rails-to-render)
 - [x] [RailsアプリケーションのCI/CDパイプラインをGitHub Actionsで構築する](/rails/08-deployment-devops/39-rails-ci-github-actions)
 - [x] [Kamal (旧MRSK) を使ったRailsアプリケーションのデプロイ戦略](/rails/08-deployment-devops/60-kamal-deployment)
+- [x] [`Terraform`によるRailsのインフラ管理(IaC)](/rails/08-deployment-devops/84-terraform-rails-guide)
 
 ### 9. API
 - [x] [GraphQL APIを`graphql-ruby` gemで構築する](/rails/09-api/25-graphql-ruby-api)
 - [x] [Rails APIモード + Next.jsで構築するモダンなWebアプリケーション](/rails/09-api/27-rails-api-nextjs)
 - [x] [RailsにおけるAPIドキュメントの自動生成 (RSwag/Committee)](/rails/09-api/45-rails-api-documentation)
+- [x] [RailsとgRPCによるハイパフォーマンスなマイクロサービス間通信](/rails/09-api/83-rails-grpc-guide)
 
 ### 10. セキュリティ
 - [x] [Devise gemを使わずに自前で認証機能を実装する](/rails/10-security/14-authentication-from-scratch)
@@ -87,11 +93,13 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Punditを使った認可機能の実装: ポリシーベースのアクセス制御](/rails/10-security/37-pundit-authorization)
 - [x] [`rodauth` gemを使った柔軟でセキュアな認証システムの構築](/rails/10-security/64-rodauth-authentication)
 - [x] [Action Policy: Punditに代わる次世代の認可ライブラリ](/rails/10-security/65-action-policy-authorization)
+- [x] [`Brakeman`による静的解析での脆弱性診断](/rails/10-security/82-brakeman-guide)
 
 ### 11. バックグラウンドジョブ
 - [x] [Sidekiqではじめるバックグラウンドジョブ入門](/rails/11-background-jobs/11-introduction-to-sidekiq)
 - [x] [Active Job詳解: アダプターの選び方と高度な使い方](/rails/11-background-jobs/35-active-job-guide)
 - [x] [RailsとGoodJob: PostgreSQLベースのバックグラウンドジョブプロセッサ](/rails/11-background-jobs/63-goodjob-background-jobs)
+- [x] [`Sidekiq-cron`で定期的なジョブをスケジューリングする](/rails/11-background-jobs/81-sidekiq-cron-guide)
 
 ### 12. Gem / ライブラリ
 - [x] [Sorbetを導入してRailsアプリケーションに型を導入する](/rails/12-gems-libraries/29-sorbet-rails)
@@ -101,7 +109,9 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Ransackを使った高度な検索機能の実装](/rails/12-gems-libraries/44-ransack-advanced-search)
 - [x] [Dry-rbエコシステム（dry-validation, dry-structなど）の紹介](/rails/12-gems-libraries/58-dry-rb-ecosystem)
 - [x] [Shopify LiquidテンプレートエンジンをRailsで活用する](/rails/12-gems-libraries/75-shopify-liquid-rails)
+- [x] [`CanCanCan`によるシンプルで強力な認可管理](/rails/12-gems-libraries/80-cancancan-guide)
 
 ### 13. その他
 - [x] [Rackミドルウェアを自作してリクエスト/レスポンスをカスタマイズする](/rails/13-others/21-custom-rack-middleware)
 - [x] [Rails開発者のためのDocker最適化テクニック集](/rails/13-others/76-docker-optimization-rails)
+- [x] [`i18n-tasks` gemでRailsの多言語対応を効率化する](/rails/13-others/79-i18n-tasks-guide)
