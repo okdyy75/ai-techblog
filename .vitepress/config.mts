@@ -27,8 +27,9 @@ const vitePressOptions = {
 const vitePressSidebarOptions = {
   // VitePress Sidebar's options here...
   documentRootPath: '/',
-  collapsed: false,
-  capitalizeFirst: true
+  collapsed: true,
+  capitalizeFirst: true,
+  useTitleFromFileHeading: true,
 };
 
 export default defineConfig(withSidebar(vitePressOptions, vitePressSidebarOptions));
