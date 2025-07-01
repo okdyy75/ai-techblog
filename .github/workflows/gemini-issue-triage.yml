@@ -19,9 +19,13 @@ jobs:
     if: startsWith(github.event.comment.body, 'gemini')
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Set Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Run Gemini CLI from the main branch
         uses: google-gemini/gemini-cli-action@main
