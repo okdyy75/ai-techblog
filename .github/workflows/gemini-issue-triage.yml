@@ -34,11 +34,25 @@ jobs:
         with:
           version: latest
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          settings_json: |
+            {
+              "coreTools": [
+                "run_shell_command(gh issue list)",
+                "run_shell_command(gh issue view)",
+                "run_shell_command(gh issue edit)",
+                "run_shell_command(gh repo view)",
+                "run_shell_command(gh pr list)",
+                "run_shell_command(gh pr view)",
+                "run_shell_command(gh pr edit)",
+                "run_shell_command(gh pr diff)"
+              ],
+            }
           prompt: |
             ${{ github.event.comment.body }}
 
             ### Premise
-            - No confirmation required
+            - No confirmation required.
+            - Always respond in Japanese.
 
             ### Issue Information
             - Repository: $REPOSITORY
