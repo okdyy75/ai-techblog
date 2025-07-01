@@ -26,6 +26,6 @@ jobs:
       - name: Run Gemini CLI from the main branch
         uses: google-gemini/gemini-cli-action@main
         with:
-          version: v0.1.8-rc.0
+          version: latest
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           prompt: ${{ github.event.comment.body }}
