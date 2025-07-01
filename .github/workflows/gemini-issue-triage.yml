@@ -22,8 +22,6 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ steps.generate_token.outputs.token }}
 
       - name: Run Gemini CLI from the main branch
         uses: google-gemini/gemini-cli-action@main
