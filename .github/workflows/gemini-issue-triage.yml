@@ -1,0 +1,33 @@
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  triage-issue:
+    timeout-minutes: 10
+    permissions:
+      issues: write
+      contents: read
+      id-token: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.issue.number }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+
+    # コメントがgeminiで始まる場合のみ実行
+    if: startsWith(github.event.comment.body, 'gemini')
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+
+      - name: Run Gemini CLI from the main branch
+        uses: google-gemini/gemini-cli-action@main
+        with:
+          version: v0.1.8-rc.0
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          prompt: ${{ github.event.comment.body }}
