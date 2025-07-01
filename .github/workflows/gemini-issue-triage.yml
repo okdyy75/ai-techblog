@@ -53,6 +53,7 @@ jobs:
             ### Premise
             - No confirmation required.
             - Always respond in Japanese.
+            - Use the `gh` command to work with GitHub.
 
             ### Issue Information
             - Repository: $REPOSITORY
