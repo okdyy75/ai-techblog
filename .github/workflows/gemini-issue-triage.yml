@@ -45,7 +45,7 @@ jobs:
                 "run_shell_command(gh pr view)",
                 "run_shell_command(gh pr edit)",
                 "run_shell_command(gh pr diff)"
-              ],
+              ]
             }
           prompt: |
             ${{ github.event.comment.body }}
