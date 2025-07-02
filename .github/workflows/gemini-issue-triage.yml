@@ -31,10 +31,6 @@ jobs:
         uses: google-gemini/gemini-cli-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_TITLE: ${{ github.event.issue.title }}
-          ISSUE_BODY: ${{ github.event.issue.body }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          REPOSITORY: ${{ github.repository }}
         with:
           version: latest
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -68,7 +64,7 @@ jobs:
             - Use the `gh` command to work with GitHub.
 
             ### Issue Information
-            - Repository: $REPOSITORY
-            - Issue Number: $ISSUE_NUMBER
-            - Issue Title: $ISSUE_TITLE
-            - Issue Body: $ISSUE_BODY
+            - Repository: ${{ github.repository }}
+            - Issue Number: ${{ github.event.issue.number }}
+            - Issue Title: ${{ github.event.issue.title }}
+            - Issue Body: ${{ github.event.issue.body }}
