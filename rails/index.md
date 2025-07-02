@@ -115,3 +115,9 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Rackミドルウェアを自作してリクエスト/レスポンスをカスタマイズする](/rails/13-others/21-custom-rack-middleware)
 - [x] [Rails開発者のためのDocker最適化テクニック集](/rails/13-others/76-docker-optimization-rails)
 - [x] [`i18n-tasks` gemでRailsの多言語対応を効率化する](/rails/13-others/79-i18n-tasks-guide)
+
+### 14. 新規記事
+- [x] [Active Recordのコールバックを理解して使いこなす](/rails/02-active-record-database/90-active-record-callbacks)
+- [x] [Rails APIとNext.jsでの認証戦略](/rails/09-api/91-rails-api-nextjs-auth)
+- [x] [本番環境向けRailsアプリケーションのDocker化](/rails/08-deployment-devops/92-dockerizing-rails-production)
+
