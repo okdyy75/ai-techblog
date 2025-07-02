@@ -50,11 +50,11 @@ jobs:
             - Issue 本文: ${{ github.event.issue.body }}
 
             ### PR作成手順
-            1. git checkout -b {ブランチ名}
+            1. git checkout -b issue-${{ github.event.issue.number }}
             2. git add -A
-            3. git commit -m "{修正内容}"
-            4. git push origin {ブランチ名}
-            5. gh pr create --title "{PRタイトル}" --body "{PR内容}"
+            3. git commit -m "{{修正内容}}"
+            4. git push origin issue-${{ github.event.issue.number }}
+            5. gh pr create --title "{{PRタイトル}}" --body "{{PR内容}}"
 
       - name: Commit Changes
         id: commit
