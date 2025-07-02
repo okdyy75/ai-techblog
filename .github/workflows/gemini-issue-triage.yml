@@ -3,13 +3,14 @@ on:
   issue_comment:
     types: [created]
 
+permissions:
+  issues: write
+  contents: write
+  pull-requests: write
+
 jobs:
   triage-issue:
     timeout-minutes: 10
-    permissions:
-      issues: write
-      contents: write
-      pull-requests: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.event.issue.number }}
       cancel-in-progress: true
