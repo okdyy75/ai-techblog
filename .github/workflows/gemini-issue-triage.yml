@@ -40,15 +40,20 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           settings_json: |
             {
-              "coreTools": [
-                "run_shell_command(gh issue list)",
-                "run_shell_command(gh issue view)",
-                "run_shell_command(gh issue edit)",
-                "run_shell_command(gh repo view)",
-                "run_shell_command(gh pr list)",
-                "run_shell_command(gh pr view)",
-                "run_shell_command(gh pr edit)",
-                "run_shell_command(gh pr diff)"
+              \"coreTools\": [
+                \"run_shell_command(git status)\",
+                \"run_shell_command(git add)\",
+                \"run_shell_command(git commit)\",
+                \"run_shell_command(git push)\",
+                \"run_shell_command(git pull)\",
+                \"run_shell_command(gh issue list)\",
+                \"run_shell_command(gh issue view)\",
+                \"run_shell_command(gh issue edit)\",
+                \"run_shell_command(gh repo view)\",
+                \"run_shell_command(gh pr list)\",
+                \"run_shell_command(gh pr view)\",
+                \"run_shell_command(gh pr edit)\",
+                \"run_shell_command(gh pr diff)\"
               ]
             }
           prompt: |
