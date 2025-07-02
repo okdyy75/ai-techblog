@@ -38,13 +38,27 @@ jobs:
           prompt: |
             ${{ github.event.comment.body }}
 
-            ### Premise
-            - No confirmation required.
-            - Always respond in Japanese.
-            - Use the `gh` command to work with GitHub.
+            ### 前提
+            - 確認は不要です
+            - 常に日本語で返答してください
+            - エラーが発生した場合は、常にエラー内容を出力してください
 
-            ### Issue Information
+            ### Issue情報
             - Repository: ${{ github.repository }}
-            - Issue Number: ${{ github.event.issue.number }}
-            - Issue Title: ${{ github.event.issue.title }}
-            - Issue Body: ${{ github.event.issue.body }}
+            - Issue 番号: ${{ github.event.issue.number }}
+            - Issue タイトル: ${{ github.event.issue.title }}
+            - Issue 本文: ${{ github.event.issue.body }}
+
+            ### PR作成手順
+            1. git checkout -b issue-${{ github.event.issue.number }}
+            2. git add -A
+            3. git commit -m "{{修正内容}}"
+            4. git push origin issue-${{ github.event.issue.number }}
+            5. gh pr create --title "{{PRタイトル}}" --body "{{PR内容}}"
+            6. gh pr view --web
+
+      - name: Commit Changes
+        id: commit
+        run: |
+          git branch
+          git status
