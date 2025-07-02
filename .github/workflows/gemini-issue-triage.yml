@@ -8,8 +8,8 @@ jobs:
     timeout-minutes: 10
     permissions:
       issues: write
-      contents: read
-      id-token: write
+      contents: write
+      pull-requests: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.event.issue.number }}
       cancel-in-progress: true
