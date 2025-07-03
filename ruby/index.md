@@ -1,4 +1,3 @@
-
 # Ruby Tech Articles
 
 ## Ruby基礎
