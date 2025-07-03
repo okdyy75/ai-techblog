@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   triage-issue:
-    timeout-minutes: 10
+    timeout-minutes: 20
     concurrency:
       group: ${{ github.workflow }}-${{ github.event.issue.number }}
       cancel-in-progress: true
