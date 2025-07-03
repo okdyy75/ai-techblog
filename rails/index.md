@@ -116,3 +116,4 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Rails開発者のためのDocker最適化テクニック集](/rails/13-others/76-docker-optimization-rails)
 - [x] [`i18n-tasks` gemでRailsの多言語対応を効率化する](/rails/13-others/79-i18n-tasks-guide)
 - [x] [Railsアプリケーションにおける設定ファイルのベストプラクティス](/rails/13-others/89-rails-settings-best-practices)
+- [x] [RailsにおけるAPIバージョニング戦略](/rails/13-others/90-api-versioning-strategies)
