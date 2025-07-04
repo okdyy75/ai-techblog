@@ -15,9 +15,9 @@ const vitePressOptions: UserConfig = {
         text: 'Ruby', 
         items: [
           { text: 'Ruby基礎', link: '/ruby/' },
-          { text: 'Ruby インストール', link: '/ruby/01-ruby-install' },
-          { text: 'Ruby 構文', link: '/ruby/02-ruby-syntax' },
-          { text: 'Ruby OOP', link: '/ruby/03-ruby-oop' }
+          { text: 'Ruby インストール', link: '/ruby/01-ruby-install/' },
+          { text: 'Ruby 構文', link: '/ruby/02-ruby-syntax/' },
+          { text: 'Ruby OOP', link: '/ruby/03-ruby-oop/' }
         ]
       },
       { 
