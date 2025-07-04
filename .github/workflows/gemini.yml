@@ -34,17 +34,17 @@ jobs:
         id: context
         run: |
           if [ "${{ github.event_name }}" = "issue_comment" ]; then
-              echo "type=Issue" >> $GITHUB_OUTPUT
-              echo "comment=${{ github.event.comment.body }}" >> $GITHUB_OUTPUT
-              echo "number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
-              echo "title=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
-              echo "body=${{ github.event.issue.body }}" >> $GITHUB_OUTPUT 
+              core.setOutput('type', 'Issue')
+              core.setOutput('comment', '${{ github.event.comment.body }}')
+              core.setOutput('number', '${{ github.event.issue.number }}')
+              core.setOutput('title', '${{ github.event.issue.title }}')
+              core.setOutput('body', '${{ github.event.issue.body }}')
             else
-              echo "type=Pull Request" >> $GITHUB_OUTPUT
-              echo "comment=${{ github.event.comment.body }}" >> $GITHUB_OUTPUT
-              echo "number=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
-              echo "title=${{ github.event.pull_request.title }}" >> $GITHUB_OUTPUT
-              echo "body=${{ github.event.pull_request.body }}" >> $GITHUB_OUTPUT
+              core.setOutput('type', 'Pull Request')
+              core.setOutput('comment', '${{ github.event.comment.body }}')
+              core.setOutput('number', '${{ github.event.pull_request.number }}')
+              core.setOutput('title', '${{ github.event.pull_request.title }}')
+              core.setOutput('body', '${{ github.event.pull_request.body }}')
             fi
         
           
@@ -68,6 +68,17 @@ jobs:
             - ${{ steps.context.outputs.type }} 番号: ${{ steps.context.outputs.number }}
             - ${{ steps.context.outputs.type }} タイトル: ${{ steps.context.outputs.title }}
             - ${{ steps.context.outputs.type }} 本文: ${{ steps.context.outputs.body }}
+
+            ### PR作成手順
+            1. git checkout -b issue-${{ steps.context.outputs.number }}
+            2. git add -A
+            3. git commit -m "{{修正内容}}"
+            4. git push origin issue-${{ steps.context.outputs.number }}
+            5. gh pr create --title "{{PRタイトル}}" --body "{{PR内容}}"
+
+            ### PRレビュー手順
+            - PR OK: gh pr review ${{ steps.context.outputs.number }} --approve --body "{{承認コメント}}"
+            - PR NG: gh pr review ${{ steps.context.outputs.number }} --request-changes --body "{{変更要求コメント}}"
 
       - name: Commit Changes
         id: commit
