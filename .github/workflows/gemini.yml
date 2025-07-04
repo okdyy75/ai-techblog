@@ -42,7 +42,7 @@ jobs:
               const body = `${{ github.event.issue.body }}`
               core.setOutput('body', body)
             } else {
-              core.setOutput('type', 'Pull Request')å
+              core.setOutput('type', 'Pull Request')
               core.setOutput('number', '${{ github.event.pull_request.number }}')
               core.setOutput('title', '${{ github.event.pull_request.title }}')
               const body = `${{ github.event.pull_request.body }}`
