@@ -34,17 +34,17 @@ jobs:
         id: context
         run: |
           if [ "${{ github.event_name }}" = "issue_comment" ]; then
-              core.setOutput('type', 'Issue')
-              core.setOutput('comment', '${{ github.event.comment.body }}')
-              core.setOutput('number', '${{ github.event.issue.number }}')
-              core.setOutput('title', '${{ github.event.issue.title }}')
-              core.setOutput('body', '${{ github.event.issue.body }}')
+              echo 'type=Issue' >> $GITHUB_OUTPUT
+              echo 'comment=${{ github.event.comment.body }}' >> $GITHUB_OUTPUT
+              echo 'number=${{ github.event.issue.number }}' >> $GITHUB_OUTPUT
+              echo 'title=${{ github.event.issue.title }}' >> $GITHUB_OUTPUT
+              echo 'body=${{ github.event.issue.body }}' >> $GITHUB_OUTPUT 
             else
-              core.setOutput('type', 'Pull Request')
-              core.setOutput('comment', '${{ github.event.comment.body }}')
-              core.setOutput('number', '${{ github.event.pull_request.number }}')
-              core.setOutput('title', '${{ github.event.pull_request.title }}')
-              core.setOutput('body', '${{ github.event.pull_request.body }}')
+              echo 'type=Pull Request' >> $GITHUB_OUTPUT
+              echo 'comment=${{ github.event.comment.body }}' >> $GITHUB_OUTPUT
+              echo 'number=${{ github.event.pull_request.number }}' >> $GITHUB_OUTPUT
+              echo 'title=${{ github.event.pull_request.title }}' >> $GITHUB_OUTPUT
+              echo 'body=${{ github.event.pull_request.body }}' >> $GITHUB_OUTPUT
             fi
         
           
