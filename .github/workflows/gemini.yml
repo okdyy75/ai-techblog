@@ -30,6 +30,24 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+      - name: Set context
+        id: context
+        run: |
+          if [ "${{ github.event_name }}" = "issue_comment" ]; then
+              echo "type=Issue" >> $GITHUB_OUTPUT
+              echo "comment=${{ github.event.comment.body }}" >> $GITHUB_OUTPUT
+              echo "number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
+              echo "title=${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+              echo "body=${{ github.event.issue.body }}" >> $GITHUB_OUTPUT 
+            else
+              echo "type=Pull Request" >> $GITHUB_OUTPUT
+              echo "comment=${{ github.event.comment.body }}" >> $GITHUB_OUTPUT
+              echo "number=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+              echo "title=${{ github.event.pull_request.title }}" >> $GITHUB_OUTPUT
+              echo "body=${{ github.event.pull_request.body }}" >> $GITHUB_OUTPUT
+            fi
+        
+          
       - name: Run Gemini CLI from the main branch
         uses: google-gemini/gemini-cli-action@main
         env:
@@ -38,18 +56,18 @@ jobs:
           version: latest
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           prompt: |
-            ${{ github.event.comment.body }}
+            ${{ steps.context.outputs.comment }}
 
             ### 前提
             - 確認は不要です
             - 常に日本語で返答してください
             - エラーが発生した場合は、常にエラー内容を出力してください
 
-            ### Issue情報
+            ### ${{ steps.context.outputs.type }}情報
             - Repository: ${{ github.repository }}
-            - Issue 番号: ${{ github.event.issue.number }}
-            - Issue タイトル: ${{ github.event.issue.title }}
-            - Issue 本文: ${{ github.event.issue.body }}
+            - ${{ steps.context.outputs.type }} 番号: ${{ steps.context.outputs.number }}
+            - ${{ steps.context.outputs.type }} タイトル: ${{ steps.context.outputs.title }}
+            - ${{ steps.context.outputs.type }} 本文: ${{ steps.context.outputs.body }}
 
       - name: Commit Changes
         id: commit
