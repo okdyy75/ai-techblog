@@ -30,23 +30,22 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Set context
-        id: context
-        run: |
-          if [ "${{ github.event_name }}" = "issue_comment" ]; then
-              echo 'type=Issue' >> $GITHUB_OUTPUT
-              echo 'comment=${{ github.event.comment.body }}' >> $GITHUB_OUTPUT
-              echo 'number=${{ github.event.issue.number }}' >> $GITHUB_OUTPUT
-              echo 'title=${{ github.event.issue.title }}' >> $GITHUB_OUTPUT
-              echo 'body=${{ github.event.issue.body }}' >> $GITHUB_OUTPUT 
-            else
-              echo 'type=Pull Request' >> $GITHUB_OUTPUT
-              echo 'comment=${{ github.event.comment.body }}' >> $GITHUB_OUTPUT
-              echo 'number=${{ github.event.pull_request.number }}' >> $GITHUB_OUTPUT
-              echo 'title=${{ github.event.pull_request.title }}' >> $GITHUB_OUTPUT
-              echo 'body=${{ github.event.pull_request.body }}' >> $GITHUB_OUTPUT
-            fi
-        
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            if ('${{ github.event_name }}' == 'issue_comment') {
+              core.setOutput('type', 'Issue')
+              core.setOutput('comment', '${{ github.event.comment.body }}')
+              core.setOutput('number', '${{ github.event.issue.number }}')
+              core.setOutput('title', '${{ github.event.issue.title }}')
+              core.setOutput('body', '${{ github.event.issue.body }}')
+            } else {
+              core.setOutput('type', 'Pull Request')
+              core.setOutput('comment', '${{ github.event.comment.body }}')
+              core.setOutput('number', '${{ github.event.pull_request.number }}')
+              core.setOutput('title', '${{ github.event.pull_request.title }}')
+              core.setOutput('body', '${{ github.event.pull_request.body }}')
+            }
           
       - name: Run Gemini CLI from the main branch
         uses: google-gemini/gemini-cli-action@main
