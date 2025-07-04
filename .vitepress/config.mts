@@ -1,9 +1,10 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, UserConfig } from 'vitepress'
 import { withSidebar } from 'vitepress-sidebar'
 import taskLists from 'markdown-it-task-lists'
+import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
 
 // https://vitepress.dev/reference/site-config
-const vitePressOptions = {
+const vitePressOptions: UserConfig = {
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
   themeConfig: {
@@ -52,17 +53,17 @@ const vitePressOptions = {
 }
 }
 
-const vitePressSidebarOptions = {
+const vitePressSidebarOptions: VitePressSidebarOptions = {
   // VitePress Sidebar's options here...
   documentRootPath: '/',
-  collapsed: false,
+  collapsed: true,
   capitalizeFirst: true,
   useTitleFromFileHeading: true,
   useFolderTitleFromIndexFile: true,
   useFolderLinkFromIndexFile: true,
   hyphenToSpace: true,
   underscoreToSpace: true,
-  excludeFiles: ['README.md', 'api-examples.md', 'markdown-examples.md'],
+  excludePattern: ['README.md', 'api-examples.md', 'markdown-examples.md'],
   sortMenusByFrontmatterOrder: true,
   sortMenusOrderByDescending: false,
   frontmatterOrderDefaultValue: 0,
