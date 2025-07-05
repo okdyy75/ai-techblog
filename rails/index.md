@@ -27,6 +27,11 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Rails 8のSolid Queueで実現するジョブキューの新しいアプローチ](/rails/02-active-record-database/68-solid-queue-rails8)
 - [x] [Active Record Encryptionを使った機密データの暗号化](/rails/02-active-record-database/69-active-record-encryption)
 - [x] [データベース移行のベストプラクティス: ゼロダウンタイム・デプロイメント](/rails/02-active-record-database/78-zero-downtime-migrations)
+- [x] [Rails ActiveRecordとLaravel Eloquentの比較: ORMの思想と実装の違い](/rails/02-active-record-database/91-activerecord-vs-eloquent-comparison.md)
+- [x] [Rails Active RecordとLaravel Eloquentのバリデーション機能比較: 実装方法と特徴の違い](/rails/02-active-record-database/91-rails-laravel-validation-comparison.md)
+- [x] [ORM クエリメソッドの違い：with、has、group、pivotの使い分けと実装比較](/rails/02-active-record-database/91-with-has-group-pivot-differences.md)
+- [x] [Rails Active RecordとLaravel Eloquentのマイグレーション機能比較: スキーマ管理の違いと実装方法](/rails/02-active-record-database/92-rails-laravel-migration-comparison.md)
+- [x] [Rails Active StorageとLaravel Filesystemのファイルアップロード機能比較: 実装方法と特徴の違い](/rails/02-active-record-database/93-rails-laravel-file-upload-comparison.md)
 
 ### 3. View / フロントエンド
 - [x] [Viewの基本: `form_with` を使って安全なフォームを作成する方法](/rails/03-view-frontend/07-rails-form-with)
