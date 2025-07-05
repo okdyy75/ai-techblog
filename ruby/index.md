@@ -2,7 +2,7 @@
 
 ## Ruby基礎
 
-- [x] [Rubyのインストールとバージョン管理](./basics/01-ruby-setup.md)
+- [x] [Rubyのインストールとバージョン管���](./basics/01-ruby-setup.md)
 - [x] [Rubyの基本構文](./basics/02-ruby-syntax.md)
 - [x] [Rubyのデータ型](./basics/03-ruby-data-types.md)
 - [x] [Rubyの制御構文](./basics/04-ruby-control-flow.md)
@@ -22,7 +22,7 @@
 
 ## Rubyエコシステム
 
-- [x] [BundlerによるGemの依存関係管理](./ecosystem/15-bundler-gem-management.md)
+- [x] [BundlerによるGemの依存関係管���](./ecosystem/15-bundler-gem-management.md)
 - [x] [Rakeタスクの作り方と活用法](./ecosystem/16-rake-tasks.md)
 - [x] [RuboCopを使った静的コード解析](./ecosystem/17-rubocop-static-analysis.md)
 - [x] [Pry/IRBでのデバッグテクニック](./ecosystem/18-debugging-with-pry-irb.md)
@@ -41,3 +41,16 @@
 - [x] [Rubyの非同期処理](./advanced/28-ruby-asynchronous-processing.md)
 - [x] [Sorbetを使ったRubyの型付け](./advanced/29-sorbet-for-ruby-typing.md)
 - [x] [mruby/CRubyの違い](./advanced/30-mruby-vs-cruby.md)
+
+## 新規記事
+
+- [x] [Ruby 3.xの主要な新機能](./31-ruby3-new-features.md)
+- [x] [Rubyで��TDD（テスト駆動開発）実践ガイド](./32-ruby-tdd-guide.md)
+- [x] [Rubyにおける関数型プログラミング](./33-ruby-functional-programming.md)
+- [x] [Rubyのパフォーマンスチューニング](./34-ruby-performance-tuning.md)
+- [x] [RubyとC言語連携（拡張ライブラリ作成）](./35-ruby-c-extension.md)
+- [x] [Hanamiフレームワーク入門](./36-hanami-framework-intro.md)
+- [x] [RubyによるWebスクレイピング](./37-ruby-web-scraping.md)
+- [x] [Ruby製静的サイトジェネレータ](./38-ruby-static-site-generators.md)
+- [x] [RubyのDSL（ドメイン固有言語）作成法](./39-ruby-dsl-creation.md)
+- [x] [Ruby on Railsのセキュリティベストプラクティス](./40-rails-security-best-practices.md)
