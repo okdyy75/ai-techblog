@@ -12,7 +12,8 @@ CanCanCanは、この認可ロジックを一箇所に集約し、クリーン�
 
 `Gemfile`に`cancancan`を追加し、`bundle install`を実行します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'cancancan'
 ```
 

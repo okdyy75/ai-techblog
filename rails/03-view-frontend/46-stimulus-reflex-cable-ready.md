@@ -20,7 +20,8 @@ StimulusReflexは、Action Cable (WebSocket) を通じて、ブラウザのDOM�
 StimulusReflexのセットアップは、インストーラースクリプトを実行するのが最も簡単です。
 
 1.  `stimulus_reflex` gemを `Gemfile` に追加し、`bundle install` します。
-    ```ruby:Gemfile
+    Gemfile
+    ```ruby
     gem 'stimulus_reflex'
     ```
 
@@ -41,7 +42,8 @@ StimulusReflexのセットアップは、インストーラースクリプトを
 
 Reflexクラスは、クライアントからのイベントを受け取り、サーバーサイドで処理を実行する場所です。`app/reflexes/counter_reflex.rb` を作成します。
 
-```ruby:app/reflexes/counter_reflex.rb
+app/reflexes/counter_reflex.rb
+```ruby
 class CounterReflex < ApplicationReflex
   def increment
     # `element` から data属性を取得
@@ -59,7 +61,8 @@ end
 
 次に、フロントエンド側でこのReflexアクションを呼び出すためのStimulusコントローラを作成します。`app/javascript/controllers/counter_controller.js` を作成します。
 
-```javascript:app/javascript/controllers/counter_controller.js
+app/javascript/controllers/counter_controller.js
+```javascript
 import ApplicationController from './application_controller'
 
 export default class extends ApplicationController {
@@ -83,7 +86,8 @@ export default class extends ApplicationController {
 
 最後に、HTMLを記述します。StimulusコントローラとReflexアクションを `data-*` 属性で結びつけます。
 
-```erb:app/views/pages/counter.html.erb
+app/views/pages/counter.html.erb
+```erb
 <h1>StimulusReflex Counter</h1>
 
 <div id="counter" data-controller="counter">
@@ -119,7 +123,8 @@ Page Morphは手軽ですが、常にビュー全体を再レンダリングす�
 
 `CounterReflex` をCableReadyを使うように書き換えてみましょう。
 
-```ruby:app/reflexes/counter_reflex.rb
+app/reflexes/counter_reflex.rb
+```ruby
 class CounterReflex < ApplicationReflex
   def increment
     @count = element.dataset[:count].to_i + 1

@@ -19,7 +19,8 @@ Railsアプリケーション開発において、テストは品質を担保し
 
 `Gemfile` の `:development, :test` グループに以下のgemを追加します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
@@ -51,7 +52,8 @@ rails generate rspec:install
 
 `spec/rails_helper.rb` にFactoryBotの構文をテスト内で直接使えるように設定を追加します。
 
-```ruby:spec/rails_helper.rb
+spec/rails_helper.rb
+```ruby
 # ... (既存の設定) ...
 RSpec.configure do |config|
   # ...
@@ -78,7 +80,8 @@ rails db:migrate
 
 `app/models/user.rb` にバリデーションを追加します。
 
-```ruby:app/models/user.rb
+app/models/user.rb
+```ruby
 class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
@@ -89,7 +92,8 @@ end
 
 `spec/factories/users.rb` を作成し、`User` モデルのテストデータを生成するためのファクトリを定義します。`Faker` gemを使って、実行ごとに異なるリアルなデータを生成します。
 
-```ruby:spec/factories/users.rb
+spec/factories/users.rb
+```ruby
 FactoryBot.define do
   factory :user do
     name { Faker::Name.name }
@@ -102,7 +106,8 @@ end
 
 `spec/models/user_spec.rb` を作成し、テストを記述します。
 
-```ruby:spec/models/user_spec.rb
+spec/models/user_spec.rb
+```ruby
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -154,7 +159,8 @@ rails g controller Users index
 
 `app/controllers/users_controller.rb` を編集します。
 
-```ruby:app/controllers/users_controller.rb
+app/controllers/users_controller.rb
+```ruby
 class UsersController < ApplicationController
   def index
     @users = User.all
@@ -167,7 +173,8 @@ end
 
 `spec/requests/users_spec.rb` を作成します。
 
-```ruby:spec/requests/users_spec.rb
+spec/requests/users_spec.rb
+```ruby
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do

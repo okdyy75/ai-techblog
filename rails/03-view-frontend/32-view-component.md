@@ -21,7 +21,8 @@ Rails開発において、ビューのロジックが複雑化し、パーシャ
 
 `Gemfile` に `view_component` gemを追加します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem "view_component"
 ```
 
@@ -31,7 +32,8 @@ gem "view_component"
 
 `config/application.rb` に設定を追加すると、`rails generate` コマンドでコンポーネントを生成する際のデフォルトテンプレートエンジンなどを指定できます。
 
-```ruby:config/application.rb
+config/application.rb
+```ruby
 config.view_component.generate.template_engine = :erb
 ```
 
@@ -57,7 +59,8 @@ rails generate component Avatar user:User
 
 `app/components/avatar_component.rb` を編集します。`initialize` メソッドでコンポーネントが必要とするデータを受け取ります。インスタンス変数はビューテンプレートから参照できます。
 
-```ruby:app/components/avatar_component.rb
+app/components/avatar_component.rb
+```ruby
 class AvatarComponent < ViewComponent::Base
   attr_reader :user
 
@@ -78,7 +81,8 @@ end
 
 `app/components/avatar_component.html.erb` を編集します。これはコンポーネントの見た目を定義するテンプレートです。
 
-```erb:app/components/avatar_component.html.erb
+app/components/avatar_component.html.erb
+```erb
 <div class="avatar">
   <%# 画像がない場合はイニシャルを表示するなどのロジック %>
   <div class="avatar-placeholder">
@@ -92,7 +96,8 @@ end
 
 通常のビューファイル（例: `app/views/users/show.html.erb`）から、`render` ヘルパーを使ってコンポーネントを呼び出します。
 
-```erb:app/views/users/show.html.erb
+app/views/users/show.html.erb
+```erb
 <h1>ユーザー詳細</h1>
 
 <%= render(AvatarComponent.new(user: @user)) %>
@@ -109,7 +114,8 @@ ViewComponentの大きな利点の一つは、そのテストのしやすさで�
 
 `test/components/avatar_component_test.rb` を編集します。
 
-```ruby:test/components/avatar_component_test.rb
+test/components/avatar_component_test.rb
+```ruby
 require "test_helper"
 
 class AvatarComponentTest < ViewComponent::TestCase
@@ -145,14 +151,16 @@ end
 
 コンポーネントの一部を呼び出し側でカスタマイズしたい場合、スロット機能が便利です。例えば、カード型のコンポーネントで、ヘッダーとボディ部分を自由に差し替えられるようにできます。
 
-```ruby:app/components/card_component.rb
+app/components/card_component.rb
+```ruby
 class CardComponent < ViewComponent::Base
   renders_one :header
   renders_one :body
 end
 ```
 
-```erb:app/components/card_component.html.erb
+app/components/card_component.html.erb
+```erb
 <div class="card">
   <div class="card-header">
     <%= header %>

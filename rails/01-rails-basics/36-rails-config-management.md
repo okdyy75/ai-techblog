@@ -56,14 +56,16 @@ Figaroは、YAMLファイル (`config/application.yml`) を使って設定を管
 ### 使い方
 
 1.  **インストール**:
-    ```ruby:Gemfile
+    Gemfile
+    ```ruby
     gem 'figaro'
     ```
     `bundle install` を実行後、`bundle exec figaro install` を実行します。これにより `config/application.yml` が生成され、`.gitignore` に自動で追加されます。
 
 2.  **設定**: `config/application.yml` にキーと値を記述します。
 
-    ```yaml:config/application.yml
+    config/application.yml
+```yaml
     # このファイルは .gitignore される
     STRIPE_SECRET_KEY: "sk_test_xxxxxxxxxxxx"
     SENDGRID_USERNAME: "user@example.com"
@@ -97,14 +99,15 @@ Dotenv (`dotenv-rails`) は、プロジェクトのルートディレクトリ�
 ### 使い方
 
 1.  **インストール**:
-    ```ruby:Gemfile
+    Gemfile
+```ruby
     gem 'dotenv-rails', groups: [:development, :test]
     ```
     `bundle install` を実行します。
 
 2.  **設定**: プロジェクトルートに `.env` ファイルを作成し、キーと値を記述します。このファイルは `.gitignore` に追加してください。
 
-    ```:.env
+    ```
     # このファイルは .gitignore する
     STRIPE_SECRET_KEY=sk_test_xxxxxxxxxxxx
     SENDGRID_USERNAME=user@example.com

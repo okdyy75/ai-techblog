@@ -14,7 +14,8 @@ Railsアプリケーションでは、日次のレポート生成、定期的な
 
 `Gemfile`に`sidekiq-cron`を追加します。`sidekiq`本体も必要です。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'sidekiq'
 gem 'sidekiq-cron'
 ```

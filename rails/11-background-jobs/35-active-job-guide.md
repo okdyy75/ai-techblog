@@ -31,7 +31,8 @@ rails generate job process_payment
 
 ジョブクラスは `ApplicationJob` を継承し、`perform` メソッド内に非同期で実行したい処理を記述します。
 
-```ruby:app/jobs/process_payment_job.rb
+app/jobs/process_payment_job.rb
+```ruby
 class ProcessPaymentJob < ApplicationJob
   queue_as :default # ジョブを投入するキュー名
 
@@ -52,7 +53,8 @@ end
 - `perform_later`: 非同期でジョブを実行します。こちらが基本です。
 - `perform_now`: 同期的にジョブを実行します（テストなどで使用）。
 
-```ruby:app/controllers/orders_controller.rb
+app/controllers/orders_controller.rb
+```ruby
 def create
   @order = Order.new(order_params)
   if @order.save
@@ -73,7 +75,8 @@ Active Jobはあくまでインターフェースであり、実際にジョブ�
 
 `config/application.rb` でアダプターを設定します。
 
-```ruby:config/application.rb
+config/application.rb
+```ruby
 module YourAppName
   class Application < Rails::Application
     # ...
@@ -114,7 +117,8 @@ MyJob.set(wait_until: Date.tomorrow.noon).perform_later(record)
 
 ネットワークエラーなどでジョブが失敗した場合、自動的にリトライさせることができます。
 
-```ruby:app/jobs/my_job.rb
+app/jobs/my_job.rb
+```ruby
 class MyJob < ApplicationJob
   # 例外が発生した場合、5秒後、15秒後、30秒後にリトライする
   retry_on(NetworkError, wait: :exponentially_longer, attempts: 3)
@@ -132,7 +136,8 @@ end
 
 ジョブのライフサイクルの特定のタイミングで処理を挟むことができます。
 
-```ruby:app/jobs/reporting_job.rb
+app/jobs/reporting_job.rb
+```ruby
 class ReportingJob < ApplicationJob
   before_enqueue { |job| # ... }
   around_perform { |job, block| # ... ; block.call; # ... }

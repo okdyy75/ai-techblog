@@ -32,7 +32,8 @@ cd my-rails-api
 
 `Gemfile` に `rack-cors` がコメントアウトされているので、アンコメントします。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'rack-cors'
 ```
 
@@ -44,7 +45,8 @@ bundle install
 
 次に、`config/initializers/cors.rb` を設定します。開発環境ではNext.jsが `http://localhost:3000` で動作することを想定しています。
 
-```ruby:config/initializers/cors.rb
+config/initializers/cors.rb
+```ruby
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins "http://localhost:3000" # Next.jsのドメイン
@@ -66,7 +68,8 @@ rails g controller Api::V1::Greetings index
 
 `app/controllers/api/v1/greetings_controller.rb` を編集します。
 
-```ruby:app/controllers/api/v1/greetings_controller.rb
+app/controllers/api/v1/greetings_controller.rb
+```ruby
 class Api::V1::GreetingsController < ApplicationController
   def index
     render json: { message: "Hello from Rails API!" }
@@ -76,7 +79,8 @@ end
 
 `config/routes.rb` にルーティングを追加します。
 
-```ruby:config/routes.rb
+config/routes.rb
+```ruby
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
@@ -114,7 +118,8 @@ cd my-nextjs-app
 
 ここでは `useEffect` と `useState` を使って、クライアントサイドでデータをフェッチする例を示します。
 
-```tsx:app/page.tsx
+app/page.tsx
+```tsx
 'use client'; // Client Componentとしてマーク
 
 import { useState, useEffect } from 'react';

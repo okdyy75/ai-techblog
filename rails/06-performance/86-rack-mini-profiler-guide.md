@@ -10,7 +10,8 @@
 
 導入は非常に簡単です。`Gemfile`に`rack-mini-profiler`を追加し、`bundle install`を実行するだけです。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 group :development, :test do
   gem 'rack-mini-profiler', require: false
 end

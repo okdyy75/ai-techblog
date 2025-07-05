@@ -41,7 +41,8 @@ Web API、特に長期間にわたって運用されるサービスでは、機�
 
 `config/routes.rb` で `namespace` を使ってルーティングを定義します。
 
-```ruby:config/routes.rb
+config/routes.rb
+```ruby
 Rails.application.routes.draw do
   # /api/v1/*
   namespace :api do
@@ -112,7 +113,8 @@ URIのクエリパラメータでバージョンを指定する方法です。
 ルーティングはシンプルになりますが、コントローラ側でバージョンの振り分け処理が必要になります。
 
 **`config/routes.rb`**
-```ruby:config/routes.rb
+config/routes.rb
+```ruby
 Rails.application.routes.draw do
   namespace :api do
     resources :users, only: [:index]
@@ -164,7 +166,8 @@ end
 
 `before_action` などを使って、リクエストヘッダーからバージョンを判定します。
 
-```ruby:app/controllers/api/users_controller.rb
+app/controllers/api/users_controller.rb
+```ruby
 class Api::UsersController < ApplicationController
   def index
     case request.headers['X-Api-Version']
@@ -200,7 +203,8 @@ HTTPの`Accept`ヘッダーを使い、メディアタイプでバージョン�
 `constraints` を使ってルーティングを定義するのが一般的です。
 
 **`config/routes.rb`**
-```ruby:config/routes.rb
+config/routes.rb
+```ruby
 class ApiVersion
   attr_reader :version
 

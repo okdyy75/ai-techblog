@@ -24,7 +24,8 @@ Deviseなどのgemは認証機能を提供しますが、認可のロジック�
 
 `Gemfile` に `pundit` を追加し、`bundle install` を実行します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem "pundit"
 ```
 
@@ -42,7 +43,8 @@ rails generate pundit:install
 
 `ApplicationController` に `Pundit::Authorization` をインクルードします。これにより、コントローラで `authorize` などのヘルパーメソッドが使えるようになります。
 
-```ruby:app/controllers/application_controller.rb
+app/controllers/application_controller.rb
+```ruby
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
@@ -74,7 +76,8 @@ rails generate pundit:policy article
 
 ポリシーメソッドは、第一引数に `user`（通常は `current_user`）、第二引数に `record`（対象のモデルオブジェクト）を受け取ります。
 
-```ruby:app/policies/article_policy.rb
+app/policies/article_policy.rb
+```ruby
 class ArticlePolicy < ApplicationPolicy
   # `user` は current_user, `record` は @article
   attr_reader :user, :record
@@ -115,7 +118,8 @@ end
 
 `authorize` メソッドを使って、各アクションで認可チェックを実行します。
 
-```ruby:app/controllers/articles_controller.rb
+app/controllers/articles_controller.rb
+```ruby
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
@@ -154,7 +158,8 @@ end
 
 `authorize` メソッドは、対応するポリシーメソッドが `false` を返した場合、`Pundit::NotAuthorizedError` という例外を発生させます。この例外を `ApplicationController` で捕捉し、ユーザーにエラーメッセージを表示するのが一般的です。
 
-```ruby:app/controllers/application_controller.rb
+app/controllers/application_controller.rb
+```ruby
 rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
 private
@@ -171,7 +176,8 @@ end
 
 ポリシーファイル内に `Scope` という内部クラスを定義します。
 
-```ruby:app/policies/article_policy.rb
+app/policies/article_policy.rb
+```ruby
 class ArticlePolicy < ApplicationPolicy
   # ... (既存のポリシーメソッド)
 
@@ -196,7 +202,8 @@ end
 
 コントローラの `index` アクションで `policy_scope` ヘルパーを使います。
 
-```ruby:app/controllers/articles_controller.rb
+app/controllers/articles_controller.rb
+```ruby
 def index
   # policy_scope(Article) が ArticlePolicy::Scope.new(current_user, Article).resolve を呼び出す
   @articles = policy_scope(Article)
@@ -209,7 +216,8 @@ end
 
 ビューの中でも `policy` ヘルパーを使って、特定のUI（編集ボタンなど）を表示するかどうかを制御できます。
 
-```erb:app/views/articles/show.html.erb
+app/views/articles/show.html.erb
+```erb
 <h1><%= @article.title %></h1>
 
 <%# update? ポリシーが true を返す場合のみリンクを表示 %>

@@ -22,7 +22,8 @@ Webアプリケーションを開発する上で、セキュリティ対策は�
 
 - **認可ライブラリの活用**: `Pundit` や `CanCanCan` などのgemを導入し、ユーザーのロールに基づいてアクセス制御ポリシーを一元管理します。
 
-  ```ruby:app/policies/article_policy.rb (Punditの例)
+  app/policies/article_policy.rb (Punditの例)
+  ```ruby
   class ArticlePolicy < ApplicationPolicy
     def update?
       # 記事の所有者、または管理者のみが更新できる
@@ -33,7 +34,8 @@ Webアプリケーションを開発する上で、セキュリティ対策は�
 
 - **コントローラでのチェック**: アクションの冒頭で必ず認可チェックを行います。
 
-  ```ruby:app/controllers/articles_controller.rb
+  app/controllers/articles_controller.rb
+  ```ruby
   def update
     @article = Article.find(params[:id])
     authorize @article # Punditによる認可チェック
@@ -51,7 +53,8 @@ Webアプリケーションを開発する上で、セキュリティ対策は�
 
 - **パスワードのハッシュ化**: `has_secure_password` を使ってパスワードを安全にハッシュ化（Bcrypt）します。絶対に平文で保存してはいけません。
 
-  ```ruby:app/models/user.rb
+  app/models/user.rb
+  ```ruby
   class User < ApplicationRecord
     has_secure_password
   end

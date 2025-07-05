@@ -21,7 +21,8 @@ Railsには、i18nをサポートする強力なフレームワークが標準�
 
 `config/application.rb` で、アプリケーションがサポートする言語（ロケール）と、デフォルトで使用する言語を設定します。
 
-```ruby:config/application.rb
+config/application.rb
+```ruby
 module YourAppName
   class Application < Rails::Application
     # ... (既存の設定)
@@ -42,7 +43,8 @@ end
 `rails-i18n` gemを導入すると、Active Recordのバリデーションメッセージや日時のフォーマットなど、Rails標準の翻訳がまとめて手に入り便利です。
 
 `Gemfile` に追加:
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'rails-i18n'
 ```
 
@@ -72,7 +74,8 @@ ja:
 
 ビューでは `t` (`translate`) ヘルパーを使って翻訳テキストを呼び出します。
 
-```erb:app/views/users/show.html.erb
+app/views/users/show.html.erb
+```erb
 <%# 階層をキーとして指定 %>
 <h1><%= t('users.show.title') %></h1>
 
@@ -89,7 +92,8 @@ ja:
 
 コントローラでは `I18n.t` メソッドを使います。特にフラッシュメッセージなどで利用します。
 
-```ruby:app/controllers/users_controller.rb
+app/controllers/users_controller.rb
+```ruby
 def create
   # ...
   redirect_to @user, notice: I18n.t('users.create.success_message')
@@ -122,7 +126,8 @@ ja:
 
 `ApplicationController` に `around_action` を設定し、リクエストのたびにロケールを適切に設定するようにします。
 
-```ruby:app/controllers/application_controller.rb
+app/controllers/application_controller.rb
+```ruby
 class ApplicationController < ActionController::Base
   around_action :switch_locale
 
@@ -139,7 +144,8 @@ end
 
 `config/routes.rb` を編集します。
 
-```ruby:config/routes.rb
+config/routes.rb
+```ruby
 Rails.application.routes.draw do
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     # ここに通常のルーティングを記述する
@@ -155,7 +161,8 @@ end
 
 `url_for` ヘルパーなどが自動的にURLにロケールを含めるように、`ApplicationController` に `default_url_options` を設定します。
 
-```ruby:app/controllers/application_controller.rb
+app/controllers/application_controller.rb
+```ruby
 # ... (switch_locale の後)
 
 def default_url_options
@@ -167,7 +174,8 @@ end
 
 ビューに言語を切り替えるためのリンクを設置します。
 
-```erb:app/views/layouts/application.html.erb
+app/views/layouts/application.html.erb
+```erb
 <nav>
   <%= link_to "日本語", url_for(locale: 'ja') %>
   |

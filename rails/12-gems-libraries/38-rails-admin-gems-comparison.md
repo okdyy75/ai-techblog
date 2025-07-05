@@ -25,7 +25,8 @@
 - **高機能**: ダッシュボード、カスタムツール、カードなど、単なるCRUDにとどまらない豊富な機能を提供します。
 - **活発な開発**: 開発が非常に活発で、新機能が頻繁に追加されます。
 
-```ruby:app/avo/resources/post_resource.rb (Avoの例)
+app/avo/resources/post_resource.rb (Avoの例)
+```ruby
 class PostResource < Avo::BaseResource
   self.title = :title
   self.includes = [:user]
@@ -58,7 +59,8 @@ end
 - **ダッシュボードでの設定**: `FooDashboard` クラスで、管理画面に表示する属性やその表示形式を定義します。
 - **シンプルな思想**: 過度なDSL（ドメイン固有言語）を避け、通常のRailsのコントローラやビューを上書きすることでカスタマイズを行います。
 
-```ruby:app/dashboards/post_dashboard.rb (Administrateの例)
+app/dashboards/post_dashboard.rb (Administrateの例)
+```ruby
 class PostDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
@@ -96,7 +98,8 @@ end
 - **設定の集約**: 1つの設定ファイルに、そのリソースに関するすべての管理画面設定を記述します。
 - **軽量**: 他のgemに比べて依存性が少なく、軽量です。
 
-```ruby:app/admin/posts_admin.rb (Trestleの例)
+app/admin/posts_admin.rb (Trestleの例)
+```ruby
 Trestle.resource(:posts) do
   menu do
     item :posts, icon: "fa fa-star"

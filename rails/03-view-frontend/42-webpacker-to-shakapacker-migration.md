@@ -27,7 +27,8 @@ Rails 5と6の時代、JavaScriptのビルドとバンドルは **Webpacker** ge
 
 `Gemfile` を開き、`webpacker` を `shakapacker` に変更します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 # 変更前
 # gem 'webpacker', '~> 5.4'
 
@@ -45,7 +46,8 @@ bundle install
 
 `package.json` を開き、`@rails/webpacker` を `shakapacker` に変更します。また、関連するローダーなども更新が必要になる場合があります。
 
-```json:package.json
+package.json
+```json
 {
   "dependencies": {
     // ...

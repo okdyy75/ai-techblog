@@ -12,7 +12,8 @@ Brakemanは、Railsアプリケーション専用に設計された静的解析�
 
 BrakemanはGemとして提供されています。`Gemfile`の`:development`グループに追加するのが一般的です。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 group :development do
   gem 'brakeman'
 end

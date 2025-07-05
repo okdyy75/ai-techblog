@@ -21,7 +21,8 @@ Rubyは動的型付け言語であり、その柔軟性が高い生産性の源�
 
 `Gemfile` に `sorbet` と `sorbet-runtime` を追加します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'sorbet', group: :development
 gem 'sorbet-runtime'
 ```
@@ -55,7 +56,8 @@ Sorbetは、ファイルごとに型検査の厳密さを指定できます。�
 
 まずは `true` から始めるのが現実的です。
 
-```ruby:app/models/user.rb
+app/models/user.rb
+```ruby
 # typed: true
 class User < ApplicationRecord
   # ...
@@ -82,7 +84,8 @@ end
 
 Railsのモデルに適用してみましょう。
 
-```ruby:app/models/user.rb
+app/models/user.rb
+```ruby
 # typed: true
 class User < ApplicationRecord
   extend T::Sig

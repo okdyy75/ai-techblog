@@ -19,7 +19,8 @@
 
 `Gemfile` に `ransack` を追加し、`bundle install` を実行します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'ransack'
 ```
 
@@ -31,7 +32,8 @@ gem 'ransack'
 
 コントローラの `index` アクションで、検索パラメータを受け取り、結果を返却するようにします。
 
-```ruby:app/controllers/articles_controller.rb
+app/controllers/articles_controller.rb
+```ruby
 class ArticlesController < ApplicationController
   def index
     # params[:q] にRansackの検索パラメータが入る
@@ -51,7 +53,8 @@ end
 
 ビューでは `search_form_for` ヘルパーを使って検索フォームを作成します。これはRails標準の `form_for` と似た使い方です。
 
-```erb:app/views/articles/index.html.erb
+app/views/articles/index.html.erb
+```erb
 <h1>記事一覧</h1>
 
 <%# `search_form_for` にRansackオブジェクト (@q) を渡す %>

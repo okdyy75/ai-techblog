@@ -31,7 +31,8 @@ gem 'redis'
 
 Redisへの接続情報は、`config/initializers/redis.rb` などで一元管理すると便利です。
 
-```ruby:config/initializers/redis.rb
+config/initializers/redis.rb
+```ruby
 $redis = Redis.new(url: ENV.fetch("REDIS_URL", "redis://localhost:6379/1"))
 ```
 
@@ -43,7 +44,8 @@ Railsはデフォルトでファイルベースのキャッシュストアを使
 
 `config/environments/production.rb` (または `development.rb`) を編集します。
 
-```ruby:config/environments/production.rb
+config/environments/production.rb
+```ruby
 config.cache_store = :redis_cache_store, { 
   url: ENV.fetch("REDIS_URL", "redis://localhost:6379/1"),
   # (任意) namespaceを設定して、複数のアプリでRedisを共有する場合にキーが衝突しないようにする
@@ -57,7 +59,8 @@ config.cache_store = :redis_cache_store, {
 
 `redis-rails` gemを `Gemfile` に追加する必要があります。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'redis-rails'
 ```
 
@@ -87,13 +90,15 @@ RailsのデフォルトのセッションストアはCookieストアで、セッ
 
 `redis-session-store` gemを `Gemfile` に追加します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'redis-session-store'
 ```
 
 `config/initializers/session_store.rb` を編集（または作成）します。
 
-```ruby:config/initializers/session_store.rb
+config/initializers/session_store.rb
+```ruby
 Rails.application.config.session_store :redis_session_store, {
   key: '_myapp_session',
   redis: {
@@ -117,7 +122,8 @@ Rails.application.config.session_store :redis_session_store, {
 ### 設定方法
 
 1.  `sidekiq` gemを `Gemfile` に追加します。
-    ```ruby:Gemfile
+    Gemfile
+```ruby
     gem 'sidekiq'
     ```
 

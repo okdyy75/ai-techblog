@@ -18,7 +18,8 @@ Railsアプリケーションを開発・運用する上で、設定ファイル
 
 `config/application.rb`は、アプリケーション全体で共有される基本的な設定を記述するファイルです。ここに記述された設定は、すべての環境（development, test, production）で読み込まれます。
 
-```ruby:config/application.rb
+config/application.rb
+```ruby
 require_relative "boot"
 
 require "rails/all"
@@ -62,7 +63,8 @@ end
 
 Railsは実行環境（`RAILS_ENV`）に応じて、対応する設定ファイルを読み込みます。
 
-```ruby:config/environments/production.rb
+config/environments/production.rb
+```ruby
 Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -92,12 +94,14 @@ end
 
 gemの設定や、アプリケーション起動時に一度だけ実行したい処理を記述するのに適しています。
 
-```ruby:config/initializers/stripe.rb
+config/initializers/stripe.rb
+```ruby
 # StripeのAPIキーを設定
 Stripe.api_key = Rails.application.credentials.stripe[:secret_key]
 ```
 
-```ruby:config/initializers/cors.rb
+config/initializers/cors.rb
+```ruby
 # CORSの設定
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
@@ -126,7 +130,8 @@ APIキー、外部サービスの認証情報、データベースのパスワ�
 $ EDITOR=vim bin/rails credentials:edit
 ```
 
-```yaml:config/credentials.yml.enc
+config/credentials.yml.enc
+```yaml
 # development環境のStripeキー
 stripe:
   secret_key: sk_test_xxxxxxxxxxxx
@@ -164,7 +169,8 @@ Rails.application.credentials.production[:stripe][:secret_key]
 
 1. `Gemfile`に`dotenv-rails`を追加します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 group :development, :test do
   gem 'dotenv-rails'
 end
@@ -172,7 +178,7 @@ end
 
 2. プロジェクトルートに`.env`ファイルを作成します。
 
-```: .env
+```
 DATABASE_HOST=localhost
 DATABASE_USER=my_user
 DATABASE_PASSWORD=my_password
@@ -180,13 +186,14 @@ DATABASE_PASSWORD=my_password
 
 3. `.gitignore`に`.env`を追加します。
 
-```: .gitignore
+```
 .env
 ```
 
 4. `config/database.yml`などで環境変数を参照します。
 
-```yaml:config/database.yml
+config/database.yml
+```yaml
 default: &default
   adapter: postgresql
   encoding: unicode

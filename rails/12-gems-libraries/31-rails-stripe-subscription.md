@@ -36,7 +36,8 @@ Stripeダッシュボードで、ユーザーに提供するサブスクリプ�
 
 `Gemfile` に `stripe` gemを追加します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'stripe'
 ```
 
@@ -44,13 +45,15 @@ gem 'stripe'
 
 次に、APIキーを設定します。`config/initializers/stripe.rb` を作成し、以下のように記述します。
 
-```ruby:config/initializers/stripe.rb
+config/initializers/stripe.rb
+```ruby
 Stripe.api_key = Rails.application.credentials.dig(:stripe, :secret_key)
 ```
 
 `rails credentials:edit` を実行し、Stripeのシークレットキーを保存します。
 
-```yml:config/credentials.yml.enc
+config/credentials.yml.enc
+```yml
 stripe:
   secret_key: sk_test_xxxxxxxxxxxx
   publishable_key: pk_test_xxxxxxxxxxxx
@@ -74,7 +77,8 @@ Stripe Checkoutを利用すると、Stripeがホストする安全な決済ペ�
 
 ユーザーが「登録」ボタンを押したときに、Stripeの決済ページへのリダイレクトURLを生成するコントローラのアクションを作成します。
 
-```ruby:app/controllers/subscriptions_controller.rb
+app/controllers/subscriptions_controller.rb
+```ruby
 class SubscriptionsController < ApplicationController
   before_action :authenticate_user! # Deviseなどの認証を想定
 
@@ -129,7 +133,8 @@ end
 
 `config/routes.rb` にルーティングを追加します。
 
-```ruby:config/routes.rb
+config/routes.rb
+```ruby
 resource :subscription, only: [:create]
 get 'subscription/success', to: 'subscriptions#success'
 get 'subscription/cancel', to: 'subscriptions#cancel'
@@ -137,7 +142,8 @@ get 'subscription/cancel', to: 'subscriptions#cancel'
 
 ビューに登録ボタンを設置します。
 
-```erb:app/views/home/index.html.erb
+app/views/home/index.html.erb
+```erb
 <%= button_to "プレミアムプランに登録", subscription_path, method: :post %>
 ```
 
@@ -153,7 +159,8 @@ StripeからのPOSTリクエストを受け取るコントローラを作成し�
 rails g controller Webhooks receive
 ```
 
-```ruby:app/controllers/webhooks_controller.rb
+app/controllers/webhooks_controller.rb
+```ruby
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token # CSRF保護を無効化
 

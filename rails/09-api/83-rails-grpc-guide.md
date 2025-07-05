@@ -21,7 +21,8 @@ gRPCは、Googleが開発したオープンソースのRPC（Remote Procedure Ca
 
 `Gemfile`に以下のGemを追加します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 gem 'grpc'
 gem 'grpc-tools' # .protoファイルからRubyコードを生成するために必要
 ```

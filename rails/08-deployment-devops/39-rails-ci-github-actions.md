@@ -33,7 +33,8 @@ GitHub Actionsのワークフローは、リポジトリの `.github/workflows` 
 
 `.github/workflows/ci.yml` というファイルを作成します。
 
-```yaml:.github/workflows/ci.yml
+.github/workflows/ci.yml
+```yaml
 name: Rails CI
 
 on:

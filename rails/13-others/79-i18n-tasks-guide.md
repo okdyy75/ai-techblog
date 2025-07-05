@@ -16,7 +16,8 @@ Railsの国際化（i18n）機能は、アプリケーションを多言語対�
 
 `Gemfile`の`:development`グループに`i18n-tasks`を追加し、`bundle install`を実行します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 group :development do
   gem 'i18n-tasks', '~> 1.0.0' # バージョンを指定することを推奨
 end

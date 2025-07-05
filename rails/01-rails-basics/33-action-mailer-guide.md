@@ -36,7 +36,8 @@ rails generate mailer UserMailer welcome_email
 
 `config/environments/development.rb` には、開発中にメール送信をシミュレートする設定をします。
 
-```ruby:config/environments/development.rb
+config/environments/development.rb
+```ruby
 # gem 'letter_opener_web' を追加して `bundle install` しておく
 config.action_mailer.delivery_method = :letter_opener_web
 config.action_mailer.perform_deliveries = true
@@ -45,7 +46,8 @@ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 `config/environments/production.rb` には、本番用のSMTPサーバー情報を設定します。
 
-```ruby:config/environments/production.rb
+config/environments/production.rb
+```ruby
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
   address:              'smtp.sendgrid.net',
@@ -65,7 +67,8 @@ config.action_mailer.default_url_options = { host: 'your-domain.com' }
 
 `app/mailers/user_mailer.rb` を編集します。メーラーのメソッド内で、宛先、件名、送信元などを設定します。インスタンス変数を定義すると、ビューテンプレートから参照できます。
 
-```ruby:app/mailers/user_mailer.rb
+app/mailers/user_mailer.rb
+```ruby
 class UserMailer < ApplicationMailer
   default from: '''notifications@example.com'''
 
@@ -115,7 +118,8 @@ HTML形式 (`.html.erb`) とテキスト形式 (`.text.erb`) の両方のテン�
 - `.deliver_now`: 同期的にメールを送信します。
 - `.deliver_later`: Active Jobのキューに追加し、バックグラウンドで非同期に送信します。ユーザーを待たせないため、こちらが推奨されます。
 
-```ruby:app/controllers/users_controller.rb
+app/controllers/users_controller.rb
+```ruby
 def create
   @user = User.new(user_params)
   if @user.save
@@ -134,7 +138,8 @@ end
 
 `test/mailers/previews/user_mailer_preview.rb` を編集します。
 
-```ruby:test/mailers/previews/user_mailer_preview.rb
+test/mailers/previews/user_mailer_preview.rb
+```ruby
 class UserMailerPreview < ActionMailer::Preview
   def welcome_email
     # プレビュー用のダミーデータを作成
@@ -152,7 +157,8 @@ end
 
 `test/mailers/user_mailer_test.rb` で、メーラーが正しい内容のメールを生成するかをテストします。
 
-```ruby:test/mailers/user_mailer_test.rb
+test/mailers/user_mailer_test.rb
+```ruby
 require "test_helper"
 
 class UserMailerTest < ActionMailer::TestCase
@@ -178,7 +184,8 @@ end
 
 ユーザー登録機能など、特定の操作をトリガーとしてメールが送信されることをテストします。
 
-```ruby:test/integration/user_creation_test.rb
+test/integration/user_creation_test.rb
+```ruby
 require "test_helper"
 
 class UserCreationTest < ActionDispatch::IntegrationTest

@@ -44,7 +44,8 @@ Action Textは、内部でActive Storageを使用して画像のアップロー�
 
 `app/models/article.rb` を編集します。
 
-```ruby:app/models/article.rb
+app/models/article.rb
+```ruby
 class Article < ApplicationRecord
   has_rich_text :content
 end
@@ -58,7 +59,8 @@ end
 
 `app/views/articles/_form.html.erb` を編集します。
 
-```erb:app/views/articles/_form.html.erb
+app/views/articles/_form.html.erb
+```erb
 <%= form_with(model: article) do |form| %>
   <%# ... error messages ... %>
 
@@ -80,7 +82,8 @@ end
 
 コントローラ側では、`Strong Parameters` で `:content` を許可することを忘れないでください。
 
-```ruby:app/controllers/articles_controller.rb
+app/controllers/articles_controller.rb
+```ruby
 def article_params
   params.require(:article).permit(:title, :content)
 end
@@ -94,7 +97,8 @@ end
 
 `app/views/articles/show.html.erb` を編集します。
 
-```erb:app/views/articles/show.html.erb
+app/views/articles/show.html.erb
+```erb
 <h1><%= @article.title %></h1>
 
 <div class="trix-content">

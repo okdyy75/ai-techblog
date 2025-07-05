@@ -45,7 +45,8 @@ RailsでAPIを開発する際、そのAPIが「どのようなエンドポイン
 
 `Gemfile` の `:development, :test` グループにgemを追加します。
 
-```ruby:Gemfile
+Gemfile
+```ruby
 group :development, :test do
   gem 'rswag-api'
   gem 'rswag-ui'
@@ -65,7 +66,8 @@ rails g rswag:install
 
 `spec/swagger_helper.rb` を編集し、APIの基本情報（タイトル、バージョンなど）を定義します。
 
-```ruby:spec/swagger_helper.rb
+spec/swagger_helper.rb
+```ruby
 require 'rails_helper'
 
 RSpec.configure do |config|
