@@ -1,4 +1,4 @@
-# Ruby Tech Articles
+# Ruby技術記事
 
 ## 1. Ruby基礎
 
