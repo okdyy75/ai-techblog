@@ -13,9 +13,6 @@ hero:
     - theme: alt
       text: Rails を学ぶ
       link: /rails/
-    - theme: alt
-      text: 記事一覧
-      link: /markdown-examples
 
 features:
   - title: 🚀 Ruby 基礎から応用まで
@@ -31,4 +28,3 @@ features:
   - title: 🆕 最新情報対応
     details: Rails 8、Ruby 3.x の最新機能やベストプラクティスを反映した内容
 ---
-
