@@ -10,6 +10,7 @@
 - [x] [Rubyのクラスとモジュール](./basics/06-ruby-classes-modules.md)
 - [x] [Rubyの例外処理](./basics/07-ruby-exception-handling.md)
 - [x] [Rubyの標準ライブラリ紹介](./basics/08-ruby-standard-library.md)
+- [x] [Ruby 3.xの主要な新機能](./basics/31-ruby3-new-features.md)
 
 ## Ruby応用
 
@@ -19,6 +20,10 @@
 - [x] [Rackの基礎とミドルウェア](./applications/12-rack-middleware.md)
 - [x] [Rubyにおけるデザインパターン](./applications/13-ruby-design-patterns.md)
 - [x] [Rubyのメモリ管理とガベージコレクション](./applications/14-ruby-memory-management.md)
+- [x] [Rubyにおける関数型プログラミング](./applications/33-ruby-functional-programming.md)
+- [x] [Rubyのパフォーマンスチューニング](./applications/34-ruby-performance-tuning.md)
+- [x] [RubyとC言語連携（拡張ライブラリ作成）](./applications/35-ruby-c-extension.md)
+- [x] [RubyのDSL（ドメイン固有言語）作成法](./applications/39-ruby-dsl-creation.md)
 
 ## Rubyエコシステム
 
@@ -28,6 +33,10 @@
 - [x] [Pry/IRBでのデバッグテクニック](./ecosystem/18-debugging-with-pry-irb.md)
 - [x] [MinitestとRSpecの比較と使い方](./ecosystem/19-minitest-vs-rspec.md)
 - [x] [Sinatraで作る軽量Webアプリケーション](./ecosystem/20-sinatra-webapp.md)
+- [x] [RubyでのTDD（テスト駆動開発）実践ガイド](./ecosystem/32-ruby-tdd-guide.md)
+- [x] [Hanamiフレームワーク入門](./ecosystem/36-hanami-framework-intro.md)
+- [x] [RubyによるWebスクレイピング](./ecosystem/37-ruby-web-scraping.md)
+- [x] [Ruby製静的サイトジェネレータ](./ecosystem/38-ruby-static-site-generators.md)
 
 ## 発展トピック
 
@@ -41,16 +50,5 @@
 - [x] [Rubyの非同期処理](./advanced/28-ruby-asynchronous-processing.md)
 - [x] [Sorbetを使ったRubyの型付け](./advanced/29-sorbet-for-ruby-typing.md)
 - [x] [mruby/CRubyの違い](./advanced/30-mruby-vs-cruby.md)
+- [x] [Ruby on Railsのセキュリティベストプラクティス](./advanced/40-rails-security-best-practices.md)
 
-## 新規記事
-
-- [x] [Ruby 3.xの主要な新機能](./31-ruby3-new-features.md)
-- [x] [Rubyで��TDD（テスト駆動開発）実践ガイド](./32-ruby-tdd-guide.md)
-- [x] [Rubyにおける関数型プログラミング](./33-ruby-functional-programming.md)
-- [x] [Rubyのパフォーマンスチューニング](./34-ruby-performance-tuning.md)
-- [x] [RubyとC言語連携（拡張ライブラリ作成）](./35-ruby-c-extension.md)
-- [x] [Hanamiフレームワーク入門](./36-hanami-framework-intro.md)
-- [x] [RubyによるWebスクレイピング](./37-ruby-web-scraping.md)
-- [x] [Ruby製静的サイトジェネレータ](./38-ruby-static-site-generators.md)
-- [x] [RubyのDSL（ドメイン固有言語）作成法](./39-ruby-dsl-creation.md)
-- [x] [Ruby on Railsのセキュリティベストプラクティス](./40-rails-security-best-practices.md)
