@@ -1,3 +1,4 @@
+name: Gemini
 
 on:
   issue_comment:
@@ -19,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # コメントがgeminiで始まる場合のみ実行
-    if: startsWith(github.event.comment.body, 'gemini')
+    if: github.actor == 'okdyy75' && startsWith(github.event.comment.body, 'gemini')
 
     steps:
       - name: Checkout repository
