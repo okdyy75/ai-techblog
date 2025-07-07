@@ -1,6 +1,8 @@
 # Ruby技術記事
 
-## 1. Ruby基礎
+Rubyプログラミング言語に関する技術記事をトピック別にまとめました。
+
+### 1. Ruby基礎
 
 - [x] [Rubyのインストールとバージョン管理](./01-basics/01-ruby-setup.md)
 - [x] [Rubyの基本構文](./01-basics/02-ruby-syntax.md)
@@ -12,7 +14,7 @@
 - [x] [Rubyの標準ライブラリ紹介](./01-basics/08-ruby-standard-library.md)
 - [x] [Ruby 3.xの主要な新機能](./01-basics/31-ruby3-new-features.md)
 
-## 2. Ruby応用
+### 2. Ruby応用
 
 - [x] [Rubyメタプログラミング入門](./02-applications/09-ruby-metaprogramming.md)
 - [x] [Rubyの並行処理と並列処理](./02-applications/10-ruby-concurrency.md)
@@ -25,7 +27,7 @@
 - [x] [RubyとC言語連携（拡張ライブラリ作成）](./02-applications/35-ruby-c-extension.md)
 - [x] [RubyのDSL（ドメイン固有言語）作成法](./02-applications/39-ruby-dsl-creation.md)
 
-## 3. Rubyエコシステム
+### 3. Rubyエコシステム
 
 - [x] [BundlerによるGemの依存関係管理](./03-ecosystem/15-bundler-gem-management.md)
 - [x] [Rakeタスクの作り方と活用法](./03-ecosystem/16-rake-tasks.md)
@@ -38,7 +40,7 @@
 - [x] [RubyによるWebスクレイピング](./03-ecosystem/37-ruby-web-scraping.md)
 - [x] [Ruby製静的サイトジェネレータ](./03-ecosystem/38-ruby-static-site-generators.md)
 
-## 4. 発展トピック
+### 4. 発展トピック
 
 - [x] [Ruby on Railsの基礎](./04-advanced/21-ruby-on-rails-basics.md)
 - [x] [Active Recordの基礎](./04-advanced/22-active-record-basics.md)
