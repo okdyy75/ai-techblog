@@ -1,0 +1,90 @@
+name: Gemini
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+permissions:
+  issues: write
+  contents: write
+  pull-requests: write
+
+jobs:
+  gemini:
+    timeout-minutes: 20
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.issue.number }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+
+    # コメントがgeminiで始まる場合のみ実行
+    if: github.actor == 'okdyy75' && startsWith(github.event.comment.body, 'gemini')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - uses: actions/github-script@v6
+        id: context
+        with:
+          script: |
+            const comment = `${{ github.event.comment.body }}`
+            core.setOutput('comment', comment)
+            if ('${{ github.event_name }}' == 'issue_comment') {
+              core.setOutput('type', 'Issue')
+              core.setOutput('number', '${{ github.event.issue.number }}')
+              core.setOutput('title', '${{ github.event.issue.title }}')
+              const body = `${{ github.event.issue.body }}`
+              core.setOutput('body', body)
+            } else {
+              core.setOutput('type', 'Pull Request')
+              core.setOutput('number', '${{ github.event.pull_request.number }}')
+              core.setOutput('title', '${{ github.event.pull_request.title }}')
+              const body = `${{ github.event.pull_request.body }}`
+              core.setOutput('body', body)
+            }
+          
+      - name: Run Gemini CLI from the main branch
+        uses: google-gemini/gemini-cli-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          version: latest
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          prompt: |
+            ${{ steps.context.outputs.comment }}
+
+            ### 前提
+            - 確認は不要です
+            - 常に日本語で返答してください
+            - エラーが発生した場合は、常にエラー内容を出力してください
+
+            ### ${{ steps.context.outputs.type }}情報
+            - Repository: ${{ github.repository }}
+            - ${{ steps.context.outputs.type }} 番号: ${{ steps.context.outputs.number }}
+            - ${{ steps.context.outputs.type }} タイトル: ${{ steps.context.outputs.title }}
+            - ${{ steps.context.outputs.type }} 本文: ${{ steps.context.outputs.body }}
+
+            ### PR作成手順
+            1. git checkout -b issue-${{ steps.context.outputs.number }}
+            2. git add -A
+            3. git commit -m "{{修正内容}}"
+            4. git push origin issue-${{ steps.context.outputs.number }}
+            5. gh pr create --title "{{PRタイトル}}" --body "{{PR内容}}"
+
+            ### PRレビュー手順
+            - PR OK: gh pr review ${{ steps.context.outputs.number }} --approve --body "{{承認コメント}}"
+            - PR NG: gh pr review ${{ steps.context.outputs.number }} --request-changes --body "{{変更要求コメント}}"
+
+      - name: Commit Changes
+        id: commit
+        run: |
+          git branch
+          git status
