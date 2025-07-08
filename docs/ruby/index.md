@@ -51,3 +51,16 @@
 - [x] [Sorbetを使ったRubyの型付け](./04-advanced/29-sorbet-for-ruby-typing.md)
 - [x] [mruby/CRubyの違い](./04-advanced/30-mruby-vs-cruby.md)
 - [x] [Ruby on Railsのセキュリティベストプラクティス](./04-advanced/40-rails-security-best-practices.md)
+
+## 5. 新しいトピック
+
+- [x] [Rubyのパターンマッチング](./05-new/01-pattern-matching.md)
+- [x] [RBSによる型定義](./05-new/02-rbs-type-definition.md)
+- [x] [Ruby製CLIツールの作り方](./05-new/03-cli-tool-creation.md)
+- [x] [Ruby on RailsとReactの連携](./05-new/04-rails-react-integration.md)
+- [x] [Active Jobの活用法](./05-new/05-active-job-usage.md)
+- [x] [Rubyのリフレクション機能](./05-new/06-ruby-reflection.md)
+- [x] [RubyのSocketプログラミング](./05-new/07-socket-programming.md)
+- [x] [Ruby on RailsのAPIモード](./05-new/08-rails-api-mode.md)
+- [x] [Rubyの委譲（Delegation）](./05-new/09-ruby-delegation.md)
+- [x] [RubyのFiberと非同期処理](./05-new/10-ruby-fiber.md)
