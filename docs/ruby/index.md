@@ -64,3 +64,16 @@
 - [x] [Ruby on RailsのAPIモード](./05-new/08-rails-api-mode.md)
 - [x] [Rubyの委譲（Delegation）](./05-new/09-ruby-delegation.md)
 - [x] [RubyのFiberと非同期処理](./05-new/10-ruby-fiber.md)
+
+## 6. 実践・その他
+
+- [x] [Prismパーサー: Rubyの新しいデフォルトパーサー](./06-others/01-prism-parser.md)
+- [x] [Garnet VM: 次世代Ruby仮想マシン](./06-others/02-garnet-vm.md)
+- [x] [Universal Symbol: Ruby 3.3での変更点](./06-others/03-universal-symbol.md)
+- [x] [YJITの進化とパフォーマンス向上](./06-others/04-yjit-evolution.md)
+- [x] [Trilogy: 新しいMySQLデータベースアダプタ](./06-others/05-trilogy-db-adapter.md)
+- [x] [Propshaft: Sprocketsに代わるアセットパイプライン](./06-others/06-propshaft-asset-pipeline.md)
+- [x] [debug.gem: Rubyの標準デバッガ](./06-others/07-debug-gem.md)
+- [x] [RubyにおけるWebAssembly (Wasm) の活用](./06-others/08-ruby-and-wasm.md)
+- [x] [Ractorのパフォーマンスと実用例](./06-others/09-ractor-performance.md)
+- [x] [RubyでのgRPCサーバー・クライアント実装](./06-others/10-grpc-implementation.md)
