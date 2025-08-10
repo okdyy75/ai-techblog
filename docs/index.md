@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: Rails を学ぶ
       link: /rails/
+    - theme: alt
+      text: AI を学ぶ
+      link: /ai/
 
 features:
   - title: 🚀 Ruby 基礎から応用まで
