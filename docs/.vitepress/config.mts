@@ -8,6 +8,17 @@ const vitePressOptions: UserConfig = {
   base: '/ai-techblog/',
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
+    head: [
+        ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-KV4CN8TQVS" }],
+        [
+            "script",
+            {},
+            `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KV4CN8TQVS');`,
+        ],
+    ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
