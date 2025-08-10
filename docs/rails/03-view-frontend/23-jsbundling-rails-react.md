@@ -91,6 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
+React 17以前を使用している場合は `react-dom` の `ReactDOM.render` を使って同様
+にマウントできます。
+
+```javascript
+// React 17までの例
+import ReactDOM from 'react-dom';
+ReactDOM.render(<HelloWorld {...props} />, container);
+```
+
 このコードは、`DOMContentLoaded`イベント（ページのHTMLが完全に読み込まれたとき）を待ち、ページ内に`id="react-root"`という要素があれば、その要素をReactのコンポーネントで置き換える、という処理を行っています。
 
 ### ステップ5: Railsビューからの呼び出し
