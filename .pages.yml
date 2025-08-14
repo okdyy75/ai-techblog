@@ -1,3 +1,9 @@
-media:
-  input: docs
-  output: /
+content:
+  - name: rails
+    label: Rails
+    type: collection
+    path: docs/rails
+  - name: ruby
+    label: Ruby
+    type: collection
+    path: docs/ruby
