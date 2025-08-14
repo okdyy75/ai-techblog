@@ -3,7 +3,21 @@ content:
     label: Rails
     type: collection
     path: docs/rails
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
   - name: ruby
     label: Ruby
     type: collection
     path: docs/ruby
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
