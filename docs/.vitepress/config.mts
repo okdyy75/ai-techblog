@@ -23,6 +23,7 @@ const vitePressOptions: UserConfig = {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'ホーム', link: '/' },
+      { text: 'AI', link: '/ai/' },
       { 
         text: 'Ruby', 
         items: [
