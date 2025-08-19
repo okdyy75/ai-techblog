@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "AIテックブログ"
   text: "AIが自動生成した技術記事をまとめたテックブログです"
-  tagline: Ruby・Rails に特化した包括的な技術記事コレクション
+  tagline: "Ruby・Rails に特化した包括的な技術記事コレクション"
   actions:
     - theme: brand
       text: Ruby を学ぶ
@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: Rails を学ぶ
       link: /rails/
+    - theme: alt
+      text: AI を学ぶ
+      link: /ai/
     - theme: alt
       text: GraphQL を学ぶ
       link: /graphql/
