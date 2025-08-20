@@ -79,7 +79,7 @@ module.exports = { typeDefs };
 
 ## 1. スキーマレベルのテスト
 
-スキーマ自体の構造と型定義を検証します。
+スキーマレベルのテストでは、GraphQLスキーマの構造的整合性を検証します。これは設計時のエラーを早期に発見するために重要です。
 
 ```javascript
 // tests/schema.test.js
@@ -90,14 +90,17 @@ describe('GraphQL Schema', () => {
   let schema;
 
   beforeAll(() => {
+    // スキーマを構築（構文エラーがあればここで検出される）
     schema = buildSchema(typeDefs);
   });
 
   test('スキーマが正常にビルドされること', () => {
+    // 基本的なスキーマ構築のテスト
     expect(schema).toBeDefined();
   });
 
   test('必要な型が定義されていること', () => {
+    // カスタム型の存在確認
     const typeMap = schema.getTypeMap();
     
     expect(typeMap.User).toBeDefined();
@@ -106,6 +109,7 @@ describe('GraphQL Schema', () => {
   });
 
   test('Queryルートタイプに必要なフィールドがあること', () => {
+    // Query型の必須フィールドの存在確認
     const queryType = schema.getQueryType();
     const fields = queryType.getFields();
     
@@ -116,6 +120,7 @@ describe('GraphQL Schema', () => {
   });
 
   test('Mutationルートタイプに必要なフィールドがあること', () => {
+    // Mutation型の必須フィールドの存在確認
     const mutationType = schema.getMutationType();
     const fields = mutationType.getFields();
     
@@ -126,6 +131,7 @@ describe('GraphQL Schema', () => {
   });
 
   test('Subscriptionルートタイプに必要なフィールドがあること', () => {
+    // Subscription型の必須フィールドの存在確認
     const subscriptionType = schema.getSubscriptionType();
     const fields = subscriptionType.getFields();
     
@@ -134,16 +140,24 @@ describe('GraphQL Schema', () => {
   });
 
   test('User型のフィールドが正しく定義されていること', () => {
+    // 型のフィールド定義と必須/オプション設定の検証
     const userType = schema.getType('User');
     const fields = userType.getFields();
     
-    expect(fields.id.type.toString()).toBe('ID!');
-    expect(fields.name.type.toString()).toBe('String!');
-    expect(fields.email.type.toString()).toBe('String!');
-    expect(fields.posts.type.toString()).toBe('[Post!]!');
+    // 型の文字列表現で必須性も含めて検証
+    expect(fields.id.type.toString()).toBe('ID!');      // 必須のID
+    expect(fields.name.type.toString()).toBe('String!'); // 必須の文字列
+    expect(fields.email.type.toString()).toBe('String!'); // 必須の文字列
+    expect(fields.posts.type.toString()).toBe('[Post!]!'); // 必須の配列（要素も必須）
   });
 });
 ```
+
+**スキーマテストの重要性：**
+- **構文エラーの早期発見**: スキーマビルド時に文法的な誤りを検出
+- **型安全性の保証**: フィールドの型定義が期待通りであることを確認
+- **API契約の検証**: クライアントが期待するAPIインターフェースの存在を保証
+- **リファクタリングの安全性**: スキーマ変更時の影響範囲を把握
 
 ## 2. リゾルバレベルのテスト
 

@@ -4,46 +4,51 @@ GraphQLアプリケーションを本番環境で安定して運用するには�
 
 ## 監視とメトリクスの設計
 
+GraphQLアプリケーションの運用では、従来のREST APIとは異なる監視アプローチが必要です。GraphQL特有の特性を考慮した包括的な監視戦略を構築しましょう。
+
 ### 1. 基本的なメトリクス収集
 
-GraphQLアプリケーションで監視すべき主要なメトリクスを定義しましょう。
+GraphQLアプリケーションで重点的に監視すべきメトリクスを定義します。これらは運用チームがシステムの健全性を判断するための基盤となります：
 
 ```javascript
 const prometheus = require('prom-client');
 
-// メトリクス定義
+// GraphQL専用メトリクスの定義
 const graphqlMetrics = {
-  // リクエスト数
+  // 1. リクエスト数の追跡
   requestCount: new prometheus.Counter({
     name: 'graphql_requests_total',
     help: 'Total number of GraphQL requests',
+    // ラベルでリクエストを分類：運用名、操作タイプ、成功/失敗
     labelNames: ['operation_name', 'operation_type', 'status']
   }),
 
-  // レスポンス時間
+  // 2. レスポンス時間の分布
   requestDuration: new prometheus.Histogram({
     name: 'graphql_request_duration_seconds',
     help: 'GraphQL request duration in seconds',
     labelNames: ['operation_name', 'operation_type'],
+    // バケット設定：実際のレスポンス時間の分布に基づいて調整
     buckets: [0.1, 0.3, 0.5, 0.7, 1, 3, 5, 7, 10]
   }),
 
-  // リゾルバ実行時間
+  // 3. リゾルバレベルの実行時間（ボトルネック特定用）
   resolverDuration: new prometheus.Histogram({
     name: 'graphql_resolver_duration_seconds',
     help: 'GraphQL resolver execution time',
     labelNames: ['field_name', 'type_name'],
+    // より細かいバケット：リゾルバは通常より高速
     buckets: [0.01, 0.1, 0.3, 0.5, 1, 2, 5]
   }),
 
-  // エラー数
+  // 4. エラー発生状況の監視
   errorCount: new prometheus.Counter({
     name: 'graphql_errors_total',
     help: 'Total number of GraphQL errors',
     labelNames: ['error_type', 'operation_name']
   }),
 
-  // クエリ複雑性
+  // 5. クエリ複雑性の監視（セキュリティ対策）
   queryComplexity: new prometheus.Histogram({
     name: 'graphql_query_complexity',
     help: 'GraphQL query complexity score',
@@ -51,7 +56,7 @@ const graphqlMetrics = {
     buckets: [1, 10, 50, 100, 200, 500, 1000]
   }),
 
-  // DataLoader統計
+  // 6. DataLoaderの効果測定
   dataLoaderStats: new prometheus.Summary({
     name: 'graphql_dataloader_batch_size',
     help: 'DataLoader batch size statistics',
@@ -62,11 +67,89 @@ const graphqlMetrics = {
 module.exports = graphqlMetrics;
 ```
 
+**メトリクス設計の原則：**
+- **粒度のバランス**: 詳細すぎるとノイズが多く、粗すぎると問題の特定が困難
+- **ラベルの適切な使用**: 運用チームが問題を迅速に特定できるよう分類
+- **パフォーマンス考慮**: メトリクス収集自体がアプリケーションの負荷にならないよう調整
+
 ### 2. Apollo Serverでのメトリクス収集
+
+実際の運用環境でメトリクス収集を行うためのApollo Serverプラグインを実装します。このプラグインはリクエストのライフサイクル全体を監視します：
 
 ```javascript
 const { ApolloServer } = require('apollo-server-express');
 const { graphqlMetrics } = require('./metrics');
+
+// 包括的な監視プラグイン
+const metricsPlugin = {
+  requestDidStart() {
+    const startTime = Date.now();
+    let operationName = 'anonymous';
+    let operationType = 'unknown';
+    
+    return {
+      // 1. 操作の解析完了時
+      didResolveOperation(requestContext) {
+        const { operation } = requestContext.request;
+        operationName = requestContext.request.operationName || 'anonymous';
+        operationType = operation.operation; // query, mutation, subscription
+        
+        // クエリ複雑性の記録（外部ライブラリと連携）
+        if (requestContext.metrics && requestContext.metrics.queryComplexity) {
+          graphqlMetrics.queryComplexity
+            .labels(operationName)
+            .observe(requestContext.metrics.queryComplexity);
+        }
+      },
+
+      // 2. エラー発生時の監視
+      didEncounterErrors(requestContext) {
+        requestContext.errors.forEach(error => {
+          // エラータイプの分類（重要：障害対応の迅速化）
+          const errorType = error.extensions?.code || 'UNKNOWN_ERROR';
+          
+          graphqlMetrics.errorCount
+            .labels(errorType, operationName)
+            .inc();
+          
+          // 重大なエラーは別途ログ出力
+          if (['INTERNAL_ERROR', 'UNAUTHENTICATED'].includes(errorType)) {
+            console.error('Critical GraphQL Error:', {
+              type: errorType,
+              operation: operationName,
+              message: error.message,
+              timestamp: new Date().toISOString()
+            });
+          }
+        });
+      },
+
+      // 3. リクエスト完了時の統計記録
+      willSendResponse(requestContext) {
+        const duration = (Date.now() - startTime) / 1000;
+        const status = requestContext.errors ? 'error' : 'success';
+        
+        // 基本的なリクエスト統計
+        graphqlMetrics.requestCount
+          .labels(operationName, operationType, status)
+          .inc();
+        
+        graphqlMetrics.requestDuration
+          .labels(operationName, operationType)
+          .observe(duration);
+        
+        // パフォーマンス警告（開発段階での最適化指標）
+        if (duration > 5) {
+          console.warn(`Slow GraphQL Query detected:`, {
+            operation: operationName,
+            duration: `${duration}s`,
+            type: operationType
+          });
+        }
+      }
+    };
+  }
+};
 
 // リクエスト監視プラグイン
 const metricsPlugin = {

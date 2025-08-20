@@ -101,13 +101,17 @@ const typeDefs = gql`
 
 ### 3. PubSubの設定
 
+PubSub（Publish-Subscribe）は、イベントの発行と購読を管理するシステムです。GraphQL Subscriptionの核となる仕組みです：
+
 ```javascript
 const { PubSub } = require('graphql-subscriptions');
 
 // 開発環境用のインメモリPubSub
+// シンプルで軽量だが、単一サーバー環境でのみ動作
 const pubsub = new PubSub();
 
-// 本番環境では Redis PubSub を推奨
+// 本番環境では Redis PubSub を強く推奨
+// 複数のサーバーインスタンス間でイベントを共有可能
 // const { RedisPubSub } = require('graphql-redis-subscriptions');
 // const pubsub = new RedisPubSub({
 //   connection: {
@@ -116,22 +120,31 @@ const pubsub = new PubSub();
 //   }
 // });
 
-// イベント定数
+// イベント名の定数化（タイポ防止とメンテナンス性向上）
 const MESSAGE_ADDED = 'MESSAGE_ADDED';
 const USER_JOINED = 'USER_JOINED';
 const USER_LEFT = 'USER_LEFT';
 const USER_TYPING = 'USER_TYPING';
 ```
 
+**PubSubの選択指針：**
+- **開発環境**: インメモリPubSub（簡単で高速）
+- **本番環境**: Redis PubSub（スケーラブル、永続化）
+- **大規模環境**: Apache Kafka、AWS SNS/SQS（高可用性、分散処理）
+
 ### 4. リゾルバの実装
+
+Subscriptionを効果的に活用するには、MutationとSubscriptionリゾルバの連携が重要です：
 
 ```javascript
 const resolvers = {
   Query: {
     messages: async (parent, { roomId }) => {
+      // 既存のメッセージを取得（ページング対応推奨）
       return await Message.findByRoomId(roomId);
     },
     rooms: async () => {
+      // 利用可能なチャットルーム一覧を取得
       return await Room.findAll();
     }
   },
@@ -140,11 +153,12 @@ const resolvers = {
     sendMessage: async (parent, { roomId, content }, context) => {
       const { user } = context; // 認証されたユーザー情報
       
+      // セキュリティチェック：認証必須
       if (!user) {
         throw new Error('認証が必要です');
       }
 
-      // メッセージを保存
+      // 1. データベースにメッセージを保存
       const message = await Message.create({
         content,
         userId: user.id,
@@ -152,16 +166,17 @@ const resolvers = {
         createdAt: new Date().toISOString()
       });
 
-      // ユーザー情報を含むメッセージオブジェクトを作成
+      // 2. Subscriptionで使用する完全なオブジェクトを構築
       const messageWithUser = {
         ...message,
-        user
+        user // Subscriptionクライアントが必要とするユーザー情報を含める
       };
 
-      // Subscriptionイベントを発行
+      // 3. 【重要】Subscriptionイベントを発行
+      // この時点で、該当ルームをsubscribeしている全クライアントに通知される
       pubsub.publish(MESSAGE_ADDED, {
         messageAdded: messageWithUser,
-        roomId
+        roomId // フィルタリングに使用
       });
 
       return messageWithUser;
@@ -174,10 +189,10 @@ const resolvers = {
         throw new Error('認証が必要です');
       }
 
-      // ユーザーをルームに追加
+      // データベースの更新とイベント発行を組み合わせ
       await RoomUser.create({ roomId, userId: user.id });
 
-      // 入室イベントを通知
+      // 入室通知をSubscriptionで配信
       pubsub.publish(USER_JOINED, {
         userJoined: user,
         roomId
@@ -193,7 +208,7 @@ const resolvers = {
         throw new Error('認証が必要です');
       }
 
-      // ユーザーをルームから削除
+      // ルームからユーザーを削除
       await RoomUser.destroy({ 
         where: { roomId, userId: user.id }
       });

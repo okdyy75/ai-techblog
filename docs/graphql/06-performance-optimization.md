@@ -54,9 +54,13 @@ DataLoaderは、FacebookがGraphQLのN+1問題を解決するために開発し�
 
 ### DataLoaderのインストールと基本設定
 
+まず、DataLoaderライブラリをプロジェクトに追加します：
+
 ```bash
 npm install dataloader
 ```
+
+次に、DataLoaderの核となるバッチ関数を実装します。この関数は複数のIDを受け取り、一度のデータベースクエリで全てのデータを取得する責任を持ちます：
 
 ```javascript
 const DataLoader = require('dataloader');
@@ -65,36 +69,48 @@ const DataLoader = require('dataloader');
 const batchUsers = async (userIds) => {
   console.log('Batch loading users:', userIds);
   
-  // 重複を除去
+  // 1. 重複するIDを除去（同じユーザーを複数回取得することを防ぐ）
   const uniqueIds = [...new Set(userIds)];
   
-  // 一括でユーザーを取得
+  // 2. データベースから一括でユーザーを取得
+  // 注意：ここが最も重要な部分！単一のクエリで全てのユーザーを取得
   const users = await db.users.findByIds(uniqueIds);
   
-  // IDをキーとしたマップを作成
+  // 3. 効率的な検索のためIDをキーとしたマップを作成
   const userMap = new Map();
   users.forEach(user => userMap.set(user.id, user));
   
-  // 元の順序で結果を返す
+  // 4. DataLoaderの要件に従い、元の順序で結果を返す
+  // 見つからないIDに対してはnullを返す（重要：順序を保持）
   return userIds.map(id => userMap.get(id) || null);
 };
 
 // DataLoaderインスタンスを作成
+// このインスタンスが自動的にバッチ処理とキャッシュを管理
 const userLoader = new DataLoader(batchUsers);
 ```
 
+**DataLoaderが動作する仕組み：**
+1. **バッチング**: 同一のイベントループ内で発生する複数の`load()`呼び出しを自動的に一つのバッチにまとめます
+2. **キャッシュ**: 一度取得したデータはメモリにキャッシュされ、同じリクエスト内での重複取得を防ぎます
+3. **順序保証**: バッチ関数は入力された順序と同じ順序で結果を返す必要があります
+
 ### リゾルバでDataLoaderを使用
+
+従来のN+1問題を起こすリゾルバをDataLoaderを使って最適化します：
 
 ```javascript
 const resolvers = {
   Query: {
     allPosts: async () => {
+      // クエリ自体は変更なし：全ての投稿を取得
       return await db.posts.findAll();
     }
   },
   Post: {
     author: async (post, args, context) => {
-      // DataLoaderを使って効率的に取得
+      // 重要：個別のデータベース呼び出しの代わりにDataLoaderを使用
+      // この呼び出しは自動的にバッチ処理される
       return await context.userLoader.load(post.authorId);
     }
   }
@@ -105,23 +121,42 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: () => ({
+    // 重要：リクエストごとに新しいDataLoaderインスタンスを作成
+    // これにより、リクエスト間でのキャッシュ汚染を防ぐ
     userLoader: new DataLoader(batchUsers)
   })
 });
 ```
 
-これにより、100件の投稿に対しても以下の2回のクエリだけで済みます：
-1. `SELECT * FROM posts`
-2. `SELECT * FROM users WHERE id IN (1, 2, 3, ...)`
+**パフォーマンス改善の効果：**
+
+**従来の方法（N+1問題）:**
+- 100件の投稿 → 101回のデータベースクエリ
+- 1回目: `SELECT * FROM posts`（全投稿取得）
+- 2〜101回目: `SELECT * FROM users WHERE id = ?`（著者を1人ずつ取得）
+
+**DataLoader使用後:**
+- 100件の投稿 → 2回のデータベースクエリ
+- 1回目: `SELECT * FROM posts`（全投稿取得）
+- 2回目: `SELECT * FROM users WHERE id IN (1, 2, 3, ...)`（著者を一括取得）
+
+これにより、データベースへの負荷が大幅に軽減され、レスポンス時間が劇的に改善されます。
 
 ## より複雑なDataLoaderの実装例
 
+実際のアプリケーションでは、単純なIDベースの関連だけでなく、より複雑なデータ取得パターンが必要になります。以下では、よくある実装パターンを詳しく解説します。
+
 ### 関連データを含むDataLoader
+
+投稿に関連するメタデータ（コメント数、最新コメントなど）を効率的に取得する例：
 
 ```javascript
 // 投稿のコメント数を一括取得するDataLoader
 const batchPostCommentCounts = async (postIds) => {
+  // SQL: SELECT post_id, COUNT(*) FROM comments WHERE post_id IN (...) GROUP BY post_id
   const counts = await db.comments.countByPostIds(postIds);
+  
+  // 結果をpostIdsの順序に合わせて返す（コメントがない投稿は0を返す）
   return postIds.map(postId => counts[postId] || 0);
 };
 
@@ -129,42 +164,70 @@ const commentCountLoader = new DataLoader(batchPostCommentCounts);
 
 // 投稿の最新コメントを一括取得するDataLoader
 const batchLatestComments = async (postIds) => {
+  // 効率的なクエリ：各投稿の最新コメントのみを取得
   const comments = await db.comments.findLatestByPostIds(postIds);
+  
+  // 投稿IDをキーとしたマップを作成
   const commentMap = new Map();
   comments.forEach(comment => {
+    // 各投稿につき最初に見つかったコメント（最新）のみを保存
     if (!commentMap.has(comment.postId)) {
       commentMap.set(comment.postId, comment);
     }
   });
   
+  // 元の順序で結果を返す（最新コメントがない場合はnull）
   return postIds.map(postId => commentMap.get(postId) || null);
 };
 
 const latestCommentLoader = new DataLoader(batchLatestComments);
 ```
 
+**使用例：**
+```javascript
+const resolvers = {
+  Post: {
+    commentCount: async (post, args, context) => {
+      // N+1問題を起こさずにコメント数を取得
+      return await context.commentCountLoader.load(post.id);
+    },
+    latestComment: async (post, args, context) => {
+      // 最新コメントも効率的に取得
+      return await context.latestCommentLoader.load(post.id);
+    }
+  }
+};
+```
+
 ### カスタムキーを使ったDataLoader
 
-時には、IDだけでなく複数のパラメータを組み合わせてデータを取得する必要があります：
+IDだけでなく、複数のパラメータを組み合わせてデータを取得する場合の実装：
 
 ```javascript
 // ユーザーごとの投稿を取得するDataLoader
+// 注意：このパターンはバッチ処理の効果が限定的な場合があります
 const batchPostsByUser = async (keys) => {
-  // keyは { userId, limit, offset } の形式
+  // 各keyは { userId, limit, offset } の形式
+  // 理想的には、この処理をバッチ化できるような実装にする
   const queries = keys.map(key => 
     db.posts.findByUserId(key.userId, key.limit, key.offset)
   );
   
+  // 並列で実行（バッチ処理の代替として）
   return await Promise.all(queries);
 };
 
 const userPostsLoader = new DataLoader(
   batchPostsByUser,
   {
-    // カスタムキーFunction
+    // カスタムキーFunction：オブジェクトキーを文字列に変換
     cacheKeyFn: (key) => `${key.userId}:${key.limit}:${key.offset}`
   }
 );
+```
+
+**重要な注意点：**
+このパターンは真のバッチ処理ではありません。異なるパラメータ（limit、offset）を持つクエリを効率的にバッチ化することは困難です。このような場合は、キャッシュによる重複排除の効果を主に期待することになります。
 
 // 使用例
 const resolvers = {

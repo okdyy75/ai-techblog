@@ -33,6 +33,8 @@ query MaliciousDeepQuery {
 
 **対策: クエリ深度制限**
 
+深度制限を実装することで、ネストが深すぎるクエリを実行前に拒否できます：
+
 ```javascript
 const depthLimit = require('graphql-depth-limit');
 const { ApolloServer } = require('apollo-server-express');
@@ -40,10 +42,20 @@ const { ApolloServer } = require('apollo-server-express');
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  validationRules: [depthLimit(10)], // 最大10階層まで
+  // バリデーションルールとして深度制限を追加
+  validationRules: [depthLimit(10)], // 最大10階層まで許可
+  
+  // エラーハンドリングでユーザーフレンドリーなメッセージを提供
   formatError: (error) => {
     if (error.message.includes('exceeds maximum operation depth')) {
-      console.warn('Depth limit exceeded:', error);
+      // セキュリティログとして記録
+      console.warn('Depth limit exceeded:', {
+        message: error.message,
+        timestamp: new Date().toISOString(),
+        // 攻撃者の特定に役立つ情報を記録（IPアドレスなど）
+      });
+      
+      // クライアントには簡潔なエラーメッセージを返す
       return new Error('クエリの階層が深すぎます');
     }
     return error;
@@ -51,19 +63,26 @@ const server = new ApolloServer({
 });
 ```
 
+**深度制限の設定指針：**
+- **一般的なWebアプリ**: 5-10階層
+- **複雑なデータモデル**: 10-15階層
+- **セキュリティ重視**: 3-7階層
+
+適切な深度を見つけるには、実際のアプリケーションで使用される正当なクエリの深度を分析することが重要です。
+
 ### 2. Query Complexity Attack（クエリ複雑性攻撃）
 
-計算コストの高いフィールドを大量に要求することで、サーバーに過大な負荷をかける攻撃です。
+深度だけでなく、計算量自体が問題となるケースです。浅いクエリでも、大量のデータを要求することでサーバーリソースを枯渇させる攻撃手法です。
 
 **攻撃例:**
 ```graphql
 query MaliciousComplexQuery {
-  users(first: 1000) {  # 大量のユーザー
-    posts(first: 100) { # 各ユーザーの投稿を100件
-      comments(first: 50) { # 各投稿のコメントを50件
+  users(first: 1000) {      # 1,000人のユーザー
+    posts(first: 100) {     # 各ユーザーの投稿100件 = 100,000件
+      comments(first: 50) { # 各投稿のコメント50件 = 5,000,000件
         author {
-          followers(first: 200) { # 各コメント著者のフォロワー200人
-            name
+          followers(first: 200) { # 各著者のフォロワー200人 = 1,000,000,000件
+            name            # 最終的に10億件のデータ取得を要求
           }
         }
       }
@@ -72,12 +91,18 @@ query MaliciousComplexQuery {
 }
 ```
 
+**計算例**: 1,000 × 100 × 50 × 200 = 1,000,000,000 レコード
+
+このようなクエリは一見正当に見えますが、データベースとサーバーに致命的な負荷をかけます。
+
 **対策: クエリ複雑性分析**
+
+各フィールドにコスト値を割り当て、クエリ全体のコストを計算して制限する手法：
 
 ```javascript
 const costAnalysis = require('graphql-query-complexity').costAnalysisValidator;
 
-// スキーマでコストを定義
+// スキーマでコストを定義（実行時間とリソース使用量に基づく）
 const typeDefs = gql`
   type Query {
     users(first: Int): [User] # 複雑性: first * 2
