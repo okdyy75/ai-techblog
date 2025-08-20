@@ -1,4 +1,3 @@
----
 # 大規模言語モデル（LLM）のファインチューニング入門：Hugging Face Transformersを使った実践ガイド
 
 ## はじめに
