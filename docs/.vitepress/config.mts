@@ -87,7 +87,19 @@ const vitePressSidebarOptions: VitePressSidebarOptions = {
   sortMenusByFrontmatterOrder: true,
   sortMenusOrderByDescending: false,
   frontmatterOrderDefaultValue: 0,
-  manualSortFileNameByPriority: ['index.md'],
+  manualSortFileNameByPriority: [
+    'index.md',
+    '01-prompt-engineering-basics.md',
+    '02-rag-mechanism-and-utilization.md',
+    '03-fine-tuning-llm-customization.md',
+    '04-major-llm-comparison.md',
+    '05-generative-ai-business-cases.md',
+    '06-ml-model-deployment-strategies.md',
+    '07-llm-fine-tuning-with-hugging-face.md',
+    '08-vector-db-for-ai-applications.md',
+    '09-pytorch-vs-tensorflow-2024.md',
+    '10-mastering-ai-code-assistants.md'
+  ],
 };
 
 export default defineConfig(withSidebar(vitePressOptions, vitePressSidebarOptions));
