@@ -85,6 +85,9 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [RailsアプリケーションのCI/CDパイプラインをGitHub Actionsで構築する](/rails/08-deployment-devops/39-rails-ci-github-actions)
 - [x] [Kamal (旧MRSK) を使ったRailsアプリケーションのデプロイ戦略](/rails/08-deployment-devops/60-kamal-deployment)
 - [x] [`Terraform`によるRailsのインフラ管理(IaC)](/rails/08-deployment-devops/84-terraform-rails-guide)
+- [x] [HerokuへRailsアプリケーションをデプロイする2025年版ガイド](/rails/08-deployment-devops/86-deploy-rails-to-heroku)
+- [x] [VercelでRailsアプリケーションをデプロイする2025年版ガイド](/rails/08-deployment-devops/87-deploy-rails-to-vercel)
+- [x] [Google CloudでRailsアプリケーションをデプロイする2025年版ガイド](/rails/08-deployment-devops/88-deploy-rails-to-google-cloud)
 
 ### 9. API
 - [x] [GraphQL APIを`graphql-ruby` gemで構築する](/rails/09-api/25-graphql-ruby-api)
