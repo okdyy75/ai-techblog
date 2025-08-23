@@ -4,11 +4,11 @@
 
 - [x] [TypeScriptのインストールとセットアップ](./01-basics/01-typescript-setup.md)
 - [x] [TypeScriptの基本構文](./01-basics/02-typescript-syntax.md)
-- [ ] [型システムの基礎]
-- [ ] [プリミティブ型とリテラル型]
-- [ ] [オブジェクト型とインターフェース]
-- [ ] [配列とタプル型]
-- [ ] [関数型とオーバーロード]
+- [x] [型システムの基礎](./01-basics/03-type-system-basics.md)
+- [x] [プリミティブ型とリテラル型](./01-basics/04-primitives-and-literals.md)
+- [x] [オブジェクト型とインターフェース](./01-basics/05-objects-and-interfaces.md)
+- [x] [配列とタプル型](./01-basics/06-arrays-and-tuples.md)
+- [x] [関数型とオーバーロード](./01-basics/07-functions-and-overloads.md)
 - [ ] [ユニオン型とインターセクション型]
 - [ ] [型エイリアスとタイプガード]
 - [ ] [ジェネリクスの基礎]
