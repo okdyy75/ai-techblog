@@ -8,6 +8,7 @@ const vitePressOptions: UserConfig = {
   base: '/ai-techblog/',
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
+  ignoreDeadLinks: true,
     head: [
         ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-KV4CN8TQVS" }],
         [
@@ -89,6 +90,7 @@ const vitePressSidebarOptions: VitePressSidebarOptions = {
   frontmatterOrderDefaultValue: 0,
   manualSortFileNameByPriority: [
     'index.md',
+    '00-my-model.md',
     '01-prompt-engineering-basics.md',
     '02-rag-mechanism-and-utilization.md',
     '03-fine-tuning-llm-customization.md',

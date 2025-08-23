@@ -21,6 +21,8 @@ hero:
       link: /graphql/
 
 features:
+  - title: 🤖 推奨AIモデル
+    details: Claude 3.5 Sonnetを中心とした、用途別最適AIモデルの選択指針と使い分け方法
   - title: 🚀 Ruby 基礎から応用まで
     details: Ruby の基本構文から、オブジェクト指向、メタプログラミング、並行処理まで幅広くカバー
   - title: 🛤️ Rails 完全ガイド

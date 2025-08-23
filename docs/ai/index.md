@@ -2,8 +2,33 @@
 
 AIに関する技術記事です。
 
+## 私のモデルは？
+
+このブログで主に使用・推奨しているAIモデルについてご紹介します。
+
+### 推奨LLMモデル
+
+**Claude 3.5 Sonnet (Anthropic)** を主要モデルとして推奨しています。
+
+#### 選択理由
+
+1. **高い安全性**: 憲法AI（Constitutional AI）により、有害な出力やバイアスが抑制されている
+2. **優れた長文処理能力**: 数万トークン規模の長文も正確に処理可能
+3. **自然な文章生成**: 人間らしい、読みやすい文章を生成
+4. **技術記事作成に最適**: 論理的で構造化された説明が得意
+
+#### 用途別おすすめモデル
+
+- **技術記事作成・編集**: Claude 3.5 Sonnet
+- **コード生成・レビュー**: GitHub Copilot（GPT-4ベース）+ Claude 3.5 Sonnet
+- **創造的コンテンツ**: GPT-4 Turbo
+- **マルチモーダル処理**: Gemini 1.5 Pro
+
+詳細な比較は [主要LLM比較記事](/ai/04-major-llm-comparison) をご覧ください。
+
 ## 記事一覧
 
+- [x] [私のモデル：このブログで使用・推奨するAIモデル](/ai/00-my-model)
 - [x] [プロンプトエンジニアリング入門](/ai/01-prompt-engineering-basics)
 - [x] [RAG（Retrieval-Augmented Generation）の仕組みと活用法](/ai/02-rag-mechanism-and-utilization)
 - [x] [ファインチューニングによるLLMのカスタマイズ](/ai/03-fine-tuning-llm-customization)
