@@ -15,8 +15,8 @@ let value: null = null;
 let data: undefined = undefined;
 
 // 型推論（型注釈を省略）
-let autoName = "Jane"; // string型として推論
-let autoAge = 25;      // number型として推論
+let autoName = "Jane"; // 推論される型: string
+let autoAge = 25;      // 推論される型: number
 ```
 
 ### let、const、varの使い分け

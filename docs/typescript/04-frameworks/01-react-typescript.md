@@ -148,6 +148,9 @@ const UserProfile: React.FC = () => {
     setUsers(prevUsers => [...prevUsers, newUser]);
   };
 
+  // 例: 新しいユーザーを追加する場合
+  // addUser({ id: 1, name: "Alice" });
+
   return (
     <div>
       {user ? (
