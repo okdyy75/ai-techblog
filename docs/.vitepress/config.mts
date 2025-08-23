@@ -5,7 +5,6 @@ import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
 
 // https://vitepress.dev/reference/site-config
 const vitePressOptions: UserConfig = {
-  base: '/ai-techblog/',
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
     head: [
