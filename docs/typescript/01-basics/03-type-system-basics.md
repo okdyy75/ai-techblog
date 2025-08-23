@@ -80,9 +80,84 @@ function isFish(animal: Fish | Bird): animal is Fish {
 }
 ```
 
+## リテラルの拡大（widening）と縮小（narrowing）
+
+`let` で初期化したリテラルは広い型へ拡大され、`const` はリテラル型のまま保持します。
+
+```ts
+let v = "ok";      // string に拡大
+const c = "ok";    // "ok" のまま
+
+const obj = { mode: "dev" };        // mode: string
+const obj2 = { mode: "dev" } as const; // mode: "dev"
+```
+
+## non-null アサーションと確定代入アサーション
+
+- `!`（non-null）: 値が null/undefined ではないと主張。乱用は危険。
+- クラスフィールドの `!`: コンストラクタ外で初期化することをコンパイラに約束。
+
+```ts
+function getLen(s?: string) {
+  return s!.length; // 実行時に s が undefined ならクラッシュ
+}
+
+class Repo {
+  private url!: string; // 後で必ず代入すると約束
+  init(u: string) { this.url = u; }
+}
+```
+
+## アサーション vs 型ガード
+
+`as` はコンパイラを黙らせるだけ。可能ならタイプガードを用意して安全に絞り込む。
+
+```ts
+function hasId(x: unknown): x is { id: string } {
+  return typeof (x as any)?.id === "string";
+}
+```
+
+## 関数の互換性と（双）変性の落とし穴
+
+コールバック引数はデフォルトで双変（bivariant）として扱われ、広く受け取れてしまいます。安全性を高めるには `--strictFunctionTypes` を有効化。
+
+```ts
+type Handler = (a: Animal) => void;
+const handleDog: (a: Dog) => void = (d) => {};
+
+let h: Handler = handleDog; // 非 strictFunctionTypes では許容され得る
+```
+
+## 列挙型より判別可能ユニオン
+
+判別プロパティで安全に分岐し、網羅性チェックを `never` で担保。
+
+```ts
+type Shape =
+  | { kind: "circle"; radius: number }
+  | { kind: "square"; size: number };
+
+function area(s: Shape): number {
+  switch (s.kind) {
+    case "circle": return Math.PI * s.radius ** 2;
+    case "square": return s.size * s.size;
+    default: {
+      const _exhaustive: never = s; // 新ケース追加時にエラー
+      return _exhaustive;
+    }
+  }
+}
+```
+
+## おすすめのコンパイラオプション（抜粋）
+
+- `strict: true`（まとめて有効化）
+- `noImplicitAny`, `strictNullChecks`, `strictFunctionTypes`, `noUncheckedIndexedAccess`
+
 ## まとめ
 
 - 型注釈は公開面、推論は実装面で活用
 - 構造的部分型と過剰プロパティチェックの違いを理解
 - `unknown` を優先し、`any` は最後の手段
-- 絞り込みで安全に分岐・アクセス
+- 絞り込みと網羅性チェックで安全に分岐
