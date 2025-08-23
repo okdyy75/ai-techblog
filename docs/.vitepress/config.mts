@@ -7,6 +7,9 @@ import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
 const vitePressOptions: UserConfig = {
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
+  sitemap: {
+    hostname: 'https://ai-techblog.okdyy75.com'
+  },
     head: [
         ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-KV4CN8TQVS" }],
         [
