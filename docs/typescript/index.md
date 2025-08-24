@@ -4,8 +4,8 @@
 
 - [x] [TypeScriptのインストールとセットアップ](./01-basics/01-typescript-setup.md)
 - [x] [TypeScriptの基本構文](./01-basics/02-typescript-syntax.md)
-- [ ] [型システムの基礎]
-- [ ] [プリミティブ型とリテラル型]
+- [x] [型システムの基礎](./01-basics/03-type-system-basics.md)
+- [x] [プリミティブ型とリテラル型](./01-basics/04-primitive-literal-types.md)
 - [ ] [オブジェクト型とインターフェース]
 - [ ] [配列とタプル型]
 - [ ] [関数型とオーバーロード]
@@ -15,7 +15,7 @@
 ## 2. TypeScript発展
 
 - [ ] [高度なジェネリクス]
-- [ ] [条件型（Conditional Types）]
+- [x] [条件型（Conditional Types）](./02-advanced/02-conditional-types.md)
 - [ ] [マップ型（Mapped Types）]
 - [ ] [テンプレートリテラル型]
 - [ ] [型レベルプログラミング]
@@ -27,7 +27,7 @@
 
 ## 3. TypeScriptエコシステム
 
-- [ ] [TSConfigの詳細設定]
+- [x] [TSConfigの詳細設定](./03-ecosystem/01-tsconfig-detailed.md)
 - [ ] [TypeScript Compilerの使い方]
 - [ ] [ESLintとPrettierの設定]
 - [ ] [Jestを使ったTypeScriptのテスト]
@@ -66,7 +66,7 @@
 
 ## 6. 実践・応用例
 
-- [ ] [型安全なAPI設計パターン]
+- [x] [型安全なAPI設計パターン](./06-practice/01-type-safe-api-design.md)
 - [ ] [TypeScriptでのエラーハンドリング]
 - [ ] [型安全な状態管理]
 - [ ] [TypeScriptでの関数型プログラミング]
