@@ -6,14 +6,18 @@
 - [x] [Rubyの基本構文](./01-basics/02-ruby-syntax.md)
 - [x] [Rubyのデータ型](./01-basics/03-ruby-data-types.md)
 - [x] [Rubyの制御構文](./01-basics/04-ruby-control-flow.md)
+- [x] [Rubyのパターンマッチング](./01-basics/01-pattern-matching.md)
 - [x] [Rubyのブロック、Proc、Lambda](./01-basics/05-ruby-blocks-procs-lambdas.md)
 - [x] [Rubyのクラスとモジュール](./01-basics/06-ruby-classes-modules.md)
 - [x] [Rubyの例外処理](./01-basics/07-ruby-exception-handling.md)
 - [x] [Rubyの標準ライブラリ紹介](./01-basics/08-ruby-standard-library.md)
+- [x] [Rubyの委譲（Delegation）](./01-basics/09-ruby-delegation.md)
 - [x] [Ruby 3.xの主要な新機能](./01-basics/31-ruby3-new-features.md)
 
 ## 2. Ruby応用
 
+- [x] [Ruby製CLIツールの作り方](./02-applications/03-cli-tool-creation.md)
+- [x] [RubyのSocketプログラミング](./02-applications/07-socket-programming.md)
 - [x] [Rubyメタプログラミング入門](./02-applications/09-ruby-metaprogramming.md)
 - [x] [Rubyの並行処理と並列処理](./02-applications/10-ruby-concurrency.md)
 - [x] [RubyのGem作成と公開方法](./02-applications/11-ruby-gem-creation.md)
@@ -40,6 +44,9 @@
 
 ## 4. 発展トピック
 
+- [x] [RBSによる型定義](./04-advanced/02-rbs-type-definition.md)
+- [x] [Rubyのリフレクション機能](./04-advanced/06-ruby-reflection.md)
+- [x] [RubyのFiberと非同期処理](./04-advanced/10-ruby-fiber.md)
 - [x] [Ruby on Railsの基礎](./04-advanced/21-ruby-on-rails-basics.md)
 - [x] [Active Recordの基礎](./04-advanced/22-active-record-basics.md)
 - [x] [Railsのルーティング](./04-advanced/23-rails-routing.md)
@@ -52,25 +59,14 @@
 - [x] [mruby/CRubyの違い](./04-advanced/30-mruby-vs-cruby.md)
 - [x] [Ruby on Railsのセキュリティベストプラクティス](./04-advanced/40-rails-security-best-practices.md)
 
-## 5. 新しいトピック
+## 5. 実践・その他
 
-- [x] [Rubyのパターンマッチング](./05-new/01-pattern-matching.md)
-- [x] [RBSによる型定義](./05-new/02-rbs-type-definition.md)
-- [x] [Ruby製CLIツールの作り方](./05-new/03-cli-tool-creation.md)
-- [x] [Rubyのリフレクション機能](./05-new/06-ruby-reflection.md)
-- [x] [RubyのSocketプログラミング](./05-new/07-socket-programming.md)
-- [x] [Ruby on RailsのAPIモード](./05-new/08-rails-api-mode.md)
-- [x] [Rubyの委譲（Delegation）](./05-new/09-ruby-delegation.md)
-- [x] [RubyのFiberと非同期処理](./05-new/10-ruby-fiber.md)
-
-## 6. 実践・その他
-
-- [x] [Prismパーサー: Rubyの新しいデフォルトパーサー](./06-others/01-prism-parser.md)
-- [x] [Garnet VM: 次世代Ruby仮想マシン](./06-others/02-garnet-vm.md)
-- [x] [Universal Symbol: Ruby 3.3での変更点](./06-others/03-universal-symbol.md)
-- [x] [YJITの進化とパフォーマンス向上](./06-others/04-yjit-evolution.md)
-- [x] [Trilogy: 新しいMySQLデータベースアダプタ](./06-others/05-trilogy-db-adapter.md)
-- [x] [debug.gem: Rubyの標準デバッガ](./06-others/07-debug-gem.md)
-- [x] [RubyにおけるWebAssembly (Wasm) の活用](./06-others/08-ruby-and-wasm.md)
-- [x] [Ractorのパフォーマンスと実用例](./06-others/09-ractor-performance.md)
-- [x] [RubyでのgRPCサーバー・クライアント実装](./06-others/10-grpc-implementation.md)
+- [x] [Prismパーサー: Rubyの新しいデフォルトパーサー](./05-others/01-prism-parser.md)
+- [x] [Garnet VM: 次世代Ruby仮想マシン](./05-others/02-garnet-vm.md)
+- [x] [Universal Symbol: Ruby 3.3での変更点](./05-others/03-universal-symbol.md)
+- [x] [YJITの進化とパフォーマンス向上](./05-others/04-yjit-evolution.md)
+- [x] [Trilogy: 新しいMySQLデータベースアダプタ](./05-others/05-trilogy-db-adapter.md)
+- [x] [debug.gem: Rubyの標準デバッガ](./05-others/07-debug-gem.md)
+- [x] [RubyにおけるWebAssembly (Wasm) の活用](./05-others/08-ruby-and-wasm.md)
+- [x] [Ractorのパフォーマンスと実用例](./05-others/09-ractor-performance.md)
+- [x] [RubyでのgRPCサーバー・クライアント実装](./05-others/10-grpc-implementation.md)

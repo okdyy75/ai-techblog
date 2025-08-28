@@ -87,6 +87,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [`Terraform`によるRailsのインフラ管理(IaC)](/rails/08-deployment-devops/84-terraform-rails-guide)
 
 ### 9. API
+- [x] [Ruby on RailsのAPIモード](/rails/09-api/08-rails-api-mode)
 - [x] [GraphQL APIを`graphql-ruby` gemで構築する](/rails/09-api/25-graphql-ruby-api)
 - [x] [Rails APIモード + Next.jsで構築するモダンなWebアプリケーション](/rails/09-api/27-rails-api-nextjs)
 - [x] [RailsにおけるAPIドキュメントの自動生成 (RSwag/Committee)](/rails/09-api/45-rails-api-documentation)

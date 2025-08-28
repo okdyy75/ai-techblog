@@ -32,7 +32,8 @@ const vitePressOptions: UserConfig = {
           { text: '1. Ruby基礎', link: '/ruby/#_1-ruby%E5%9F%BA%E7%A4%8E' },
           { text: '2. Ruby応用', link: '/ruby/#_2-ruby%E5%BF%9C%E7%94%A8' },
           { text: '3. Rubyエコシステム', link: '/ruby/#_3-ruby%E3%82%A8%E3%82%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0' },
-          { text: '4. 発展トピック', link: '/ruby/#_4-ruby%E7%99%BA%E5%B1%95%E3%83%88%E3%83%94%E3%83%83%E3%82%AF' }
+          { text: '4. 発展トピック', link: '/ruby/#_4-ruby%E7%99%BA%E5%B1%95%E3%83%88%E3%83%94%E3%83%83%E3%82%AF' },
+          { text: '5. 実践・その他', link: '/ruby/#_5-%E5%AE%9F%E8%B7%B5-%E3%81%9D%E3%81%AE%E4%BB%96' }
         ]
       },
       { 
