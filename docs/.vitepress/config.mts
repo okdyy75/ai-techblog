@@ -53,7 +53,20 @@ const vitePressOptions: UserConfig = {
           { text: '12. Gem / ライブラリ', link: '/rails/#_12-gem-%E3%83%A9%E3%82%A4%E3%83%95%E3%82%99%E3%83%A9%E3%83%AA' },
           { text: '13. その他', link: '/rails/#_13-%E3%81%9D%E3%81%AE%E4%BB%96' },
         ]
-      }
+      },
+      { 
+        text: 'TypeScript', 
+        items: [
+          { text: '1. TypeScript基礎', link: '/typescript/#_1-typescript%E5%9F%BA%E7%A4%8E' },
+          { text: '2. TypeScript発展', link: '/typescript/#_2-typescript%E7%99%BA%E5%B1%95' },
+          { text: '3. TypeScriptエコシステム', link: '/typescript/#_3-typescript%E3%82%A8%E3%82%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0' },
+          { text: '4. フレームワークとの連携', link: '/typescript/#_4-%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A8%E3%81%AE%E9%80%A3%E6%90%BA' },
+          { text: '5. 開発ツールと効率化', link: '/typescript/#_5-%E9%96%8B%E7%99%BA%E3%83%84%E3%83%BC%E3%83%AB%E3%81%A8%E5%8A%B9%E7%8E%87%E5%8C%96' },
+          { text: '6. 実践・応用例', link: '/typescript/#_6-%E5%AE%9F%E8%B7%B5-%E5%BF%9C%E7%94%A8%E4%BE%8B' },
+        ]
+      },
+      { text: 'GraphQL', link: '/graphql/' },
+      { text: 'インフラ', link: '/infrastructure/' }
     ],
 
     socialLinks: [
