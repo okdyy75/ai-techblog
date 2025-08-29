@@ -9,13 +9,13 @@
 - [x] [オブジェクト型とインターフェース](./01-basics/05-object-types-and-interfaces.md)
 - [x] [配列とタプル型](./01-basics/06-arrays-and-tuples.md)
 - [x] [関数型とオーバーロード](./01-basics/07-function-types-and-overloads.md)
-- [ ] [ユニオン型とインターセクション型]
-- [ ] [型エイリアスとタイプガード]
-- [ ] [ジェネリクスの基礎]
+- [x] [ユニオン型とインターセクション型](./01-basics/08-union-and-intersection-types.md)
+- [x] [型エイリアスとタイプガード](./01-basics/09-type-aliases-and-type-guards.md)
+- [x] [ジェネリクスの基礎](./01-basics/10-generics-basics.md)
 ## 2. TypeScript発展
 
-- [ ] [高度なジェネリクス]
-- [ ] [条件型（Conditional Types）]
+- [x] [高度なジェネリクス](./02-advanced/01-advanced-generics.md)
+- [x] [条件型（Conditional Types）](./02-advanced/02-conditional-types.md)
 - [ ] [マップ型（Mapped Types）]
 - [ ] [テンプレートリテラル型]
 - [ ] [型レベルプログラミング]
