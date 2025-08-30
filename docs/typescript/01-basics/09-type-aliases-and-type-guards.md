@@ -133,7 +133,7 @@ type Pet = Fish | Bird;
 
 // ユーザー定義タイプガード
 function isFish(pet: Pet): pet is Fish {
-  return (pet as Fish).swim !== undefined;
+  return "swim" in pet;
 }
 
 function feedPet(pet: Pet) {
