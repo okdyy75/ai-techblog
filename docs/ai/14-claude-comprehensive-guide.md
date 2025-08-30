@@ -102,8 +102,11 @@ Claudeは、Anthropicが開発した次世代AIアシスタントです。2023�
 # Claude API使用例
 import anthropic
 
+# クライアントの初期化
+client = anthropic.Anthropic(api_key='YOUR_API_KEY')
+
 # テキスト生成
-response = anthropic.messages.create(
+response = client.messages.create(
     model="claude-3-opus-20240229",
     max_tokens=1000,
     messages=[
@@ -112,7 +115,7 @@ response = anthropic.messages.create(
 )
 
 # 画像理解
-response = anthropic.messages.create(
+response = client.messages.create(
     model="claude-3-opus-20240229",
     max_tokens=1000,
     messages=[

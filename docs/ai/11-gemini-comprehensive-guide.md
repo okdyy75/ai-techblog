@@ -48,6 +48,8 @@ Geminiは、Googleが開発した次世代マルチモーダルAIモデルファ
 
 ## 料金体系（2024年最新）
 
+> **注意**: 料金は変更される可能性があります。最新情報は[Gemini公式サイト](https://ai.google.dev/pricing)でご確認ください。
+
 ### Gemini API 料金
 
 #### 入力料金（Input）

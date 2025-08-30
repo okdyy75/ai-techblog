@@ -102,7 +102,7 @@ ChatGPTは、OpenAIが開発した大規模言語モデル（LLM）ベースの�
 import openai
 
 # テキスト生成
-response = openai.ChatCompletion.create(
+response = openai.chat.completions.create(
     model="gpt-4o",
     messages=[
         {"role": "user", "content": "複雑な数学の問題を解いてください"}
@@ -110,7 +110,7 @@ response = openai.ChatCompletion.create(
 )
 
 # 画像理解
-response = openai.ChatCompletion.create(
+response = openai.chat.completions.create(
     model="gpt-4o",
     messages=[
         {
@@ -198,7 +198,7 @@ model = "gpt-4o"
 ### 4. 基本的な使用
 ```python
 # テキスト生成
-response = openai.ChatCompletion.create(
+response = openai.chat.completions.create(
     model=model,
     messages=[
         {"role": "user", "content": "こんにちは、ChatGPTについて教えてください"}
@@ -208,7 +208,7 @@ response = openai.ChatCompletion.create(
 print(response.choices[0].message.content)
 
 # 画像理解
-response = openai.ChatCompletion.create(
+response = openai.chat.completions.create(
     model="gpt-4o",
     messages=[
         {
@@ -233,7 +233,7 @@ response = openai.ChatCompletion.create(
 ### エラーハンドリング
 ```python
 try:
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model=model,
         messages=messages
     )
