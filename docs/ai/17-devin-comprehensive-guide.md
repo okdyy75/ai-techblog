@@ -14,393 +14,401 @@
 
 ## Devinとは
 
-Devinは、Cognition社が開発した世界初のAIソフトウェアエンジニアです。従来のAIコーディングアシスタントとは異なり、完全に自律的にソフトウェア開発プロジェクトを実行できる能力を持っています。
+Devinは、Cognition社が開発したAIソフトウェアエンジニアです。従来のAIコーディングアシスタントとは異なり、自律的にソフトウェア開発タスクを実行できる能力を持っています。
+
+### 公式リンク
+- **公式サイト**: https://devin.ai/
+- **アプリケーション**: https://app.devin.ai/
+- **ドキュメント**: https://docs.devin.ai/
+- **会社サイト**: https://www.cognition.ai/
 
 ### 技術仕様
 - **基盤モデル**: 独自の大規模言語モデル
 - **アーキテクチャ**: 自律的エージェント設計
-- **実行環境**: クラウドベース
-- **統合機能**: 開発環境、デバッグ、デプロイメント
+- **実行環境**: クラウドベース（Webアプリケーション）
+- **統合機能**: GitHub、Slack、IDE、ブラウザ
 
 ### 開発能力
-- **完全自律開発**: 要件定義からデプロイまで
-- **複数ツール操作**: ブラウザ、ターミナル、IDE
-- **学習・適応**: 新しい技術スタックへの対応
+- **自律的タスク実行**: 複雑な開発タスクの自動実行
+- **マルチツール操作**: ブラウザ、ターミナル、IDEの操作
+- **学習・適応**: プロジェクト固有の要件への適応
 - **プロジェクト管理**: タスク分割、進捗管理
 
 ## 主要な特徴
 
-### 1. 完全自律的な開発
-- プロジェクトの要件理解と設計
-- 自動的なコード生成と実装
-- テストの作成と実行
-- デバッグと問題解決
+### 1. Devin IDE
+- 組み込みの開発環境
+- リアルタイムでのコード編集
+- デバッグ機能
+- ファイル管理
 
-### 2. マルチモーダル操作
-- ブラウザでの情報収集
-- ターミナルでのコマンド実行
-- IDEでのコード編集
-- ファイルシステムの操作
+### 2. Ask Devin
+- コードベースの探索
+- アーキテクチャの質問
+- 技術的な相談
+- 高コンテキストセッションの生成
 
-### 3. 学習・適応能力
-- 新しい技術スタックの学習
-- プロジェクト固有の要件への適応
+### 3. Devin Wiki
+- アーキテクチャ図の自動生成
+- ドキュメントの作成
+- ソースへのリンク
+- リポジトリ全体の理解
+
+### 4. 統合機能
+- **GitHub統合**: リポジトリとの直接連携
+- **Slack統合**: チーム内でのコラボレーション
+- **ブラウザ操作**: 情報収集とWeb操作
+- **ターミナル操作**: コマンド実行
+
+### 5. 学習・適応能力
+- プロジェクト固有のパターン学習
+- 新しい技術スタックへの対応
 - エラーからの学習と改善
-- ベストプラクティスの適用
-
-### 4. プロジェクト管理
-- タスクの自動分割
-- 進捗の追跡と報告
-- 依存関係の管理
-- リソースの最適化
+- 継続的な能力向上
 
 ## 料金プラン
 
-### Early Access Program
-- **料金**: 招待制（現在は限定公開）
-- **対象**: 選ばれた開発者・企業
-- **機能**: 全機能へのアクセス
-- **サポート**: 直接サポート
-
-### Developer Plan
-- **料金**: $99/月（約15,000円）
-- **対象**: 個人開発者
+### Core Plan（従量課金制）
+- **料金**: $20から開始（$2.25/ACU）
+- **対象**: 個人開発者、小規模チーム
 - **機能**:
-  - 基本的な自律開発機能
-  - 標準的な技術スタック対応
-  - コミュニティサポート
+  - 自律的タスク完了
+  - Devin IDE
+  - Ask Devin
+  - Devin Wiki
+  - 時間とともに学習
+  - 無制限ユーザー
+  - 共有とコラボレーション
+  - 最大10同時セッション
+  - 月額コミットメントなし
+  - オンデマンド消費の自動リロード設定
 
-### Professional Plan
-- **料金**: $299/月（約45,000円）
-- **対象**: プロフェッショナル開発者
+### Team Plan
+- **料金**: $500/月
+- **対象**: 開発チーム
 - **機能**:
-  - 高度な自律開発機能
-  - カスタム技術スタック対応
-  - 優先サポート
-  - プロジェクト管理機能
+  - Core Planの全機能
+  - Devin API
+  - 早期機能リリースとリサーチプレビューへのアクセス
+  - 無制限同時セッション
+  - 月250 ACU（$2.00/ACU）
+  - 専用Slack Connectチャンネルでのサポート
+  - Cognitionチームとのオプションオンボーディングコール
 
 ### Enterprise Plan
 - **料金**: カスタム価格
-- **対象**: 企業・チーム
+- **対象**: 大企業
 - **機能**:
-  - 完全な自律開発機能
-  - オンプレミス展開オプション
-  - SLA保証
-  - 専任サポート
-  - カスタム統合
+  - Team Planの全機能
+  - Devin Enterpriseへのアクセス
+  - カスタムDevins
+  - VPCでのデプロイ
+  - SAML/OIDC SSO
+  - 集中化されたエンタープライズ管理制御
+  - チームスペース分離
+  - 専任アカウントチーム
+  - カスタム条件
+  - 複数のDevin組織にわたる集中請求と使用分析
 
-### Team Plan
-- **料金**: $999/月（約150,000円）
-- **対象**: 開発チーム
-- **機能**:
-  - 最大10ユーザー
-  - チーム管理機能
-  - 使用状況分析
-  - セキュリティ機能
+### ACU（Agent Compute Unit）について
+- Devinの作業単位
+- 仮想マシン時間、モデル推論、ネットワーク帯域幅の正規化された測定
+- タスクの複雑さ、プロンプトの品質、コードベースのサイズなどで変動
 
 ## 対応言語・プラットフォーム
 
 ### 対応プログラミング言語
-- **主要言語**: Python, JavaScript, TypeScript, Java, C++, C#, Go, Rust
-- **Web開発**: React, Vue.js, Angular, Next.js, Nuxt.js
-- **バックエンド**: Node.js, Django, Flask, Spring Boot, .NET
-- **モバイル**: React Native, Flutter, Swift, Kotlin
-- **データサイエンス**: R, Julia, MATLAB, TensorFlow, PyTorch
+- JavaScript/TypeScript
+- Python
+- Java
+- C++
+- Go
+- Rust
+- PHP
+- Ruby
+- C#
+- その他主要言語
 
-### 対応プラットフォーム・ツール
-- **OS**: Linux, macOS, Windows
-- **クラウド**: AWS, Azure, Google Cloud, DigitalOcean
-- **コンテナ**: Docker, Kubernetes
+### 対応プラットフォーム
+- **Web開発**: React, Vue, Angular, Next.js
+- **バックエンド**: Node.js, Django, Flask, Spring Boot
 - **データベース**: PostgreSQL, MySQL, MongoDB, Redis
+- **クラウド**: AWS, Azure, Google Cloud
+- **コンテナ**: Docker, Kubernetes
 - **CI/CD**: GitHub Actions, GitLab CI, Jenkins
+
+### 統合サービス
+- **バージョン管理**: GitHub, GitLab, Azure DevOps
+- **コミュニケーション**: Slack
+- **プロジェクト管理**: Linear, Jira
+- **デプロイメント**: Vercel, Netlify, Heroku
 
 ## インストール・設定方法
 
-### 1. アクセス申請
+### 1. アカウント作成
 ```bash
-# 1. Cognition社のウェブサイトでアクセス申請
-# https://www.cognition-labs.com/
-
-# 2. 開発者情報とプロジェクト概要を提出
-# 3. 審査後の招待メールを待つ
+# 公式サイトでアカウント作成
+# https://app.devin.ai/signup
 ```
 
-### 2. 初期設定
-```bash
-# 招待メールからアクセス
-# 1. アカウント作成
-# 2. 開発環境の設定
-# 3. APIキーの取得
-```
-
-### 3. 開発環境の設定
+### 2. リポジトリ設定
 ```yaml
-# devin-config.yaml
-version: "1.0"
-environment:
-  name: "my-project"
-  type: "web-application"
-  stack: "react-typescript-node"
-
-devin:
-  model: "latest"
-  autonomy_level: "full"
-  learning_enabled: true
-  debugging_enabled: true
-
-tools:
-  browser: true
-  terminal: true
-  ide: true
-  git: true
-  docker: true
-
-security:
-  api_key_management: true
-  code_review: true
-  dependency_scan: true
+# リポジトリの接続設定
+repository:
+  type: "github"
+  url: "https://github.com/username/repository"
+  branch: "main"
+  access_token: "your-github-token"
 ```
 
-### 4. IDE統合
-```json
-// VS Code settings.json
-{
-  "devin.enabled": true,
-  "devin.autonomy": "full",
-  "devin.learning": true,
-  "devin.debugging": true,
-  "devin.api_key": "your-api-key-here"
-}
+### 3. VPN設定（必要に応じて）
+```yaml
+# VPN設定ファイル
+vpn:
+  type: "openvpn"
+  config_file: "path/to/config.ovpn"
+  credentials:
+    username: "your-username"
+    password: "your-password"
+```
+
+### 4. ナレッジオンボーディング
+```yaml
+# プロジェクト固有の知識設定
+knowledge:
+  - name: "プロジェクト概要"
+    content: "プロジェクトの目的、アーキテクチャ、技術スタック"
+  - name: "コーディング規約"
+    content: "チームのコーディングスタイル、ベストプラクティス"
+  - name: "デプロイメント手順"
+    content: "本番環境へのデプロイ手順と注意事項"
 ```
 
 ## 基本的な使い方
 
-### 1. プロジェクト作成
+### 1. セッション開始
 ```bash
-# 自然言語でのプロジェクト要求
-devin create "ECサイトを作成して。React + TypeScript + Node.js + PostgreSQLを使用"
-
-# 特定の要件での作成
-devin create --requirements requirements.txt --stack "react-node-postgres"
+# Webアプリケーションでセッション開始
+# https://app.devin.ai/
 ```
 
-### 2. 機能実装
+### 2. プロジェクト設定
 ```bash
-# 機能の追加
-devin implement "ユーザー認証機能を追加"
-
-# 特定のファイルの実装
-devin implement --file src/auth.ts "JWT認証を実装"
-
-# テスト付きで実装
-devin implement --with-tests "ユーザー登録API"
+# リポジトリの接続
+# 1. GitHubリポジトリを選択
+# 2. アクセス権限を付与
+# 3. ブランチを指定
 ```
 
-### 3. デバッグ・修正
+### 3. タスクの実行
 ```bash
-# 自動デバッグ
-devin debug
-
-# 特定のエラーの修正
-devin fix "TypeError: Cannot read property 'name' of undefined"
-
-# パフォーマンス問題の解決
-devin optimize --performance
+# 基本的なタスク実行例
+# "ユーザー認証機能を実装して"
+# "APIエンドポイントを追加して"
+# "バグを修正して"
 ```
 
-### 4. テスト・デプロイ
+### 4. Devin IDEでの作業
 ```bash
-# テストの実行
-devin test
+# IDEでの直接編集
+# 1. ファイルの作成・編集
+# 2. コードの実行・テスト
+# 3. デバッグ
+```
 
-# デプロイメント
-devin deploy --platform "vercel"
-
-# CI/CDパイプラインの設定
-devin setup-ci --platform "github-actions"
+### 5. Ask Devinでの質問
+```bash
+# コードベースに関する質問例
+# "この関数は何をしている？"
+# "エラーの原因は？"
+# "パフォーマンスを改善するには？"
 ```
 
 ## 高度な機能
 
-### 1. プロジェクト分析・設計
+### 1. インタラクティブプランニング
 ```bash
-# 既存プロジェクトの分析
-devin analyze --project ./existing-project
-
-# アーキテクチャ設計
-devin design --architecture "microservices" --services "user,product,order"
-
-# データベース設計
-devin design --database --schema schema.png
+# タスク実行前の詳細計画作成
+# 1. タスクの分析
+# 2. 段階的な実行計画
+# 3. 依存関係の特定
+# 4. リスク評価
 ```
 
-### 2. リファクタリング・最適化
+### 2. デプロイメント機能
 ```bash
-# 自動リファクタリング
-devin refactor --strategy "extract-methods"
-
-# パフォーマンス最適化
-devin optimize --target "database-queries"
-
-# セキュリティ強化
-devin secure --scan "vulnerabilities"
+# フロントエンド・バックエンドアプリケーションのデプロイ
+# 対応プラットフォーム:
+# - Vercel
+# - Netlify
+# - Heroku
+# - AWS
+# - Azure
 ```
 
-### 3. 学習・適応
+### 3. プレイブック機能
 ```bash
-# 新しい技術の学習
-devin learn --technology "GraphQL"
-
-# プロジェクト固有の学習
-devin learn --project --patterns
-
-# ベストプラクティスの適用
-devin apply --best-practices
+# 再利用可能なプロンプトライブラリ
+# 1. プレイブックの作成
+# 2. 組織内での共有
+# 3. 標準化されたワークフロー
 ```
 
-### 4. プロジェクト管理
+### 4. セッションインサイト
 ```bash
-# タスクの分割
-devin plan --tasks "user-authentication"
+# セッション分析と改善提案
+# 1. 実行時間の分析
+# 2. 効率性の評価
+# 3. 改善点の特定
+```
 
-# 進捗の追跡
-devin status --project
-
-# 依存関係の管理
-devin manage --dependencies
+### 5. シークレット管理
+```bash
+# 安全な認証情報の共有
+# 1. APIキーの管理
+# 2. データベース認証情報
+# 3. サードパーティサービス認証
 ```
 
 ## ベストプラクティス
 
-### 1. 効果的なプロンプト設計
+### 1. 効果的な指示の書き方
 ```bash
 # 良い例：具体的で段階的な指示
-devin create "React + TypeScriptでECサイトを作成。ユーザー認証、商品管理、注文機能を含む。PostgreSQLでデータベース、Stripeで決済"
+"React + TypeScriptでECサイトのユーザー認証機能を実装してください。
+Firebase Authenticationを使用し、ログイン・ログアウト・ユーザー登録機能を含めてください。"
 
 # 悪い例：曖昧な指示
-devin create "ウェブサイトを作って"
+"ウェブサイトを作って"
 ```
 
-### 2. セキュリティ考慮事項
+### 2. プロジェクト設定の最適化
 ```yaml
-# devin-config.yaml でのセキュリティ設定
+# 効果的なプロジェクト設定
+project:
+  name: "明確なプロジェクト名"
+  description: "詳細なプロジェクト説明"
+  architecture: "使用するアーキテクチャパターン"
+  tech_stack: "技術スタックの詳細"
+  requirements: "機能要件の明確化"
+```
+
+### 3. セキュリティ考慮事項
+```yaml
+# セキュリティ設定
 security:
   api_key_management: true
   code_review: true
   dependency_scan: true
   vulnerability_scan: true
   secrets_detection: true
-  sql_injection_protection: true
 ```
 
-### 3. 品質管理
+### 4. 品質管理
 ```bash
-# コード品質の自動チェック
-devin quality --check
-
-# テストカバレッジの確保
-devin test --coverage --minimum 80
-
-# ドキュメントの自動生成
-devin document --generate
-```
-
-### 4. チーム開発での活用
-```yaml
-# チーム設定例
-team:
-  code_review_required: true
-  test_coverage_minimum: 80
-  security_scan_required: true
-  documentation_required: true
-  deployment_approval: true
+# コード品質の確保
+# 1. 自動テストの作成
+# 2. コードレビューの実施
+# 3. パフォーマンスの最適化
+# 4. セキュリティの確認
 ```
 
 ## トラブルシューティング
 
-### よくある問題と解決方法
+### 1. よくある問題と解決方法
 
-#### 1. 実行エラー
+#### セッションが開始できない
 ```bash
-# ログの確認
-devin logs --verbose
-
-# 設定の検証
-devin validate --config
-
-# 環境の診断
-devin diagnose --environment
+# 解決方法
+# 1. ブラウザのキャッシュをクリア
+# 2. 別のブラウザで試行
+# 3. ネットワーク接続を確認
+# 4. サポートに連絡
 ```
 
-#### 2. パフォーマンス問題
-```yaml
-# devin-config.yaml での最適化設定
-performance:
-  batch_size: 100
-  parallel_execution: true
-  cache_enabled: true
-  model_optimization: true
-  memory_management: true
+#### リポジトリにアクセスできない
+```bash
+# 解決方法
+# 1. GitHubトークンの権限を確認
+# 2. リポジトリの可視性設定を確認
+# 3. ブランチ名を確認
+# 4. アクセス権限を再設定
 ```
 
-#### 3. 学習・適応の問題
+#### タスクが期待通りに実行されない
 ```bash
-# 学習データの確認
-devin learn --status
+# 解決方法
+# 1. 指示をより具体的にする
+# 2. コンテキストを追加する
+# 3. 段階的にタスクを分割する
+# 4. ナレッジを更新する
+```
 
-# 適応能力のリセット
-devin learn --reset
+### 2. パフォーマンス最適化
+```bash
+# ACU使用量の最適化
+# 1. 明確で具体的な指示
+# 2. 不要なファイルの除外
+# 3. 効率的なプロンプト設計
+# 4. セッション時間の管理
+```
 
-# カスタム学習データの追加
-devin learn --custom --data ./custom-data
+### 3. サポートへの連絡
+```bash
+# サポート連絡先
+# Email: support@cognition.ai
+# Team Plan以上: 専用Slackチャンネル
+# Enterprise Plan: 専任アカウントチーム
 ```
 
 ## 他ツールとの比較
 
-### Devin vs GitHub Copilot
-| 項目 | Devin | GitHub Copilot |
-|------|-------|----------------|
-| 自律性 | 完全自律 | 補完のみ |
-| スコープ | プロジェクト全体 | ファイル単位 |
-| 実行能力 | 自動実行 | 手動実行のみ |
-| 学習能力 | 高度な適応学習 | 制限的 |
-| プロジェクト管理 | 内蔵 | なし |
+### GitHub Copilot vs Devin
+| 項目 | GitHub Copilot | Devin |
+|------|----------------|-------|
+| **機能範囲** | コード補完・提案 | 完全自律開発 |
+| **実行環境** | IDE統合 | クラウドベース |
+| **タスク実行** | リアルタイム補完 | 複雑タスクの自動実行 |
+| **学習能力** | 限定的 | 継続的学習 |
+| **統合機能** | IDE中心 | マルチツール統合 |
 
-### Devin vs Coding Agent
-| 項目 | Devin | Coding Agent |
-|------|-------|--------------|
-| 自律性 | 完全自律 | 半自律 |
-| 実行環境 | クラウド中心 | ローカル・クラウド |
-| 学習能力 | 高度 | 中程度 |
-| プロジェクト管理 | 高度 | 基本 |
-| カスタマイズ | 制限的 | 高度 |
+### Amazon CodeWhisperer vs Devin
+| 項目 | Amazon CodeWhisperer | Devin |
+|------|----------------------|-------|
+| **機能範囲** | コード生成・セキュリティ | 完全自律開発 |
+| **AWS統合** | 高度 | 標準 |
+| **実行環境** | IDE統合 | クラウドベース |
+| **タスク実行** | コード生成 | プロジェクト全体の実行 |
+| **料金** | 個人無料 | 従量課金制 |
 
-### Devin vs Amazon CodeWhisperer
-| 項目 | Devin | Amazon CodeWhisperer |
-|------|-------|---------------------|
-| 自律性 | 完全自律 | 補完のみ |
-| 統合 | マルチプラットフォーム | AWS特化 |
-| 機能 | 包括的開発支援 | コード補完中心 |
-| 学習能力 | 高度 | 制限的 |
-| プロジェクト管理 | 内蔵 | なし |
+### Tabnine vs Devin
+| 項目 | Tabnine | Devin |
+|------|---------|-------|
+| **機能範囲** | コード補完・生成 | 完全自律開発 |
+| **実行環境** | ローカル・クラウド | クラウドベース |
+| **学習能力** | プロジェクト固有 | 継続的学習 |
+| **統合機能** | IDE中心 | マルチツール統合 |
+| **料金** | 無料版あり | 従量課金制 |
 
 ## まとめ
 
-Devinは、AIソフトウェアエンジニアとして、従来のAIコーディングアシスタントを超えた革新的な開発体験を提供します。完全に自律的な開発能力により、開発者の生産性を飛躍的に向上させ、複雑なプロジェクトも効率的に実行できます。
+Devinは、従来のAIコーディングアシスタントを超えた、自律的なソフトウェア開発を可能にする革新的なツールです。その特徴は：
 
-### 推奨する導入ステップ
-1. **アクセス申請と審査**
-2. **小規模プロジェクトでのテスト**
-3. **段階的な機能活用**
-4. **チームでの導入検討**
-5. **継続的な最適化**
+### 主な利点
+1. **完全自律開発**: 複雑なタスクの自動実行
+2. **マルチツール統合**: 開発環境全体との連携
+3. **継続的学習**: プロジェクト固有の適応
+4. **スケーラブル**: 個人から企業まで対応
 
-Devinを活用することで、開発の自動化、品質の向上、開発速度の加速を実現できます。ただし、適切な設定とベストプラクティスの実践、そして人間の監督が重要です。
+### 適用場面
+- **個人開発者**: 生産性の向上
+- **開発チーム**: バックログの削減
+- **企業**: 開発コストの削減
 
 ### 今後の展望
-- **技術スタックの拡張**: より多くの言語・フレームワークへの対応
-- **学習能力の向上**: より高度な適応学習機能
-- **チーム協業**: 複数のDevinエージェント間の協調
-- **エンタープライズ機能**: 大規模組織での活用支援
+- より高度な自律性
+- 追加の統合機能
+- エンタープライズ機能の拡張
+- カスタマイズ性の向上
 
-Devinは、ソフトウェア開発の未来を変える可能性を秘めた革新的なツールです。
+Devinは、AI駆動のソフトウェア開発の未来を先取りするツールとして、開発者の生産性と創造性を大幅に向上させる可能性を秘めています。
