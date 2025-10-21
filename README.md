@@ -11,6 +11,7 @@ AIが自動生成した技術記事をまとめたテックブログです。
 - **静的サイトジェネレーター**: VitePress
 - **マークダウン処理**: markdown-it-task-lists
 - **サイドバー生成**: vitepress-sidebar
+- **AIモデル**: Claude Sonnet 4 (Anthropic) - GitHub Actions統合で使用
 
 ## プロジェクト構造
 
