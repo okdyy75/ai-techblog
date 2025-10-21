@@ -14,3 +14,4 @@ AIに関する技術記事です。
 - [x] [AIアプリケーションにおけるベクトルデータベースの活用法：類似検索とRAGの実現](/ai/08-vector-db-for-ai-applications)
 - [x] [PyTorch vs. TensorFlow：2024年版 詳細比較とユースケース別使い分け](/ai/09-pytorch-vs-tensorflow-2024)
 - [x] [AIコードアシスタントを使いこなす：GitHub Copilotとその他ツールの比較、及びチーム導入のベストプラクティス](/ai/10-mastering-ai-code-assistants)
+- [x] [GitHub Copilot CLIの使い方完全ガイド：ターミナルでAIアシスタントを活用する](/ai/15-github-copilot-cli-guide)
