@@ -2,92 +2,118 @@ import { defineConfig, UserConfig } from 'vitepress'
 import { withSidebar } from 'vitepress-sidebar'
 import taskLists from 'markdown-it-task-lists'
 import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
-import { readdirSync, readFileSync, existsSync } from 'fs'
+import { readFileSync, existsSync } from 'fs'
 import { join } from 'path'
 
-// ヘッダーメニューを自動生成する関数
-function generateNav() {
-  const docsPath = join(__dirname, '..')
-  const nav: any[] = [{ text: 'ホーム', link: '/' }]
-
-  // カテゴリ名と表示名のマッピング
-  const categoryNames: Record<string, string> = {
-    ai: 'AI',
-    ruby: 'Ruby',
-    rails: 'Rails',
-    typescript: 'TypeScript',
-    graphql: 'GraphQL',
-    infrastructure: 'インフラ',
-  }
-
-  // 除外するディレクトリ
-  const excludeDirs = ['.vitepress', 'public', '.obsidian']
-
-  // docsディレクトリ内のフォルダを取得
-  const dirs = readdirSync(docsPath, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory() && !excludeDirs.includes(dirent.name))
-    .filter(dirent => categoryNames[dirent.name])
-    .map(dirent => dirent.name)
-
-  // 各カテゴリのindex.mdから見出しを抽出してnavを生成
-  for (const dir of dirs) {
-    const indexPath = join(docsPath, dir, 'index.md')
-    const displayName = categoryNames[dir]
-
-    if (!existsSync(indexPath)) {
-      // index.mdがない場合は単純なリンク
-      nav.push({ text: displayName, link: `/${dir}/` })
-      continue
-    }
-
-    const content = readFileSync(indexPath, 'utf-8')
-    const headings = extractHeadings(content)
-
-    if (headings.length === 0) {
-      // 見出しがない場合は単純なリンク
-      nav.push({ text: displayName, link: `/${dir}/` })
-    } else {
-      // サブメニューを持つアイテム
-      nav.push({
-        text: displayName,
-        items: headings.map(heading => ({
-          text: heading.text,
-          link: `/${dir}/#${heading.anchor}`
-        }))
-      })
-    }
-  }
-
-  return nav
+// 型定義
+interface NavItem {
+  text: string
+  link?: string
+  items?: NavItem[]
 }
 
-// マークダウンから見出しを抽出する関数
-function extractHeadings(content: string) {
-  const headings: Array<{ text: string; anchor: string }> = []
-  const lines = content.split('\n')
+interface Heading {
+  text: string
+  anchor: string
+}
 
-  for (const line of lines) {
-    // ## または ### で始まる見出しを抽出（#のみは除外）
-    const match = line.match(/^#{2,3}\s+(.+)/)
-    if (match) {
-      const text = match[1].trim()
-      // VitePressのアンカー生成ルールに従う（小文字化、スペースをハイフンに、特殊文字をエンコード）
-      const anchor = text
-        .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^\w\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF-]/g, (char) => {
-          // 日本語やハイフン、アンダースコア以外はエンコード
-          if (/[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/.test(char)) {
-            return encodeURIComponent(char).toLowerCase()
-          }
-          return ''
-        })
+interface Category {
+  dir: string
+  displayName: string
+}
 
-      headings.push({ text, anchor })
-    }
+// カテゴリの定義（表示順序を保持）
+const CATEGORIES: Category[] = [
+  { dir: 'ai', displayName: 'AI' },
+  { dir: 'ruby', displayName: 'Ruby' },
+  { dir: 'rails', displayName: 'Rails' },
+  { dir: 'typescript', displayName: 'TypeScript' },
+  { dir: 'graphql', displayName: 'GraphQL' },
+  { dir: 'infrastructure', displayName: 'インフラ' },
+]
+
+/**
+ * VitePressのアンカー形式に変換
+ * 例: "1. Ruby基礎" -> "1-ruby基礎"
+ */
+function convertToAnchor(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF-]/g, (char) => {
+      // 日本語文字はエンコード、それ以外は削除
+      return /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/.test(char)
+        ? encodeURIComponent(char).toLowerCase()
+        : ''
+    })
+}
+
+/**
+ * Markdownから見出し（## または ###）を抽出
+ */
+function extractHeadings(content: string): Heading[] {
+  const headings: Heading[] = []
+  const headingRegex = /^#{2,3}\s+(.+)$/gm
+  let match: RegExpExecArray | null
+
+  while ((match = headingRegex.exec(content)) !== null) {
+    const text = match[1].trim()
+    headings.push({
+      text,
+      anchor: convertToAnchor(text),
+    })
   }
 
   return headings
+}
+
+/**
+ * 1つのカテゴリのNavItemを生成
+ */
+function createCategoryNavItem(category: Category, docsPath: string): NavItem {
+  const indexPath = join(docsPath, category.dir, 'index.md')
+  const baseLink = `/${category.dir}/`
+
+  // index.mdが存在しない、または読み込みに失敗した場合
+  if (!existsSync(indexPath)) {
+    return { text: category.displayName, link: baseLink }
+  }
+
+  try {
+    const content = readFileSync(indexPath, 'utf-8')
+    const headings = extractHeadings(content)
+
+    // 見出しがない場合は単純なリンク
+    if (headings.length === 0) {
+      return { text: category.displayName, link: baseLink }
+    }
+
+    // サブメニュー付きのナビゲーションアイテム
+    return {
+      text: category.displayName,
+      items: headings.map(({ text, anchor }) => ({
+        text,
+        link: `${baseLink}#${anchor}`,
+      })),
+    }
+  } catch (error) {
+    console.warn(`Failed to read ${indexPath}:`, error)
+    return { text: category.displayName, link: baseLink }
+  }
+}
+
+/**
+ * ヘッダーナビゲーションメニューを自動生成
+ */
+function generateNav(): NavItem[] {
+  const docsPath = join(__dirname, '..')
+  const nav: NavItem[] = [{ text: 'ホーム', link: '/' }]
+
+  for (const category of CATEGORIES) {
+    nav.push(createCategoryNavItem(category, docsPath))
+  }
+
+  return nav
 }
 
 // https://vitepress.dev/reference/site-config
