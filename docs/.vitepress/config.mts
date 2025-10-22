@@ -5,112 +5,42 @@ import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
 import { readFileSync, existsSync } from 'fs'
 import { join } from 'path'
 
-// 型定義
-interface NavItem {
-  text: string
-  link?: string
-  items?: NavItem[]
-}
-
-interface Heading {
-  text: string
-  anchor: string
-}
-
-interface Category {
-  dir: string
-  displayName: string
-}
-
-// カテゴリの定義（表示順序を保持）
-const CATEGORIES: Category[] = [
-  { dir: 'ai', displayName: 'AI' },
-  { dir: 'ruby', displayName: 'Ruby' },
-  { dir: 'rails', displayName: 'Rails' },
-  { dir: 'typescript', displayName: 'TypeScript' },
-  { dir: 'graphql', displayName: 'GraphQL' },
-  { dir: 'infrastructure', displayName: 'インフラ' },
+const CATEGORIES = [
+  ['ai', 'AI'],
+  ['ruby', 'Ruby'],
+  ['rails', 'Rails'],
+  ['typescript', 'TypeScript'],
+  ['graphql', 'GraphQL'],
+  ['infrastructure', 'インフラ'],
 ]
 
-/**
- * VitePressのアンカー形式に変換
- * 例: "1. Ruby基礎" -> "1-ruby基礎"
- */
-function convertToAnchor(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF-]/g, (char) => {
-      // 日本語文字はエンコード、それ以外は削除
-      return /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/.test(char)
-        ? encodeURIComponent(char).toLowerCase()
-        : ''
-    })
-}
+function generateNav() {
+  const nav = [{ text: 'ホーム', link: '/' }]
 
-/**
- * Markdownから見出し（## または ###）を抽出
- */
-function extractHeadings(content: string): Heading[] {
-  const headings: Heading[] = []
-  const headingRegex = /^#{2,3}\s+(.+)$/gm
-  let match: RegExpExecArray | null
-
-  while ((match = headingRegex.exec(content)) !== null) {
-    const text = match[1].trim()
-    headings.push({
-      text,
-      anchor: convertToAnchor(text),
-    })
-  }
-
-  return headings
-}
-
-/**
- * 1つのカテゴリのNavItemを生成
- */
-function createCategoryNavItem(category: Category, docsPath: string): NavItem {
-  const indexPath = join(docsPath, category.dir, 'index.md')
-  const baseLink = `/${category.dir}/`
-
-  // index.mdが存在しない、または読み込みに失敗した場合
-  if (!existsSync(indexPath)) {
-    return { text: category.displayName, link: baseLink }
-  }
-
-  try {
-    const content = readFileSync(indexPath, 'utf-8')
-    const headings = extractHeadings(content)
-
-    // 見出しがない場合は単純なリンク
-    if (headings.length === 0) {
-      return { text: category.displayName, link: baseLink }
+  for (const [dir, name] of CATEGORIES) {
+    const path = join(__dirname, '..', dir, 'index.md')
+    if (!existsSync(path)) {
+      nav.push({ text: name, link: `/${dir}/` })
+      continue
     }
 
-    // サブメニュー付きのナビゲーションアイテム
-    return {
-      text: category.displayName,
-      items: headings.map(({ text, anchor }) => ({
-        text,
-        link: `${baseLink}#${anchor}`,
-      })),
+    try {
+      const content = readFileSync(path, 'utf-8')
+      const headings = [...content.matchAll(/^#{2,3}\s+(.+)$/gm)].map(m => {
+        const text = m[1].trim()
+        const anchor = text
+          .toLowerCase()
+          .replace(/\s+/g, '-')
+          .replace(/[^\w\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF-]/g, c =>
+            /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/.test(c) ? encodeURIComponent(c).toLowerCase() : ''
+          )
+        return { text, link: `/${dir}/#${anchor}` }
+      })
+
+      nav.push(headings.length ? { text: name, items: headings } : { text: name, link: `/${dir}/` })
+    } catch {
+      nav.push({ text: name, link: `/${dir}/` })
     }
-  } catch (error) {
-    console.warn(`Failed to read ${indexPath}:`, error)
-    return { text: category.displayName, link: baseLink }
-  }
-}
-
-/**
- * ヘッダーナビゲーションメニューを自動生成
- */
-function generateNav(): NavItem[] {
-  const docsPath = join(__dirname, '..')
-  const nav: NavItem[] = [{ text: 'ホーム', link: '/' }]
-
-  for (const category of CATEGORIES) {
-    nav.push(createCategoryNavItem(category, docsPath))
   }
 
   return nav
