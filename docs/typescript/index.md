@@ -16,11 +16,11 @@
 
 - [x] [高度なジェネリクス](./02-advanced/01-advanced-generics.md)
 - [x] [条件型（Conditional Types）](./02-advanced/02-conditional-types.md)
-- [ ] [マップ型（Mapped Types）]
-- [ ] [テンプレートリテラル型]
-- [ ] [型レベルプログラミング]
-- [ ] [デコレータとメタデータ]
-- [ ] [NamespaceとModule]
+- [x] [マップ型（Mapped Types）](./02-advanced/03-mapped-types.md)
+- [x] [テンプレートリテラル型](./02-advanced/04-template-literal-types.md)
+- [x] [型レベルプログラミング](./02-advanced/05-type-level-programming.md)
+- [x] [デコレータとメタデータ](./02-advanced/06-decorators-and-metadata.md)
+- [x] [NamespaceとModule](./02-advanced/07-namespaces-and-modules.md)
 - [ ] [宣言ファイル（.d.ts）の作成]
 - [ ] [TypeScriptの型システムの内部動作]
 - [ ] [パフォーマンス最適化のための型設計]
