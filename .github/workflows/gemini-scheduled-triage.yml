@@ -30,10 +30,10 @@ jobs:
     runs-on: 'ubuntu-latest'
     timeout-minutes: 7
     permissions:
-      contents: 'read'
+      contents: 'write'
       id-token: 'write'
-      issues: 'read'
-      pull-requests: 'read'
+      issues: 'write'
+      pull-requests: 'write'
     outputs:
       available_labels: '${{ steps.get_labels.outputs.available_labels }}'
       triaged_issues: '${{ env.TRIAGED_ISSUES }}'
@@ -242,7 +242,7 @@ jobs:
       needs.triage.outputs.triaged_issues != '' &&
       needs.triage.outputs.triaged_issues != '[]'
     permissions:
-      contents: 'read'
+      contents: 'write'
       issues: 'write'
       pull-requests: 'write'
     steps:
@@ -254,7 +254,7 @@ jobs:
         with:
           app-id: '${{ vars.APP_ID }}'
           private-key: '${{ secrets.APP_PRIVATE_KEY }}'
-          permission-contents: 'read'
+          permission-contents: 'write'
           permission-issues: 'write'
           permission-pull-requests: 'write'
 

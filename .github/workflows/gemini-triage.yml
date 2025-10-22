@@ -24,10 +24,10 @@ jobs:
       available_labels: '${{ steps.get_labels.outputs.available_labels }}'
       selected_labels: '${{ env.SELECTED_LABELS }}'
     permissions:
-      contents: 'read'
+      contents: 'write'
       id-token: 'write'
-      issues: 'read'
-      pull-requests: 'read'
+      issues: 'write'
+      pull-requests: 'write'
     steps:
       - name: 'Get repository labels'
         id: 'get_labels'
@@ -150,7 +150,7 @@ jobs:
     if: |-
       ${{ needs.triage.outputs.selected_labels != '' }}
     permissions:
-      contents: 'read'
+      contents: 'write'
       issues: 'write'
       pull-requests: 'write'
     steps:
@@ -162,7 +162,7 @@ jobs:
         with:
           app-id: '${{ vars.APP_ID }}'
           private-key: '${{ secrets.APP_PRIVATE_KEY }}'
-          permission-contents: 'read'
+          permission-contents: 'write'
           permission-issues: 'write'
           permission-pull-requests: 'write'
 
