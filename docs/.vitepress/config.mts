@@ -14,17 +14,6 @@ const CATEGORIES = [
   ['infrastructure', 'インフラ'],
 ]
 
-// Unicode範囲の定義
-const HIRAGANA = '\u3040-\u309F'      // ひらがな（ぁ-ん）
-const KATAKANA = '\u30A0-\u30FF'      // カタカナ（ァ-ヶ）
-const KANJI = '\u4E00-\u9FFF'         // 漢字（一-龯）
-const JAPANESE = `${HIRAGANA}${KATAKANA}${KANJI}`
-
-// 正規表現パターン
-const KEEP_CHARS = `\\w${JAPANESE}-`                    // 保持: 英数字_、日本語、ハイフン
-const JAPANESE_ONLY = `[${JAPANESE}]`                   // 日本語のみ
-const REMOVE_CHARS = `[^${KEEP_CHARS}]`                 // 削除対象: 上記以外の文字（記号など）
-
 function generateNav() {
   const nav = [{ text: 'ホーム', link: '/' }]
 
@@ -39,13 +28,13 @@ function generateNav() {
       const content = readFileSync(path, 'utf-8')
       const headings = [...content.matchAll(/^#{2,3}\s+(.+)$/gm)].map(m => {
         const text = m[1].trim()
+        // VitePressのアンカー形式に変換: "1. Ruby基礎" → "1-ruby基礎"
+        // \u3040-\u309F: ひらがな, \u30A0-\u30FF: カタカナ, \u4E00-\u9FFF: 漢字
         const anchor = text
-          .toLowerCase()                              // 小文字化
-          .replace(/\s+/g, '-')                       // スペース → ハイフン
-          .replace(new RegExp(REMOVE_CHARS, 'g'), c =>
-            new RegExp(JAPANESE_ONLY).test(c)
-              ? encodeURIComponent(c).toLowerCase()   // 日本語 → URLエンコード
-              : ''                                     // その他の記号 → 削除
+          .toLowerCase()
+          .replace(/\s+/g, '-')
+          .replace(/[^\w\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF-]/g, c =>
+            /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/.test(c) ? encodeURIComponent(c).toLowerCase() : ''
           )
         return { text, link: `/${dir}/#${anchor}` }
       })
