@@ -114,7 +114,12 @@ const vitePressSidebarOptions: VitePressSidebarOptions = {
     '07-llm-fine-tuning-with-hugging-face.md',
     '08-vector-db-for-ai-applications.md',
     '09-pytorch-vs-tensorflow-2024.md',
-    '10-mastering-ai-code-assistants.md'
+    '10-mastering-ai-code-assistants.md',
+    '11-gemini-comprehensive-guide.md',
+    '12-grok-comprehensive-guide.md',
+    '13-chatgpt-comprehensive-guide.md',
+    '14-claude-comprehensive-guide.md',
+    '15-claude-code-guide.md'
   ],
 };
 
