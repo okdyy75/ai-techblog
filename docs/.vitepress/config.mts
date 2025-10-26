@@ -2,6 +2,78 @@ import { defineConfig, UserConfig } from 'vitepress'
 import { withSidebar } from 'vitepress-sidebar'
 import taskLists from 'markdown-it-task-lists'
 import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
+import fs from 'fs'
+import path from 'path'
+
+// ナビゲーションを自動生成する関数
+function generateNav() {
+  const docsDir = path.join(__dirname, '..')
+  const nav: any[] = [{ text: 'ホーム', link: '/' }]
+
+  // ディレクトリリストを取得（特定の順序で表示）
+  const categories = ['ai', 'ruby', 'rails', 'typescript', 'graphql', 'infrastructure']
+
+  // 日本語のカテゴリ名のマッピング
+  const categoryNames: Record<string, string> = {
+    ai: 'AI',
+    ruby: 'Ruby',
+    rails: 'Rails',
+    typescript: 'TypeScript',
+    graphql: 'GraphQL',
+    infrastructure: 'インフラ'
+  }
+
+  for (const category of categories) {
+    const categoryPath = path.join(docsDir, category)
+    const indexPath = path.join(categoryPath, 'index.md')
+
+    // ディレクトリとindex.mdが存在するかチェック
+    if (!fs.existsSync(categoryPath) || !fs.existsSync(indexPath)) {
+      continue
+    }
+
+    // index.mdからセクションを抽出
+    const content = fs.readFileSync(indexPath, 'utf-8')
+    const sections = extractSections(content, category)
+
+    if (sections.length > 0) {
+      // サブメニューがある場合
+      nav.push({
+        text: categoryNames[category] || category,
+        items: sections
+      })
+    } else {
+      // サブメニューがない場合（シンプルなリンク）
+      nav.push({
+        text: categoryNames[category] || category,
+        link: `/${category}/`
+      })
+    }
+  }
+
+  return nav
+}
+
+// index.mdからセクション情報を抽出する関数
+function extractSections(content: string, category: string) {
+  const sections: { text: string; link: string }[] = []
+  const lines = content.split('\n')
+
+  for (const line of lines) {
+    // ## または ### で始まる見出しを検索し、{#id} パターンを探す
+    const match = line.match(/^#{2,3}\s+(.+?)\s+\{#(.+?)\}/)
+    if (match) {
+      const text = match[1].trim()
+      const id = match[2].trim()
+      sections.push({
+        text: text,
+        link: `/${category}/#${id}`
+      })
+    }
+  }
+
+  return sections
+}
 
 // https://vitepress.dev/reference/site-config
 const vitePressOptions: UserConfig = {
@@ -23,51 +95,7 @@ const vitePressOptions: UserConfig = {
     ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'ホーム', link: '/' },
-      { text: 'AI', link: '/ai/' },
-      {
-        text: 'Ruby',
-        items: [
-          { text: '1. Ruby基礎', link: '/ruby/#basics' },
-          { text: '2. Ruby応用', link: '/ruby/#applications' },
-          { text: '3. Rubyエコシステム', link: '/ruby/#ecosystem' },
-          { text: '4. 発展トピック', link: '/ruby/#advanced' },
-          { text: '5. 実践・その他', link: '/ruby/#practice' }
-        ]
-      },
-      {
-        text: 'Rails',
-        items: [
-          { text: '1. Rails基礎', link: '/rails/#basics' },
-          { text: '2. Active Record / データベース', link: '/rails/#active-record-database' },
-          { text: '3. View / フロントエンド', link: '/rails/#view-frontend' },
-          { text: '4. Controller / ルーティング', link: '/rails/#controller-routing' },
-          { text: '5. テスト', link: '/rails/#testing' },
-          { text: '6. パフォーマンス', link: '/rails/#performance' },
-          { text: '7. アーキテクチャ / 設計', link: '/rails/#architecture-design' },
-          { text: '8. デプロイ / DevOps', link: '/rails/#deployment-devops' },
-          { text: '9. API', link: '/rails/#api' },
-          { text: '10. セキュリティ', link: '/rails/#security' },
-          { text: '11. バックグラウンドジョブ', link: '/rails/#background-jobs' },
-          { text: '12. Gem / ライブラリ', link: '/rails/#gems-libraries' },
-          { text: '13. その他', link: '/rails/#others' },
-        ]
-      },
-      {
-        text: 'TypeScript',
-        items: [
-          { text: '1. TypeScript基礎', link: '/typescript/#basics' },
-          { text: '2. TypeScript発展', link: '/typescript/#advanced' },
-          { text: '3. TypeScriptエコシステム', link: '/typescript/#ecosystem' },
-          { text: '4. フレームワークとの連携', link: '/typescript/#frameworks' },
-          { text: '5. 開発ツールと効率化', link: '/typescript/#tools' },
-          { text: '6. 実践・応用例', link: '/typescript/#practice' },
-        ]
-      },
-      { text: 'GraphQL', link: '/graphql/' },
-      { text: 'インフラ', link: '/infrastructure/' }
-    ],
+    nav: generateNav(),
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/okdyy75/ai-techblog' }
