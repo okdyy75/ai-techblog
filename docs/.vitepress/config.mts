@@ -5,74 +5,36 @@ import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
 import fs from 'fs'
 import path from 'path'
 
-// ナビゲーションを自動生成する関数
 function generateNav() {
   const docsDir = path.join(__dirname, '..')
-  const nav: any[] = [{ text: 'ホーム', link: '/' }]
+  const categories = [
+    { dir: 'ai', name: 'AI' },
+    { dir: 'ruby', name: 'Ruby' },
+    { dir: 'rails', name: 'Rails' },
+    { dir: 'typescript', name: 'TypeScript' },
+    { dir: 'graphql', name: 'GraphQL' },
+    { dir: 'infrastructure', name: 'インフラ' }
+  ]
 
-  // ディレクトリリストを取得（特定の順序で表示）
-  const categories = ['ai', 'ruby', 'rails', 'typescript', 'graphql', 'infrastructure']
+  const nav = [{ text: 'ホーム', link: '/' }]
 
-  // 日本語のカテゴリ名のマッピング
-  const categoryNames: Record<string, string> = {
-    ai: 'AI',
-    ruby: 'Ruby',
-    rails: 'Rails',
-    typescript: 'TypeScript',
-    graphql: 'GraphQL',
-    infrastructure: 'インフラ'
-  }
+  for (const { dir, name } of categories) {
+    const indexPath = path.join(docsDir, dir, 'index.md')
+    if (!fs.existsSync(indexPath)) continue
 
-  for (const category of categories) {
-    const categoryPath = path.join(docsDir, category)
-    const indexPath = path.join(categoryPath, 'index.md')
-
-    // ディレクトリとindex.mdが存在するかチェック
-    if (!fs.existsSync(categoryPath) || !fs.existsSync(indexPath)) {
-      continue
-    }
-
-    // index.mdからセクションを抽出
     const content = fs.readFileSync(indexPath, 'utf-8')
-    const sections = extractSections(content, category)
+    const sections = content.split('\n')
+      .map(line => line.match(/^#{2,3}\s+(.+?)\s+\{#(.+?)\}/))
+      .filter(Boolean)
+      .map(match => ({ text: match![1], link: `/${dir}/#${match![2]}` }))
 
-    if (sections.length > 0) {
-      // サブメニューがある場合
-      nav.push({
-        text: categoryNames[category] || category,
-        items: sections
-      })
-    } else {
-      // サブメニューがない場合（シンプルなリンク）
-      nav.push({
-        text: categoryNames[category] || category,
-        link: `/${category}/`
-      })
-    }
+    nav.push(sections.length > 0
+      ? { text: name, items: sections }
+      : { text: name, link: `/${dir}/` }
+    )
   }
 
   return nav
-}
-
-// index.mdからセクション情報を抽出する関数
-function extractSections(content: string, category: string) {
-  const sections: { text: string; link: string }[] = []
-  const lines = content.split('\n')
-
-  for (const line of lines) {
-    // ## または ### で始まる見出しを検索し、{#id} パターンを探す
-    const match = line.match(/^#{2,3}\s+(.+?)\s+\{#(.+?)\}/)
-    if (match) {
-      const text = match[1].trim()
-      const id = match[2].trim()
-      sections.push({
-        text: text,
-        link: `/${category}/#${id}`
-      })
-    }
-  }
-
-  return sections
 }
 
 // https://vitepress.dev/reference/site-config
