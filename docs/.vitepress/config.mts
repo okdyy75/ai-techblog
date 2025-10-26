@@ -26,18 +26,11 @@ function generateNav() {
 
     try {
       const content = readFileSync(path, 'utf-8')
-      const headings = [...content.matchAll(/^#{2,3}\s+(.+)$/gm)].map(m => {
-        const text = m[1].trim()
-        // VitePressのアンカー形式に変換: "1. Ruby基礎" → "1-ruby基礎"
-        // \u3040-\u309F: ひらがな, \u30A0-\u30FF: カタカナ, \u4E00-\u9FFF: 漢字
-        const anchor = text
-          .toLowerCase()
-          .replace(/\s+/g, '-')
-          .replace(/[^\w\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF-]/g, c =>
-            /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/.test(c) ? encodeURIComponent(c).toLowerCase() : ''
-          )
-        return { text, link: `/${dir}/#${anchor}` }
-      })
+      // カスタムアンカー付き: ## 見出し {#anchor-id}
+      const headings = [...content.matchAll(/^#{2,3}\s+(.+?)\s*\{#(.+?)\}/gm)].map(m => ({
+        text: m[1].trim(),
+        link: `/${dir}/#${m[2]}`
+      }))
 
       nav.push(headings.length ? { text: name, items: headings } : { text: name, link: `/${dir}/` })
     } catch {
