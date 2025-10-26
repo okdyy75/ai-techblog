@@ -1,6 +1,6 @@
 # TypeScript技術記事
 
-## 1. TypeScript基礎
+## 1. TypeScript基礎 {#basics}
 
 - [x] [TypeScriptのインストールとセットアップ](./01-basics/01-typescript-setup.md)
 - [x] [TypeScriptの基本構文](./01-basics/02-typescript-syntax.md)
@@ -12,7 +12,7 @@
 - [x] [ユニオン型とインターセクション型](./01-basics/08-union-and-intersection-types.md)
 - [x] [型エイリアスとタイプガード](./01-basics/09-type-aliases-and-type-guards.md)
 - [x] [ジェネリクスの基礎](./01-basics/10-generics-basics.md)
-## 2. TypeScript発展
+## 2. TypeScript発展 {#advanced}
 
 - [x] [高度なジェネリクス](./02-advanced/01-advanced-generics.md)
 - [x] [条件型（Conditional Types）](./02-advanced/02-conditional-types.md)
@@ -25,7 +25,7 @@
 - [ ] [TypeScriptの型システムの内部動作]
 - [ ] [パフォーマンス最適化のための型設計]
 
-## 3. TypeScriptエコシステム
+## 3. TypeScriptエコシステム {#ecosystem}
 
 - [ ] [TSConfigの詳細設定]
 - [ ] [TypeScript Compilerの使い方]
@@ -38,7 +38,7 @@
 - [ ] [TypeScript向けのビルドツール比較]
 - [ ] [TypeScript Node.js開発環境]
 
-## 4. フレームワークとの連携
+## 4. フレームワークとの連携 {#frameworks}
 
 - [x] [React + TypeScript](./04-frameworks/01-react-typescript.md)
 - [ ] [Vue.js + TypeScript]
@@ -51,7 +51,7 @@
 - [ ] [tRPC TypeScript API]
 - [ ] [Prisma + TypeScript]
 
-## 5. 開発ツールと効率化
+## 5. 開発ツールと効率化 {#tools}
 
 - [ ] [TypeScript Language Server]
 - [ ] [VS Code TypeScript開発]
@@ -64,7 +64,7 @@
 - [ ] [TypeScript Playground活用法]
 - [ ] [TypeScript パッケージ管理のベストプラクティス]
 
-## 6. 実践・応用例
+## 6. 実践・応用例 {#practice}
 
 - [ ] [型安全なAPI設計パターン]
 - [ ] [TypeScriptでのエラーハンドリング]

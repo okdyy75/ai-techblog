@@ -26,43 +26,43 @@ const vitePressOptions: UserConfig = {
     nav: [
       { text: 'ホーム', link: '/' },
       { text: 'AI', link: '/ai/' },
-      { 
-        text: 'Ruby', 
+      {
+        text: 'Ruby',
         items: [
-          { text: '1. Ruby基礎', link: '/ruby/#_1-ruby%E5%9F%BA%E7%A4%8E' },
-          { text: '2. Ruby応用', link: '/ruby/#_2-ruby%E5%BF%9C%E7%94%A8' },
-          { text: '3. Rubyエコシステム', link: '/ruby/#_3-ruby%E3%82%A8%E3%82%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0' },
-          { text: '4. 発展トピック', link: '/ruby/#_4-ruby%E7%99%BA%E5%B1%95%E3%83%88%E3%83%94%E3%83%83%E3%82%AF' },
-          { text: '5. 実践・その他', link: '/ruby/#_5-%E5%AE%9F%E8%B7%B5-%E3%81%9D%E3%81%AE%E4%BB%96' }
+          { text: '1. Ruby基礎', link: '/ruby/#basics' },
+          { text: '2. Ruby応用', link: '/ruby/#applications' },
+          { text: '3. Rubyエコシステム', link: '/ruby/#ecosystem' },
+          { text: '4. 発展トピック', link: '/ruby/#advanced' },
+          { text: '5. 実践・その他', link: '/ruby/#practice' }
         ]
       },
-      { 
-        text: 'Rails', 
+      {
+        text: 'Rails',
         items: [
-          { text: '1. Rails基礎', link: '/rails/#_1-rails%E5%9F%BA%E7%A4%8E' },
-          { text: '2. Active Record / データベース', link: '/rails/#_2-active-record-%E3%83%86%E3%82%99%E3%83%BC%E3%82%BF%E3%83%98%E3%82%99%E3%83%BC%E3%82%B9' },
-          { text: '3. View / フロントエンド', link: '/rails/#_3-view-%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%88%E3%82%99' },
-          { text: '4. Controller / ルーティング', link: '/rails/#_4-controller-%E3%83%AB%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%AF%E3%82%99' },
-          { text: '5. テスト', link: '/rails/#_5-%E3%83%86%E3%82%B9%E3%83%88' },
-          { text: '6. パフォーマンス', link: '/rails/#_6-%E3%83%8F%E3%82%9A%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9' },
-          { text: '7. アーキテクチャ / 設計', link: '/rails/#_7-%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3-%E8%A8%AD%E8%A8%88' },
-          { text: '8. デプロイ / DevOps', link: '/rails/#_8-%E3%83%86%E3%82%99%E3%83%95%E3%82%9A%E3%83%AD%E3%82%A4-devops' },
-          { text: '9. API', link: '/rails/#_9-api' },
-          { text: '10. セキュリティ', link: '/rails/#_10-%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3' },
-          { text: '11. バックグラウンドジョブ', link: '/rails/#_11-%E3%83%8F%E3%82%99%E3%83%83%E3%82%AF%E3%82%AF%E3%82%99%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%88%E3%82%99%E3%82%B7%E3%82%99%E3%83%A7%E3%83%95%E3%82%99' },
-          { text: '12. Gem / ライブラリ', link: '/rails/#_12-gem-%E3%83%A9%E3%82%A4%E3%83%95%E3%82%99%E3%83%A9%E3%83%AA' },
-          { text: '13. その他', link: '/rails/#_13-%E3%81%9D%E3%81%AE%E4%BB%96' },
+          { text: '1. Rails基礎', link: '/rails/#basics' },
+          { text: '2. Active Record / データベース', link: '/rails/#active-record-database' },
+          { text: '3. View / フロントエンド', link: '/rails/#view-frontend' },
+          { text: '4. Controller / ルーティング', link: '/rails/#controller-routing' },
+          { text: '5. テスト', link: '/rails/#testing' },
+          { text: '6. パフォーマンス', link: '/rails/#performance' },
+          { text: '7. アーキテクチャ / 設計', link: '/rails/#architecture-design' },
+          { text: '8. デプロイ / DevOps', link: '/rails/#deployment-devops' },
+          { text: '9. API', link: '/rails/#api' },
+          { text: '10. セキュリティ', link: '/rails/#security' },
+          { text: '11. バックグラウンドジョブ', link: '/rails/#background-jobs' },
+          { text: '12. Gem / ライブラリ', link: '/rails/#gems-libraries' },
+          { text: '13. その他', link: '/rails/#others' },
         ]
       },
-      { 
-        text: 'TypeScript', 
+      {
+        text: 'TypeScript',
         items: [
-          { text: '1. TypeScript基礎', link: '/typescript/#_1-typescript%E5%9F%BA%E7%A4%8E' },
-          { text: '2. TypeScript発展', link: '/typescript/#_2-typescript%E7%99%BA%E5%B1%95' },
-          { text: '3. TypeScriptエコシステム', link: '/typescript/#_3-typescript%E3%82%A8%E3%82%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0' },
-          { text: '4. フレームワークとの連携', link: '/typescript/#_4-%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A8%E3%81%AE%E9%80%A3%E6%90%BA' },
-          { text: '5. 開発ツールと効率化', link: '/typescript/#_5-%E9%96%8B%E7%99%BA%E3%83%84%E3%83%BC%E3%83%AB%E3%81%A8%E5%8A%B9%E7%8E%87%E5%8C%96' },
-          { text: '6. 実践・応用例', link: '/typescript/#_6-%E5%AE%9F%E8%B7%B5-%E5%BF%9C%E7%94%A8%E4%BE%8B' },
+          { text: '1. TypeScript基礎', link: '/typescript/#basics' },
+          { text: '2. TypeScript発展', link: '/typescript/#advanced' },
+          { text: '3. TypeScriptエコシステム', link: '/typescript/#ecosystem' },
+          { text: '4. フレームワークとの連携', link: '/typescript/#frameworks' },
+          { text: '5. 開発ツールと効率化', link: '/typescript/#tools' },
+          { text: '6. 実践・応用例', link: '/typescript/#practice' },
         ]
       },
       { text: 'GraphQL', link: '/graphql/' },
