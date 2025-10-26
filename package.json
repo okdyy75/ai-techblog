@@ -2,10 +2,12 @@
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "generate:nav": "tsx scripts/generate-navigation.mts"
   },
   "devDependencies": {
     "markdown-it-task-lists": "^2.1.1",
+    "tsx": "^4.19.2",
     "vitepress": "^1.6.3",
     "vitepress-sidebar": "^1.31.1"
   }
