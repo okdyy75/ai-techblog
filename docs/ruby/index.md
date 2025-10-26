@@ -1,6 +1,6 @@
 # Ruby技術記事
 
-## 1. Ruby基礎
+## 1. Ruby基礎 {#basics}
 
 - [x] [Rubyのインストールとバージョン管理](./01-basics/01-ruby-setup.md)
 - [x] [Rubyの基本構文](./01-basics/02-ruby-syntax.md)
@@ -14,7 +14,7 @@
 - [x] [Rubyの委譲（Delegation）](./01-basics/09-ruby-delegation.md)
 - [x] [Ruby 3.xの主要な新機能](./01-basics/31-ruby3-new-features.md)
 
-## 2. Ruby応用
+## 2. Ruby応用 {#applications}
 
 - [x] [Ruby製CLIツールの作り方](./02-applications/03-cli-tool-creation.md)
 - [x] [RubyのSocketプログラミング](./02-applications/07-socket-programming.md)
@@ -29,7 +29,7 @@
 - [x] [RubyとC言語連携（拡張ライブラリ作成）](./02-applications/35-ruby-c-extension.md)
 - [x] [RubyのDSL（ドメイン固有言語）作成法](./02-applications/39-ruby-dsl-creation.md)
 
-## 3. Rubyエコシステム
+## 3. Rubyエコシステム {#ecosystem}
 
 - [x] [BundlerによるGemの依存関係管理](./03-ecosystem/15-bundler-gem-management.md)
 - [x] [Rakeタスクの作り方と活用法](./03-ecosystem/16-rake-tasks.md)
@@ -42,7 +42,7 @@
 - [x] [RubyによるWebスクレイピング](./03-ecosystem/37-ruby-web-scraping.md)
 - [x] [Ruby製静的サイトジェネレータ](./03-ecosystem/38-ruby-static-site-generators.md)
 
-## 4. 発展トピック
+## 4. 発展トピック {#advanced}
 
 - [x] [RBSによる型定義](./04-advanced/02-rbs-type-definition.md)
 - [x] [Rubyのリフレクション機能](./04-advanced/06-ruby-reflection.md)
@@ -59,7 +59,7 @@
 - [x] [mruby/CRubyの違い](./04-advanced/30-mruby-vs-cruby.md)
 - [x] [Ruby on Railsのセキュリティベストプラクティス](./04-advanced/40-rails-security-best-practices.md)
 
-## 5. 実践・その他
+## 5. 実践・その他 {#practice}
 
 - [x] [Prismパーサー: Rubyの新しいデフォルトパーサー](./05-others/01-prism-parser.md)
 - [x] [Garnet VM: 次世代Ruby仮想マシン](./05-others/02-garnet-vm.md)
