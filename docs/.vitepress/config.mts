@@ -11,6 +11,7 @@ function generateNav() {
     { dir: 'ai', name: 'AI' },
     { dir: 'ruby', name: 'Ruby' },
     { dir: 'rails', name: 'Rails' },
+    { dir: 'postgres', name: 'PostgreSQL' },
     { dir: 'typescript', name: 'TypeScript' },
     { dir: 'graphql', name: 'GraphQL' },
     { dir: 'infrastructure', name: 'インフラ' }
