@@ -8,11 +8,11 @@ title: PostgreSQL
 
 ### 1. PostgreSQL基礎 {#basics}
 - [x] 1. [PostgreSQL入門：初めてのデータベース構築](./01-basics.md)
-- [ ] 2. PostgreSQLのインストールと初期設定ガイド
-- [ ] 3. psqlコマンドラインツールの基本操作
-- [ ] 4. データ型をマスターする：PostgreSQLの型システム
-- [ ] 5. SQLの基礎：SELECT, INSERT, UPDATE, DELETE
-- [ ] 6. テーブル設計のベストプラクティス
+- [x] 2. [PostgreSQLのインストールと初期設定ガイド](./02-installation-and-setup.md)
+- [x] 3. [psqlコマンドラインツールの基本操作](./03-psql-basic-operations.md)
+- [x] 4. [データ型をマスターする：PostgreSQLの型システム](./04-mastering-data-types.md)
+- [x] 5. [SQLの基礎：SELECT, INSERT, UPDATE, DELETE](./05-sql-basics.md)
+- [x] 6. [テーブル設計のベストプラクティス](./06-table-design-best-practices.md)
 - [ ] 30. DockerでPostgreSQL環境を構築する
 
 ### 2. インデックス・パフォーマンス {#performance}
