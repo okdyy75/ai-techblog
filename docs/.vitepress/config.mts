@@ -13,6 +13,7 @@ function generateNav() {
     { dir: 'rails', name: 'Rails' },
     { dir: 'typescript', name: 'TypeScript' },
     { dir: 'graphql', name: 'GraphQL' },
+    { dir: 'postgres', name: 'PostgreSQL' },
     { dir: 'infrastructure', name: 'インフラ' }
   ]
 
