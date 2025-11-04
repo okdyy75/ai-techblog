@@ -7,7 +7,7 @@ title: PostgreSQL
 ## 記事一覧
 
 ### 1. PostgreSQL基礎 {#basics}
-- [ ] 1. PostgreSQL入門：初めてのデータベース構築
+- [x] 1. [PostgreSQL入門：初めてのデータベース構築](./01-basics.md)
 - [ ] 2. PostgreSQLのインストールと初期設定ガイド
 - [ ] 3. psqlコマンドラインツールの基本操作
 - [ ] 4. データ型をマスターする：PostgreSQLの型システム
