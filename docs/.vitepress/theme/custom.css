@@ -1,0 +1,346 @@
+/* ===============================================
+   カスタムカラーテーマ
+   =============================================== */
+
+:root {
+  /* ブランドカラー - より鮮やかで現代的な配色 */
+  --vp-c-brand-1: #3b82f6;
+  --vp-c-brand-2: #2563eb;
+  --vp-c-brand-3: #1d4ed8;
+
+  /* アクセントカラー */
+  --vp-c-brand-soft: #dbeafe;
+
+  /* 背景色 - より洗練された配色 */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f9fafb;
+  --vp-c-bg-mute: #f3f4f6;
+
+  /* ホームページのヒーローセクション */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark {
+  --vp-c-brand-1: #60a5fa;
+  --vp-c-brand-2: #3b82f6;
+  --vp-c-brand-3: #2563eb;
+
+  --vp-c-bg: #1a1a1a;
+  --vp-c-bg-soft: #242424;
+  --vp-c-bg-mute: #2c2c2c;
+}
+
+/* ===============================================
+   ヘッダー・ナビゲーションのスタイル改善
+   =============================================== */
+
+/* ヘッダーに微妙な背景効果を追加 */
+.VPNav {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dark .VPNav {
+  background-color: rgba(26, 26, 26, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ナビゲーションメニューのホバー効果を改善 */
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuGroup:hover .button {
+  color: var(--vp-c-brand-1) !important;
+  transition: color 0.25s ease;
+}
+
+/* ドロップダウンメニューのスタイル改善 */
+.VPNavBarMenuGroup .items {
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 8px;
+}
+
+.dark .VPNavBarMenuGroup .items {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.VPNavBarMenuGroup .VPLink {
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition: all 0.25s ease;
+}
+
+.VPNavBarMenuGroup .VPLink:hover {
+  background-color: var(--vp-c-brand-soft);
+  transform: translateX(4px);
+}
+
+.dark .VPNavBarMenuGroup .VPLink:hover {
+  background-color: rgba(96, 165, 250, 0.1);
+}
+
+/* ===============================================
+   ホームページのヒーローセクション
+   =============================================== */
+
+.VPHero {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+/* ヒーローのタイトルをより目立たせる */
+.VPHero .name {
+  font-size: 64px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.2 !important;
+}
+
+@media (max-width: 768px) {
+  .VPHero .name {
+    font-size: 48px !important;
+  }
+}
+
+.VPHero .text {
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: rgba(60, 60, 67, 0.78);
+  margin-top: 24px !important;
+}
+
+.dark .VPHero .text {
+  color: rgba(235, 235, 245, 0.6);
+}
+
+.VPHero .tagline {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  color: rgba(60, 60, 67, 0.68);
+  margin-top: 16px !important;
+}
+
+.dark .VPHero .tagline {
+  color: rgba(235, 235, 245, 0.5);
+}
+
+/* アクションボタンのスタイル改善 */
+.VPHero .actions {
+  margin-top: 48px !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.VPButton {
+  border-radius: 12px !important;
+  padding: 12px 32px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.VPButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.VPButton.brand {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+}
+
+.VPButton.brand:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+}
+
+.VPButton.alt {
+  border: 2px solid var(--vp-c-brand-1) !important;
+  color: var(--vp-c-brand-1) !important;
+  background-color: transparent !important;
+}
+
+.VPButton.alt:hover {
+  background-color: var(--vp-c-brand-soft) !important;
+  border-color: var(--vp-c-brand-2) !important;
+}
+
+.dark .VPButton.alt {
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+.dark .VPButton.alt:hover {
+  background-color: rgba(96, 165, 250, 0.1) !important;
+}
+
+/* ===============================================
+   Features セクションのスタイル改善
+   =============================================== */
+
+.VPFeatures {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+}
+
+.VPFeature {
+  border-radius: 16px !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  padding: 32px !important;
+  transition: all 0.3s ease !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(249, 250, 251, 0.8) 100%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.dark .VPFeature {
+  background: linear-gradient(180deg, rgba(36, 36, 36, 0.8) 0%, rgba(44, 44, 44, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.VPFeature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: var(--vp-c-brand-1) !important;
+}
+
+.dark .VPFeature:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.VPFeature .title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 12px !important;
+}
+
+.VPFeature .details {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: rgba(60, 60, 67, 0.78);
+}
+
+.dark .VPFeature .details {
+  color: rgba(235, 235, 245, 0.6);
+}
+
+/* ===============================================
+   フッターのスタイル改善
+   =============================================== */
+
+.VPFooter {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 32px 24px !important;
+  background: linear-gradient(180deg, transparent 0%, rgba(249, 250, 251, 0.5) 100%);
+}
+
+.dark .VPFooter {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, transparent 0%, rgba(36, 36, 36, 0.5) 100%);
+}
+
+/* ===============================================
+   レスポンシブデザインの改善
+   =============================================== */
+
+@media (max-width: 768px) {
+  .VPHero {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .VPHero .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .VPButton {
+    width: 100%;
+  }
+
+  .VPFeatures {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
+
+/* ===============================================
+   サイドバーのスタイル改善
+   =============================================== */
+
+.VPSidebar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%);
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dark .VPSidebar {
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.9) 0%, rgba(36, 36, 36, 0.9) 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* サイドバーリンクのホバー効果 */
+.VPSidebarItem .link:hover {
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* アクティブなサイドバーアイテム */
+.VPSidebarItem.is-active > .item .link {
+  color: var(--vp-c-brand-1) !important;
+  font-weight: 600 !important;
+}
+
+/* ===============================================
+   検索ボックスのスタイル改善
+   =============================================== */
+
+.VPNavBarSearch .DocSearch-Button {
+  border-radius: 12px !important;
+  transition: all 0.25s ease !important;
+}
+
+.VPNavBarSearch .DocSearch-Button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+/* ===============================================
+   スムーズスクロール
+   =============================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===============================================
+   カスタムアニメーション
+   =============================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPFeature {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.VPFeature:nth-child(1) { animation-delay: 0.1s; }
+.VPFeature:nth-child(2) { animation-delay: 0.2s; }
+.VPFeature:nth-child(3) { animation-delay: 0.3s; }
+.VPFeature:nth-child(4) { animation-delay: 0.4s; }
+.VPFeature:nth-child(5) { animation-delay: 0.5s; }
+.VPFeature:nth-child(6) { animation-delay: 0.6s; }
+.VPFeature:nth-child(7) { animation-delay: 0.7s; }

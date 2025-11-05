@@ -41,21 +41,37 @@ function generateNav() {
 // https://vitepress.dev/reference/site-config
 const vitePressOptions: UserConfig = {
   title: "AIテックブログ",
-  description: "AIが自動生成した技術記事をまとめたテックブログです",
+  description: "最新技術を体系的に学べる技術記事コレクション。Ruby・Rails・AI・GraphQL・PostgreSQL・インフラを網羅",
+  lang: 'ja-JP',
   sitemap: {
     hostname: 'https://ai-techblog.okdyy75.com'
   },
-    head: [
-        ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-KV4CN8TQVS" }],
-        [
-            "script",
-            {},
-            `window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-KV4CN8TQVS');`,
-        ],
+  head: [
+    // Google Analytics
+    ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-KV4CN8TQVS" }],
+    [
+      "script",
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KV4CN8TQVS');`,
     ],
+    // Meta tags
+    ['meta', { name: 'theme-color', content: '#3b82f6' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    // Open Graph
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'AIテックブログ' }],
+    ['meta', { property: 'og:title', content: 'AIテックブログ - 最新技術を体系的に学べる技術記事コレクション' }],
+    ['meta', { property: 'og:description', content: 'Ruby・Rails・AI・GraphQL・PostgreSQL・インフラを網羅した包括的な技術リソース' }],
+    ['meta', { property: 'og:url', content: 'https://ai-techblog.okdyy75.com' }],
+    // Twitter Card
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'AIテックブログ - 最新技術を体系的に学べる技術記事コレクション' }],
+    ['meta', { name: 'twitter:description', content: 'Ruby・Rails・AI・GraphQL・PostgreSQL・インフラを網羅した包括的な技術リソース' }],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: generateNav(),
@@ -65,13 +81,64 @@ const vitePressOptions: UserConfig = {
     ],
 
     footer: {
-      message: 'AI が自動生成した技術記事をまとめたテックブログ',
+      message: '最新技術を体系的に学べる技術記事コレクション',
       copyright: 'Copyright © 2024 okdyy75'
     },
 
     search: {
-      provider: 'local'
-    }
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: '検索',
+            buttonAriaLabel: 'サイト内検索'
+          },
+          modal: {
+            noResultsText: '結果が見つかりませんでした',
+            resetButtonTitle: 'リセット',
+            footer: {
+              selectText: '選択',
+              navigateText: '移動',
+              closeText: '閉じる'
+            }
+          }
+        }
+      }
+    },
+
+    // 編集リンクの設定
+    editLink: {
+      pattern: 'https://github.com/okdyy75/ai-techblog/edit/main/docs/:path',
+      text: 'このページを編集'
+    },
+
+    // 最終更新日の表示
+    lastUpdated: {
+      text: '最終更新',
+      formatOptions: {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+      }
+    },
+
+    // ドキュメントフッター
+    docFooter: {
+      prev: '前のページ',
+      next: '次のページ'
+    },
+
+    // アウトラインの設定
+    outline: {
+      level: [2, 3],
+      label: '目次'
+    },
+
+    // リターントップボタン
+    returnToTopLabel: 'トップに戻る',
+
+    // サイドバーのラベル
+    sidebarMenuLabel: 'メニュー',
+    darkModeSwitchLabel: 'ダークモード'
   },
   markdown: {
     config: (md) => {
