@@ -16,16 +16,16 @@ title: PostgreSQL
 - [ ] 30. DockerでPostgreSQL環境を構築する
 
 ### 2. インデックス・パフォーマンス {#performance}
-- [ ] 7. インデックスの仕組みと効果的な使い方
+- [x] 7. [インデックスの仕組みと効果的な使い方](./07-index-mechanism-and-usage.md)
 - [ ] 15. パフォーマンスチューニング：EXPLAIN ANALYZEの読み方
 - [ ] 16. クエリ最適化：実行計画を改善するテクニック
 - [ ] 24. マテリアライズドビューによるパフォーマンス向上
 
 ### 3. トランザクション・データベース設計 {#transactions-design}
-- [ ] 8. トランザクションとACID特性
-- [ ] 9. ビューの活用法：複雑なクエリをシンプルに
-- [ ] 10. ストアドプロシージャと関数によるサーバーサイドプログラミング
-- [ ] 11. トリガーを使ったデータ整合性の維持
+- [x] 8. [トランザクションとACID特性](./08-transactions-and-acid.md)
+- [x] 9. [ビューの活用法：複雑なクエリをシンプルに](./09-using-views.md)
+- [x] 10. [ストアドプロシージャと関数によるサーバーサイドプログラミング](./10-stored-procedures-and-functions.md)
+- [x] 11. [トリガーを使ったデータ整合性の維持](./11-triggers-for-data-integrity.md)
 
 ### 4. 高度なデータ型・機能 {#advanced-features}
 - [ ] 12. JSON/JSONBデータ型の徹底活用
