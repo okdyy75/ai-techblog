@@ -7,6 +7,7 @@ AIに関する技術記事です。
 - [x] [主要LLM（GPT、Gemini、Claude）の比較](/ai/04-major-llm-comparison)
 - [x] [プロンプトエンジニアリング入門](/ai/01-prompt-engineering-basics)
 - [x] [AIコードアシスタントを使いこなす：GitHub Copilotとその他ツールの比較、及びチーム導入のベストプラクティス](/ai/10-mastering-ai-code-assistants)
+- [x] [GitHub Copilot完全ガイド：AIペアプログラミングの実践](/ai/16-github-copilot-guide)
 - [ ] [ChatGPT Atlasとは？AI搭載ブラウザの全貌を徹底解説](/ai/15-chatgpt-atlas-guide)
 
 ## 実装技術 {#implementation}
