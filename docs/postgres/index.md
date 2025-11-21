@@ -17,8 +17,8 @@ title: PostgreSQL
 
 ### 2. インデックス・パフォーマンス {#performance}
 - [x] 7. [インデックスの仕組みと効果的な使い方](./07-index-mechanism-and-usage.md)
-- [ ] 15. パフォーマンスチューニング：EXPLAIN ANALYZEの読み方
-- [ ] 16. クエリ最適化：実行計画を改善するテクニック
+- [x] 15. [パフォーマンスチューニング：EXPLAIN ANALYZEの読み方](./15-performance-tuning-explain.md)
+- [x] 16. [クエリ最適化：実行計画を改善するテクニック](./16-query-optimization.md)
 - [ ] 24. マテリアライズドビューによるパフォーマンス向上
 
 ### 3. トランザクション・データベース設計 {#transactions-design}
@@ -28,15 +28,15 @@ title: PostgreSQL
 - [x] 11. [トリガーを使ったデータ整合性の維持](./11-triggers-for-data-integrity.md)
 
 ### 4. 高度なデータ型・機能 {#advanced-features}
-- [ ] 12. JSON/JSONBデータ型の徹底活用
-- [ ] 13. 全文検索：pg_trgmとFTS
+- [x] 12. [JSON/JSONBデータ型の徹底活用](./12-json-jsonb-data-types.md)
+- [x] 13. [全文検索：pg_trgmとFTS](./13-full-text-search.md)
 - [ ] 14. PostGISによる地理空間データ入門
 - [ ] 25. ウィンドウ関数を使いこなす
 - [ ] 26. CTE（共通テーブル式）による複雑なクエリの可読性向上
 - [ ] 27. PostgreSQLの拡張機能トップ10
 
 ### 5. 運用・管理 {#administration}
-- [ ] 17. バックアップとリストア戦略
+- [x] 17. [バックアップとリストア戦略](./17-backup-and-restore.md)
 - [ ] 18. レプリケーション：ストリーミングレプリケーションの設定
 - [ ] 19. 高可用性構成：pgpool-IIとPacemaker
 - [ ] 20. セキュリティ：ユーザー、ロール、権限管理
