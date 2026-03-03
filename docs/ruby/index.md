@@ -12,6 +12,7 @@
 - [x] [Rubyの例外処理](./01-basics/07-ruby-exception-handling.md)
 - [x] [Rubyの標準ライブラリ紹介](./01-basics/08-ruby-standard-library.md)
 - [x] [Rubyの委譲（Delegation）](./01-basics/09-ruby-delegation.md)
+- [x] [RubyのEnumerable完全入門](./01-basics/10-ruby-enumerable-deep-dive.md)
 - [x] [Ruby 3.xの主要な新機能](./01-basics/31-ruby3-new-features.md)
 
 ## 2. Ruby応用 {#applications}
