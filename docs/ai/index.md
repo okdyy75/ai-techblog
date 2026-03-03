@@ -16,6 +16,7 @@ AIに関する技術記事です。
 - [x] [ファインチューニングによるLLMのカスタマイズ](/ai/03-fine-tuning-llm-customization)
 - [x] [大規模言語モデル（LLM）のファインチューニング入門：Hugging Face Transformersを使った実践ガイド](/ai/07-llm-fine-tuning-with-hugging-face)
 - [x] [PyTorch vs. TensorFlow：2024年版 詳細比較とユースケース別使い分け](/ai/09-pytorch-vs-tensorflow-2024)
+- [x] [MCP入門：AIエージェントに外部ツールを安全に接続する方法](/ai/16-mcp-introduction-agent-tooling)
 
 ## 実践・運用 {#practice}
 
