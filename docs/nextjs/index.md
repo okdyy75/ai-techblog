@@ -7,7 +7,7 @@
 - [ ] Next.js App Router完全入門：Pages Routerとの違いと移行ポイント
 - [ ] Next.jsのデータ取得を整理する：fetch・Server Actions・Route Handlers実践
 - [ ] Next.jsで認証を実装する：Auth.js（NextAuth）で作る安全なログイン基盤
-- [ ] Next.jsのSEO最適化：metadata API・OGP・構造化データの実践テクニック
+- [x] [Next.jsのSEO最適化：metadata API・OGP・構造化データの実践テクニック](./04-nextjs-seo-metadata-ogp-structured-data.md)
 - [ ] Next.js × Supabaseで作る実用Webアプリ：認証・DB・デプロイまで一気通貫
 - [ ] Next.jsのパフォーマンス改善：LCP/INPを意識した高速化チェックリスト
 - [ ] Vercelデプロイ最適化：Next.js本番運用でハマるポイント総まとめ
