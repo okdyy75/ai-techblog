@@ -5,7 +5,7 @@
 ## 入門 {#basics}
 
 - [ ] Next.js App Router完全入門：Pages Routerとの違いと移行ポイント
-- [ ] Next.jsのデータ取得を整理する：fetch・Server Actions・Route Handlers実践
+- [x] [Next.jsのデータ取得を整理する：fetch・Server Actions・Route Handlers実践](./02-nextjs-data-fetching-server-actions-route-handlers.md)
 - [ ] Next.jsで認証を実装する：Auth.js（NextAuth）で作る安全なログイン基盤
 - [ ] Next.jsのSEO最適化：metadata API・OGP・構造化データの実践テクニック
 - [ ] Next.js × Supabaseで作る実用Webアプリ：認証・DB・デプロイまで一気通貫
