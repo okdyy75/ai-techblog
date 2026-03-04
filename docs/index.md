@@ -19,6 +19,9 @@ hero:
     - theme: alt
       text: GraphQL を学ぶ
       link: /graphql/
+    - theme: alt
+      text: Next.js を学ぶ
+      link: /nextjs/
 
 features:
   - title: 🚀 Ruby 基礎から応用まで
@@ -35,4 +38,6 @@ features:
     details: Rails 8、Ruby 3.x の最新機能やベストプラクティスを反映した内容
   - title: 🌐 GraphQL API
     details: モダンなAPIクエリ言語GraphQLの基本から、サーバー構築、フロントエンド連携、応用までを解説
+  - title: ⚡ Next.js
+    details: App Router、データ取得、SEO、デプロイなど、実務で使えるNext.js知識を順次追加
 ---
