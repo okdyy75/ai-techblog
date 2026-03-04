@@ -4,7 +4,7 @@
 
 ## 入門 {#basics}
 
-- [ ] Next.js App Router完全入門：Pages Routerとの違いと移行ポイント
+- [x] [Next.js App Router完全入門：Pages Routerとの違いと移行ポイント](./01-nextjs-app-router-guide.md)
 - [ ] Next.jsのデータ取得を整理する：fetch・Server Actions・Route Handlers実践
 - [ ] Next.jsで認証を実装する：Auth.js（NextAuth）で作る安全なログイン基盤
 - [ ] Next.jsのSEO最適化：metadata API・OGP・構造化データの実践テクニック
