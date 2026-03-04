@@ -97,6 +97,13 @@ export async function createPost(formData: FormData) {
   await fetch('https://api.example.com/posts', {
     method: 'POST',
     body: JSON.stringify({ title, content }),
+  // 実際のDB保存処理など
+  await fetch('https://api.example.com/posts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ title, content }),
   });
 
   // キャッシュを無効化して最新の状態にする
