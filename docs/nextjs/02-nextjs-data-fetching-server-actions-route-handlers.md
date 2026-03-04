@@ -96,10 +96,6 @@ export async function createPost(formData: FormData) {
   // 実際のDB保存処理など
   await fetch('https://api.example.com/posts', {
     method: 'POST',
-    body: JSON.stringify({ title, content }),
-  // 実際のDB保存処理など
-  await fetch('https://api.example.com/posts', {
-    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
