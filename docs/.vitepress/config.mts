@@ -46,6 +46,7 @@ const vitePressOptions: UserConfig = {
     hostname: 'https://ai-techblog.okdyy75.com'
   },
     head: [
+        ["script", { async: "", src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9459277760652211", crossorigin: "anonymous" }],
         ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-KV4CN8TQVS" }],
         [
             "script",
