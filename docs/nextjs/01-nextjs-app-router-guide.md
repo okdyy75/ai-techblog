@@ -56,7 +56,9 @@ export default async function UsersPage() {
 
   return (
     <ul>
-      {users.map((user: any) => (
+      {users.map((user: { id: string; name: string }) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
         <li key={user.id}>{user.name}</li>
       ))}
     </ul>
