@@ -14,7 +14,8 @@ function generateNav() {
     { dir: 'typescript', name: 'TypeScript' },
     { dir: 'graphql', name: 'GraphQL' },
     { dir: 'postgres', name: 'PostgreSQL' },
-    { dir: 'infrastructure', name: 'インフラ' }
+    { dir: 'infrastructure', name: 'インフラ' },
+    { dir: 'nextjs', name: 'Next.js' }
   ]
 
   const nav = [{ text: 'ホーム', link: '/' }]
