@@ -71,3 +71,4 @@
 - [x] [RubyにおけるWebAssembly (Wasm) の活用](./05-others/08-ruby-and-wasm.md)
 - [x] [Ractorのパフォーマンスと実用例](./05-others/09-ractor-performance.md)
 - [x] [RubyでのgRPCサーバー・クライアント実装](./05-others/10-grpc-implementation.md)
+- [x] [RubyでLLMアプリを作る実践: ruby-openai + 構造化出力 + エラーハンドリング](./05-others/11-ruby-llm-practical-guide.md)
