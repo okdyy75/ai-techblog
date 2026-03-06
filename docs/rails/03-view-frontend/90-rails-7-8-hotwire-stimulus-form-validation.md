@@ -44,6 +44,7 @@ end
 <%= form_with model: @user,
   data: {
     controller: "form-validation",
+    action: "submit->form-validation#submit",
     form_validation_rules_value: {
       name:  { presence: true, minLength: 3 },
       email: { presence: true, email: true }
