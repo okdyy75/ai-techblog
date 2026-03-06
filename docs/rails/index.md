@@ -50,6 +50,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Turbo Streamsでリアルタイム更新を実現する高度なテクニック](/rails/03-view-frontend/71-advanced-turbo-streams)
 - [x] [`Motion UI`と`Turbo`を連携させたリッチなUIアニメーション](/rails/03-view-frontend/88-motion-ui-turbo-guide)
 - [x] [Railsにおけるクライアントサイドフォームバリデーションの実践](/rails/03-view-frontend/89-rails-client-side-form-validation)
+- [x] [Rails 7/8 + Hotwire環境におけるStimulus駆動フォームバリデーションの実践](/rails/03-view-frontend/90-rails-7-8-hotwire-stimulus-form-validation)
 
 ### 4. Controller / ルーティング {#controller-routing}
 - [x] [もう怖くない！Railsのルーティング (`routes.rb`) 完全ガイド](/rails/04-controller-routing/04-rails-routing-guide)
