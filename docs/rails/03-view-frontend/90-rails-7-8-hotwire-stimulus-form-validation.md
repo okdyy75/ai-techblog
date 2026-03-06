@@ -75,7 +75,7 @@ end
     <p id="email-error" data-form-validation-target="error" aria-live="polite"></p>
   </div>
 
-  <%= f.submit "保存", data: { action: "form-validation#submit" } %>
+  <%= f.submit "保存" %>
 <% end %>
 ```
 
