@@ -41,7 +41,7 @@ SourceFile
 ```ts
 import ts from "typescript";
 
-const code = `function greet(name: string) { return ` + "`Hello, ${name}`" + `; }`;
+const code = `function greet(name: string) { return \`Hello, \${name}\`; }`;
 
 const sourceFile = ts.createSourceFile(
   "example.ts",
