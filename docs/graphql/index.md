@@ -18,3 +18,4 @@
 - [第9回: GraphQLのセキュリティとベストプラクティス - 脆弱性対策と安全な運用](./09-security-best-practices.md)
 - [第10回: GraphQLの運用・監視・デバッグ - 本番環境での実践的な管理手法](./10-operations-monitoring.md)
 - [第11回: スキーマ駆動開発を加速するGraphQL Code GeneratorとCI/CD連携](./11-codegen-cicd.md)
+- [第12回: 大規模開発を変えるGraphQL FederationとSupergraph：モノリスからの脱却](./12-federation-supergraph.md)
