@@ -13,4 +13,4 @@
 - [ ] Vercelデプロイ最適化：Next.js本番運用でハマるポイント総まとめ
 - [ ] Next.jsで多言語サイトを作る：i18n設計とルーティング実装のベストプラクティス
 - [ ] Next.jsのテスト戦略：Unit/E2E（Vitest + Playwright）を最小構成で始める
-- [ ] Next.js × Stripeでサブスク課金を実装する：Webhookと権限管理の実践
+- [x] [Next.js × Stripeでサブスク課金を実装する：Webhookと権限管理の実践](./04-nextjs-stripe-subscription-webhook-authorization.md)
