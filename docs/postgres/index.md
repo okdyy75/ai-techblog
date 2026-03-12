@@ -13,7 +13,7 @@ title: PostgreSQL
 - [x] 4. [データ型をマスターする：PostgreSQLの型システム](./04-mastering-data-types.md)
 - [x] 5. [SQLの基礎：SELECT, INSERT, UPDATE, DELETE](./05-sql-basics.md)
 - [x] 6. [テーブル設計のベストプラクティス](./06-table-design-best-practices.md)
-- [ ] 30. DockerでPostgreSQL環境を構築する
+- [x] [30. DockerでPostgreSQL環境を構築する](./12-30-docker-postgres.md)
 
 ### 2. インデックス・パフォーマンス {#performance}
 - [x] 7. [インデックスの仕組みと効果的な使い方](./07-index-mechanism-and-usage.md)
