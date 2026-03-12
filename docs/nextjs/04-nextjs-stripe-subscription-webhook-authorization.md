@@ -202,6 +202,11 @@ export async function POST(req: NextRequest) {
     switch (event.type) {
       case 'checkout.session.completed':
         const checkoutSession = event.data.object as Stripe.CheckoutSession;
+
+        if (checkoutSession.mode !== 'subscription') {
+          break; // サブスクリプション以外のセッションはスキップ
+        }
+
         // 支払い済みサブスクリプションの取得
         const subscriptionId = checkoutSession.subscription as string;
         const subscription = await stripe.subscriptions.retrieve(subscriptionId);
@@ -301,7 +306,7 @@ export async function POST(req: NextRequest) {
 }
 ```
 
-この Webhook ハンドラでは、`micro` ライブラリを使用してリクエストの raw body を取得し、Stripe の署名検証を行います。検証が成功したら、イベントタイプに応じてデータベースの `User` モデルを更新します。特に `checkout.session.completed` と `customer.subscription.updated` イベントが重要です。
+この Webhook ハンドラでは、`req.text()` を使用してリクエストの raw body を取得し、Stripe の署名検証を行います。検証が成功したら、イベントタイプに応じてデータベースの `User` モデルを更新します。特に `checkout.session.completed` と `customer.subscription.updated` イベントが重要です。
 
 **冪等性 (Idempotency) について**: Stripe Webhook は、ネットワークの問題などで同じイベントが複数回送信される可能性があります。そのため、イベント処理ロジックは冪等である必要があります。上記の例では、`db.user.update` が常に最新の状態をセットするため、ある程度冪等性が保たれますが、複雑なビジネスロジックを伴う場合は、`Stripe.Event.id` をデータベースに保存し、既に処理済みでないかを確認するなどの追加の対策を検討してください。
 
@@ -332,6 +337,9 @@ export async function middleware(req: NextRequest) {
       return NextResponse.redirect(new URL('/api/auth/signin', req.url));
     }
 
+    // 注意: MiddlewareはEdge Runtimeで動作するため、標準のPrisma Clientは使用できません。
+    // Prisma Accelerate等のEdge対応ドライバを使用するか、以下のDBチェック処理を
+    // Server Component側で行う必要があります。
     const user = await db.user.findUnique({
       where: { id: session.user.id },
     });
