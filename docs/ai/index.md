@@ -21,5 +21,6 @@ AIに関する技術記事です。
 
 ## 実践・運用 {#practice}
 
+- [x] [LLMアプリケーションのオブザーバビリティ：トレースとコスト管理の実装戦略](/ai/18-llm-observability-tracing-cost-management)
 - [x] [実践・機械学習モデルのデプロイ戦略：Docker, Kubernetes, そしてサーバーレス](/ai/06-ml-model-deployment-strategies)
 - [x] [生成AIのビジネス活用事例](/ai/05-generative-ai-business-cases)
