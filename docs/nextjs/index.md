@@ -10,7 +10,7 @@
 - [ ] Next.jsのSEO最適化：metadata API・OGP・構造化データの実践テクニック
 - [ ] Next.js × Supabaseで作る実用Webアプリ：認証・DB・デプロイまで一気通貫
 - [ ] Next.jsのパフォーマンス改善：LCP/INPを意識した高速化チェックリスト
-- [ ] Vercelデプロイ最適化：Next.js本番運用でハマるポイント総まとめ
+- [x] [Vercelデプロイ最適化：Next.js本番運用でハマるポイント総まとめ](./05-vercel-deployment-optimization-nextjs.md)
 - [ ] Next.jsで多言語サイトを作る：i18n設計とルーティング実装のベストプラクティス
 - [ ] Next.jsのテスト戦略：Unit/E2E（Vitest + Playwright）を最小構成で始める
 - [x] [Next.js × Stripeでサブスク課金を実装する：Webhookと権限管理の実践](./04-nextjs-stripe-subscription-webhook-authorization.md)
