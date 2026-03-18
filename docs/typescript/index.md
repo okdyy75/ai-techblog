@@ -61,7 +61,7 @@
 - [x] [Zod: ランタイム型検証](./05-tools/06-zod-runtime-validation.md)
 - [ ] [io-ts: 関数型アプローチの型検証]
 - [x] [TypeScript AST操作とトランスフォーム](./05-tools/08-typescript-ast-transform.md)
-- [ ] [TypeScript Playground活用法]
+- [x] [TypeScript Playground活用法](./05-tools/09-typescript-playground-guide.md)
 - [ ] [TypeScript パッケージ管理のベストプラクティス]
 
 ## 6. 実践・応用例 {#practice}
