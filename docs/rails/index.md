@@ -49,6 +49,7 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Rails 8のインライン実行でJavaScriptとCSSの扱いがどう変わるか](/rails/03-view-frontend/70-rails8-inline-execution)
 - [x] [Turbo Streamsでリアルタイム更新を実現する高度なテクニック](/rails/03-view-frontend/71-advanced-turbo-streams)
 - [x] [`Motion UI`と`Turbo`を連携させたリッチなUIアニメーション](/rails/03-view-frontend/88-motion-ui-turbo-guide)
+- [x] [Rails 7/8 + Hotwire環境におけるStimulus駆動フォームバリデーションの実践](/rails/03-view-frontend/90-rails-7-8-hotwire-stimulus-form-validation)
 
 ### 4. Controller / ルーティング {#controller-routing}
 - [x] [もう怖くない！Railsのルーティング (`routes.rb`) 完全ガイド](/rails/04-controller-routing/04-rails-routing-guide)

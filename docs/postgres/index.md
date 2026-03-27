@@ -13,7 +13,7 @@ title: PostgreSQL
 - [x] 4. [データ型をマスターする：PostgreSQLの型システム](./04-mastering-data-types.md)
 - [x] 5. [SQLの基礎：SELECT, INSERT, UPDATE, DELETE](./05-sql-basics.md)
 - [x] 6. [テーブル設計のベストプラクティス](./06-table-design-best-practices.md)
-- [ ] 30. DockerでPostgreSQL環境を構築する
+- [x] [30. DockerでPostgreSQL環境を構築する](./12-30-docker-postgres.md)
 
 ### 2. インデックス・パフォーマンス {#performance}
 - [x] 7. [インデックスの仕組みと効果的な使い方](./07-index-mechanism-and-usage.md)
@@ -32,7 +32,7 @@ title: PostgreSQL
 - [ ] 13. 全文検索：pg_trgmとFTS
 - [ ] 14. PostGISによる地理空間データ入門
 - [ ] 25. ウィンドウ関数を使いこなす
-- [ ] 26. CTE（共通テーブル式）による複雑なクエリの可読性向上
+- [x] 26. [CTE（共通テーブル式）による複雑なクエリの可読性向上](./13-cte-query-readability.md)
 - [ ] 27. PostgreSQLの拡張機能トップ10
 
 ### 5. 運用・管理 {#administration}
@@ -41,7 +41,7 @@ title: PostgreSQL
 - [ ] 19. 高可用性構成：pgpool-IIとPacemaker
 - [ ] 20. セキュリティ：ユーザー、ロール、権限管理
 - [ ] 21. 接続プーリング：PgBouncerの導入と設定
-- [ ] 28. メジャーバージョンアップグレードの手順
+- [x] 28. [メジャーバージョンアップグレードの手順](./28-major-version-upgrade-guide.md)
 - [ ] 29. 監視：pg_stat_statementsと監視ツール
 
 ### 6. 大規模データ・統合 {#scaling-integration}
