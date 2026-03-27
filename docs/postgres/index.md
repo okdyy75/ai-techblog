@@ -41,7 +41,7 @@ title: PostgreSQL
 - [ ] 19. 高可用性構成：pgpool-IIとPacemaker
 - [ ] 20. セキュリティ：ユーザー、ロール、権限管理
 - [ ] 21. 接続プーリング：PgBouncerの導入と設定
-- [ ] 28. メジャーバージョンアップグレードの手順
+- [x] 28. [メジャーバージョンアップグレードの手順](./28-major-version-upgrade-guide.md)
 - [ ] 29. 監視：pg_stat_statementsと監視ツール
 
 ### 6. 大規模データ・統合 {#scaling-integration}
