@@ -27,7 +27,7 @@
 
 ## 3. TypeScriptエコシステム {#ecosystem}
 
-- [ ] [TSConfigの詳細設定]
+- [x] [TSConfigの詳細設定 - 実務で使えるcompilerOptions完全ガイド](./03-ecosystem/01-tsconfig-detailed-guide.md)
 - [ ] [TypeScript Compilerの使い方]
 - [ ] [ESLintとPrettierの設定]
 - [ ] [Jestを使ったTypeScriptのテスト]
