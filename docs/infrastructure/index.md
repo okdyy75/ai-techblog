@@ -1,5 +1,9 @@
 # クラウドインフラ技術記事
 
+## Amazon Web Services {#aws}
+
+- [x] [AWS基礎知識：クラウドインフラの入門](./aws/aws-basics.md)
+
 ## Heroku {#heroku}
 
 - [x] [Heroku基礎知識：クラウドプラットフォームの入門](./heroku/heroku-basics.md)
