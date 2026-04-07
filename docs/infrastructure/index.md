@@ -18,3 +18,7 @@
 - [x] [GCP上級者向け：高度なサービスとアーキテクチャ](./gcp/gcp-advanced.md)
 - [x] [GCPエンタープライズ：大規模システムとベストプラクティス](./gcp/gcp-enterprise.md)
 
+## Amazon Web Services {#aws}
+
+- [x] [AWS入門：主要サービスとアーキテクチャ設計の基礎](./aws-basics-and-architecture.md)
+
