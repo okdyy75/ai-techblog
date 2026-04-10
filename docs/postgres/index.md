@@ -17,7 +17,7 @@ title: PostgreSQL
 
 ### 2. インデックス・パフォーマンス {#performance}
 - [x] 7. [インデックスの仕組みと効果的な使い方](./07-index-mechanism-and-usage.md)
-- [ ] 15. パフォーマンスチューニング：EXPLAIN ANALYZEの読み方
+- [x] 15. [パフォーマンスチューニング：EXPLAIN ANALYZEの読み方](./15-explain-analyze-guide.md)
 - [ ] 16. クエリ最適化：実行計画を改善するテクニック
 - [ ] 24. マテリアライズドビューによるパフォーマンス向上
 
