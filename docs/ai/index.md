@@ -18,6 +18,7 @@ AIに関する技術記事です。
 - [x] [PyTorch vs. TensorFlow：2024年版 詳細比較とユースケース別使い分け](/ai/09-pytorch-vs-tensorflow-2024)
 - [x] [MCP入門：AIエージェントに外部ツールを安全に接続する方法](/ai/16-mcp-introduction-agent-tooling)
 - [x] [LLM評価入門：AI機能の品質をどう測るか](/ai/17-llm-evaluation-introduction)
+- [x] [AIエージェント設計パターン：ReAct、Plan-and-Solve、Multi-Agentの使い分け](/ai/18-agent-design-patterns)
 
 ## 実践・運用 {#practice}
 
