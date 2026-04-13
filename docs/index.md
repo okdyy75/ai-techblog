@@ -22,6 +22,9 @@ hero:
     - theme: alt
       text: Next.js を学ぶ
       link: /nextjs/
+    - theme: alt
+      text: インフラを学ぶ
+      link: /infrastructure/
 
 features:
   - title: 🚀 Ruby 基礎から応用まで
