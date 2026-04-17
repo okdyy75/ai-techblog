@@ -12,6 +12,7 @@ AIに関する技術記事です。
 ## 実装技術 {#implementation}
 
 - [x] [RAG（Retrieval-Augmented Generation）の仕組みと活用法](/ai/02-rag-mechanism-and-utilization)
+- [x] [AIエージェントパターン入門：ReAct・Plan-and-Solveを実装する](/ai/18-ai-agent-patterns-react-plan-solve)
 - [x] [AIアプリケーションにおけるベクトルデータベースの活用法：類似検索とRAGの実現](/ai/08-vector-db-for-ai-applications)
 - [x] [ファインチューニングによるLLMのカスタマイズ](/ai/03-fine-tuning-llm-customization)
 - [x] [大規模言語モデル（LLM）のファインチューニング入門：Hugging Face Transformersを使った実践ガイド](/ai/07-llm-fine-tuning-with-hugging-face)
