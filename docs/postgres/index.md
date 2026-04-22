@@ -28,7 +28,7 @@ title: PostgreSQL
 - [x] 11. [トリガーを使ったデータ整合性の維持](./11-triggers-for-data-integrity.md)
 
 ### 4. 高度なデータ型・機能 {#advanced-features}
-- [ ] 12. JSON/JSONBデータ型の徹底活用
+- [x] 12. [JSON/JSONBデータ型の徹底活用：構造から実践活用まで](./12-jsonb-data-types.md)
 - [ ] 13. 全文検索：pg_trgmとFTS
 - [ ] 14. PostGISによる地理空間データ入門
 - [ ] 25. ウィンドウ関数を使いこなす
