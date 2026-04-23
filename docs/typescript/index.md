@@ -19,6 +19,7 @@
 - [x] [マップ型（Mapped Types）](./02-advanced/03-mapped-types.md)
 - [x] [テンプレートリテラル型](./02-advanced/04-template-literal-types.md)
 - [x] [型レベルプログラミング](./02-advanced/05-type-level-programming.md)
+- [x] [Conditional Typesと`infer`キーワードの実践的活用法](./conditional-types-infer-keyword.md)
 - [x] [デコレータとメタデータ](./02-advanced/06-decorators-and-metadata.md)
 - [x] [NamespaceとModule](./02-advanced/07-namespaces-and-modules.md)
 - [ ] [宣言ファイル（.d.ts）の作成]
