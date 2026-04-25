@@ -23,3 +23,4 @@ AIに関する技術記事です。
 
 - [x] [実践・機械学習モデルのデプロイ戦略：Docker, Kubernetes, そしてサーバーレス](/ai/06-ml-model-deployment-strategies)
 - [x] [生成AIのビジネス活用事例](/ai/05-generative-ai-business-cases)
+- [x] [Gemini 2.5 Pro Deep Think: 思考するAIの実験的機能と活用ガイド](/ai/18-gemini-2-5-pro-deep-think)
