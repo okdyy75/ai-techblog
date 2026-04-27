@@ -23,3 +23,7 @@ AIに関する技術記事です。
 
 - [x] [実践・機械学習モデルのデプロイ戦略：Docker, Kubernetes, そしてサーバーレス](/ai/06-ml-model-deployment-strategies)
 - [x] [生成AIのビジネス活用事例](/ai/05-generative-ai-business-cases)
+
+## エージェント・アーキテクチャ {#agent-architecture}
+
+- [x] [AIエージェントアーキテクチャの設計パターン：ReAct、Plan-and-Solve、Multi-Agent](/ai/18-ai-agent-architecture-patterns)
