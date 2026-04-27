@@ -22,6 +22,9 @@ hero:
     - theme: alt
       text: Next.js を学ぶ
       link: /nextjs/
+    - theme: alt
+      text: TypeScript を学ぶ
+      link: /typescript/
 
 features:
   - title: 🚀 Ruby 基礎から応用まで
@@ -40,4 +43,6 @@ features:
     details: モダンなAPIクエリ言語GraphQLの基本から、サーバー構築、フロントエンド連携、応用までを解説
   - title: ⚡ Next.js
     details: App Router、データ取得、SEO、デプロイなど、実務で使えるNext.js知識を順次追加
+  - title: 📘 TypeScript
+    details: 型システムの基礎から応用、フレームワーク連携、ツール活用まで型安全な開発を学ぶ
 ---

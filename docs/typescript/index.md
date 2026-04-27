@@ -67,7 +67,7 @@
 ## 6. 実践・応用例 {#practice}
 
 - [ ] [型安全なAPI設計パターン]
-- [ ] [TypeScriptでのエラーハンドリング]
+- [x] [TypeScriptでのエラーハンドリング](./06-practice/07-error-handling.md)
 - [ ] [型安全な状態管理]
 - [ ] [TypeScriptでの関数型プログラミング]
 - [ ] [TypeScript設計パターン]
