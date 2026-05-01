@@ -25,6 +25,9 @@ hero:
     - theme: alt
       text: TypeScript を学ぶ
       link: /typescript/
+    - theme: alt
+      text: PostgreSQL を学ぶ
+      link: /postgres/
 
 features:
   - title: 🚀 Ruby 基礎から応用まで
@@ -45,4 +48,6 @@ features:
     details: App Router、データ取得、SEO、デプロイなど、実務で使えるNext.js知識を順次追加
   - title: 📘 TypeScript
     details: 型システムの基礎から応用、フレームワーク連携、ツール活用まで型安全な開発を学ぶ
+  - title: 🐘 PostgreSQL
+    details: バックアップ・リストア、パフォーマンスチューニング、高度なSQL、運用管理まで包括的に解説
 ---

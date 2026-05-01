@@ -36,7 +36,7 @@ title: PostgreSQL
 - [ ] 27. PostgreSQLの拡張機能トップ10
 
 ### 5. 運用・管理 {#administration}
-- [ ] 17. バックアップとリストア戦略
+- [x] 17. [PostgreSQLのバックアップとリストア完全ガイド](./17-backup-and-restore-guide.md)
 - [ ] 18. レプリケーション：ストリーミングレプリケーションの設定
 - [ ] 19. 高可用性構成：pgpool-IIとPacemaker
 - [ ] 20. セキュリティ：ユーザー、ロール、権限管理
