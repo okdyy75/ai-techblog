@@ -25,6 +25,9 @@ hero:
     - theme: alt
       text: TypeScript を学ぶ
       link: /typescript/
+    - theme: alt
+      text: Infrastructure を学ぶ
+      link: /infrastructure/
 
 features:
   - title: 🚀 Ruby 基礎から応用まで
@@ -45,4 +48,6 @@ features:
     details: App Router、データ取得、SEO、デプロイなど、実務で使えるNext.js知識を順次追加
   - title: 📘 TypeScript
     details: 型システムの基礎から応用、フレームワーク連携、ツール活用まで型安全な開発を学ぶ
+  - title: 🏗️ Infrastructure
+    details: Docker、クラウドプラットフォーム、デプロイメント、インフラ自動化など現代のインフラ技術を習得
 ---
