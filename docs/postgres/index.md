@@ -31,7 +31,7 @@ title: PostgreSQL
 - [x] 12. [JSON/JSONBデータ型の徹底活用](./14-json-jsonb-mastery.md)
 - [ ] 13. 全文検索：pg_trgmとFTS
 - [ ] 14. PostGISによる地理空間データ入門
-- [ ] 25. ウィンドウ関数を使いこなす
+- [x] [25. ウィンドウ関数を使いこなす](./25-mastering-window-functions.md)
 - [x] 26. [CTE（共通テーブル式）による複雑なクエリの可読性向上](./13-cte-query-readability.md)
 - [ ] 27. PostgreSQLの拡張機能トップ10
 
