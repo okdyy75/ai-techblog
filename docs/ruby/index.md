@@ -72,3 +72,4 @@
 - [x] [Ractorのパフォーマンスと実用例](./05-others/09-ractor-performance.md)
 - [x] [RubyでのgRPCサーバー・クライアント実装](./05-others/10-grpc-implementation.md)
 - [2026年版：プロフェッショナルのためのRuby Gem作成完全ガイド](/ruby/06-gem.md)
+- [Ruby 3.3から始まる次世代Ruby開発：PrismパーサとJITの進化を使いこなす](/ruby/07-ruby-3-3.md)
