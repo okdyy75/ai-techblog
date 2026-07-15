@@ -16,3 +16,4 @@
 - [x] [Next.js × Stripeでサブスク課金を実装する：Webhookと権限管理の実践](./04-nextjs-stripe-subscription-webhook-authorization.md)
 - [Next.js 15 App Router 完全ガイド：React 19 時代のモダン開発を極める](/nextjs/07-next-js-15-app-router.md)
 - [2026年のNext.jsテスト戦略：App RouterとRSC時代の堅牢な開発ガイド](/nextjs/08-next-js.md)
+- [Next.js 15/16におけるデータフェッチングの極意：Server Components時代の最適パターン](/nextjs/09-next-js.md)
