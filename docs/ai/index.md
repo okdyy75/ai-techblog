@@ -27,3 +27,4 @@ AIに関する技術記事です。
 ## エージェント・アーキテクチャ {#agent-architecture}
 
 - [x] [AIエージェントアーキテクチャの設計パターン：ReAct、Plan-and-Solve、Multi-Agent](/ai/18-ai-agent-architecture-patterns)
+- [LLMセキュリティ最前線：2026年における実践的防御ガイド —自律型エージェント時代の安全なシステム構築法—](/ai/19-llm.md)
