@@ -77,3 +77,4 @@
 - [ ] [TypeScriptでのテスト戦略]
 - [ ] [TypeScriptレガシーコードのマイグレーション]
 - [2026年のTypeScriptビルド最適化戦略：大規模プロジェクトを支える高速コンパイルの極意](/typescript/08-typescript.md)
+- [2026年のTypeScriptプロジェクト構成ガイド：保守性と拡張性を両立する設計パターン](/typescript/09-typescript.md)
