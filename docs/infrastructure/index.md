@@ -26,3 +26,4 @@
 
 - [x] [AWS基礎知識：クラウドコンピューティングの入門](./aws/aws-basics.md)
 
+- [2026年におけるCI/CDパイプライン設計の決定版：Platform Engineering時代のプラクティス](/infrastructure/01-ci-cd.md)
