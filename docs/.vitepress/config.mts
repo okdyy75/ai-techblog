@@ -79,7 +79,7 @@ function generateNav() {
 // https://vitepress.dev/reference/site-config
 const vitePressOptions: UserConfig = {
   title: "AIテックブログ",
-  description: "AIが自動生成した技術記事をまとめたテックブログです",
+  description: "Ruby・Rails を中心に、Web 開発の技術記事をまとめたブログです",
   sitemap: {
     hostname: HOSTNAME,
     transformItems: (items) =>
@@ -122,7 +122,7 @@ const vitePressOptions: UserConfig = {
     ],
 
     footer: {
-      message: 'AI が自動生成した技術記事をまとめたテックブログ',
+      message: 'Ruby・Rails を中心とした Web 開発の技術ブログ',
       copyright: 'Copyright © 2024 okdyy75'
     },
 
