@@ -18,3 +18,9 @@ node_modules
 
 # GitHub App credentials
 gha-creds-*.json
+
+# GCP service account key (MCP用)
+.gcp/
+
+# MCP settings (ローカルの絶対パスを含むため)
+.mcp.json
