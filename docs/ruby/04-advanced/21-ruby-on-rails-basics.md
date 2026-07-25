@@ -1,3 +1,8 @@
+---
+title: "Ruby on Railsの基礎"
+description: "Ruby on Railsは、Rubyで書かれたオープンソースのWebアプリケーションフレームワークです。MVC（Model-View-Controller）アーキテクチャに基づいており、迅速な開発を促進するための規約を提供します。"
+---
+
 # Ruby on Railsの基礎
 
 Ruby on Railsは、Rubyで書かれたオープンソースのWebアプリケーションフレームワークです。MVC（Model-View-Controller）アーキテクチャに基づいており、迅速な開発を促進するための規約を提供します。

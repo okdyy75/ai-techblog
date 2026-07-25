@@ -4,6 +4,43 @@ import taskLists from 'markdown-it-task-lists'
 import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
 import fs from 'fs'
 import path from 'path'
+import { execSync } from 'child_process'
+
+const HOSTNAME = 'https://ai-techblog.okdyy75.com'
+
+// GitHub Pages は `/foo` と `/foo.html` の両方を 200 で返すため、
+// canonical を出さないと全記事が重複URL扱いになる。出力ファイル名に合わせて `.html` を正とする
+function canonicalUrl(relativePath: string) {
+  const p = relativePath
+    .replace(/(^|\/)index\.md$/, '$1')
+    .replace(/\.md$/, '.html')
+  return `${HOSTNAME}/${p}`
+}
+
+// git の最終コミット日を1回のログ走査で「docs配下のファイル => ISO日時」に集計する
+function buildLastmodMap(): Record<string, string> {
+  const map: Record<string, string> = {}
+  try {
+    const log = execSync('git log --pretty=format:%cI --name-only --diff-filter=ACMR -- docs', {
+      cwd: path.join(__dirname, '../..'),
+      encoding: 'utf-8',
+      maxBuffer: 256 * 1024 * 1024
+    })
+    let date = ''
+    for (const line of log.split('\n')) {
+      const t = line.trim()
+      if (!t) continue
+      if (/^\d{4}-\d{2}-\d{2}T/.test(t)) { date = t; continue }
+      // git log は新しい順に出力されるので、各ファイルの初出がそのまま最終更新日になる
+      if (t.endsWith('.md') && !map[t]) map[t] = date
+    }
+  } catch {
+    // 履歴を取得できない環境では lastmod を省略する
+  }
+  return map
+}
+
+const lastmodMap = buildLastmodMap()
 
 function generateNav() {
   const docsDir = path.join(__dirname, '..')
@@ -44,7 +81,25 @@ const vitePressOptions: UserConfig = {
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
   sitemap: {
-    hostname: 'https://ai-techblog.okdyy75.com'
+    hostname: HOSTNAME,
+    transformItems: (items) =>
+      items.map((item) => {
+        // canonical と URL 形式を揃える（`graphql/index.html` => `graphql/`）
+        const url = item.url.replace(/(^|\/)index\.html$/, '$1')
+        const source = url === '' || url.endsWith('/')
+          ? `docs/${url}index.md`
+          : `docs/${url.replace(/\.html$/, '.md')}`
+        const lastmod = lastmodMap[source]
+        return lastmod ? { ...item, url, lastmod } : { ...item, url }
+      })
+  },
+  transformPageData(pageData) {
+    pageData.frontmatter.head = [
+      ...(pageData.frontmatter.head ?? []).filter(
+        (h) => !(h[0] === 'link' && h[1]?.rel === 'canonical')
+      ),
+      ['link', { rel: 'canonical', href: canonicalUrl(pageData.relativePath) }]
+    ]
   },
     head: [
         ["script", { async: "", src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9459277760652211", crossorigin: "anonymous" }],

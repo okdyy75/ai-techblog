@@ -1,3 +1,8 @@
+---
+title: "Render.comへRailsアプリケーションをデプロイする2025年版ガイド"
+description: "かつてRailsアプリケーションのホスティングといえばHerokuが第一の選択肢でしたが、無料プランの廃止や価格改定を経て、開発者たちは新たなPaaS（Platform as a Service）を模索するようになりました。"
+---
+
 # Render.comへRailsアプリケーションをデプロイする2025年版ガイド
 
 ## はじめに

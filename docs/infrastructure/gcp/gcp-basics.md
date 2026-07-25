@@ -1,3 +1,8 @@
+---
+title: "Google Cloud Platform基礎知識：クラウドインフラの入門"
+description: "Google Cloud Platform（GCP）は、Googleが提供する包括的なクラウドコンピューティングプラットフォームです。"
+---
+
 # Google Cloud Platform基礎知識：クラウドインフラの入門
 
 ## 概要

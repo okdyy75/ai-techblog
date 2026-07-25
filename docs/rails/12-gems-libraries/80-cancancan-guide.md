@@ -1,3 +1,8 @@
+---
+title: "CanCanCanによるシンプルで強力な認可管理"
+description: "認証（Authentication）が「ユーザーが誰であるか」を検証するプロセスであるのに対し、認可（Authorization）は「そのユーザーが何をしてよいか」を決定するプロセスです。"
+---
+
 # CanCanCanによるシンプルで強力な認可管理
 
 ## 概要

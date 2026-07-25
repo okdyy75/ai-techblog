@@ -1,3 +1,8 @@
+---
+title: "41. RailsとRedis: キャッシュ、セッションストア、Sidekiqでの活用法"
+description: "Redis (REmote DIctionary Server) は、高速なインメモリ型のキーバリューストアです。"
+---
+
 # 41. RailsとRedis: キャッシュ、セッションストア、Sidekiqでの活用法
 
 ## はじめに

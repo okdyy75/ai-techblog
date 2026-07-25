@@ -1,3 +1,8 @@
+---
+title: "Next.jsのデータ取得を整理する：fetch・Server Actions・Route Handlers実践"
+description: "Next.jsのApp Routerが登場してから、データ取得（Data Fetching）の手法は大きく進化しました。"
+---
+
 # Next.jsのデータ取得を整理する：fetch・Server Actions・Route Handlers実践
 
 Next.jsのApp Routerが登場してから、データ取得（Data Fetching）の手法は大きく進化しました。以前のPages Routerでは`getStaticProps`や`getServerSideProps`といった特定の関数に依存していましたが、App RouterではReact Server Components（RSC）をベースとした、より直感的で柔軟なモデルへと移行しています。

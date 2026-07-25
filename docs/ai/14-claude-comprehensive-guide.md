@@ -1,3 +1,8 @@
+---
+title: "Claude完全ガイド：Anthropicの革新的AIモデルの全貌"
+description: "Claudeは、Anthropicが開発した次世代AIアシスタントです。2023年3月にClaude 2がリリースされ、その後Claude 3 Haiku、Sonnet、Opusなど次々と進化を遂げています。"
+---
+
 # Claude完全ガイド：Anthropicの革新的AIモデルの全貌
 
 ## 概要

@@ -1,3 +1,8 @@
+---
+title: "GraphQL APIを`graphql-ruby` gemで構築する"
+description: "RESTは長年にわたりAPI設計のデファクトスタンダードでしたが、クライアント側の要求が多様化・複雑化するにつれて、いくつかの課題が明らかになってきました。"
+---
+
 # GraphQL APIを`graphql-ruby` gemで構築する
 
 ## はじめに

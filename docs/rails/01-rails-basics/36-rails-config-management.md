@@ -1,3 +1,8 @@
+---
+title: "36. Railsにおける設定管理: credentials, Figaro, dotenvの比較と実践"
+description: "Railsアプリケーションを開発・運用する上で、APIキー、データベースのパスワード、外部サービスの認証情報など、環境ごとに異なる設定値や秘密情報を管理する必要が出てきます。"
+---
+
 # 36. Railsにおける設定管理: credentials, Figaro, dotenvの比較と実践
 
 ## はじめに

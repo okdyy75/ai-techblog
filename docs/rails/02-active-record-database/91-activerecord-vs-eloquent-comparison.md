@@ -1,3 +1,8 @@
+---
+title: "Rails ActiveRecordとLaravel Eloquentの比較: ORMの思想と実装の違い"
+description: "Web開発において、データベースとアプリケーションの間の橋渡しを行うORM（Object-Relational Mapping）は、開発効率と保守性を大きく左右する重要な要素です。"
+---
+
 # Rails ActiveRecordとLaravel Eloquentの比較: ORMの思想と実装の違い
 
 ## はじめに

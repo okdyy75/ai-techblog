@@ -1,3 +1,8 @@
+---
+title: "Rails Active RecordとLaravel Eloquentのバリデーション機能比較: 実装方法と特徴の違い"
+description: "データの整合性を保つバリデーション機能は、Webアプリケーション開発において不可欠な要素です。Ruby on RailsのActive RecordとLaravelのEloquentは、それぞれ異なるアプローチでバリデーション機能を提供しています。"
+---
+
 # Rails Active RecordとLaravel Eloquentのバリデーション機能比較: 実装方法と特徴の違い
 
 ## はじめに

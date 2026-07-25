@@ -1,3 +1,8 @@
+---
+title: "【第2回】実践！Node.jsとApollo ServerでGraphQLサーバーを構築しよう"
+description: "前回はGraphQLの基本的な概念について学びました。今回は、いよいよ手を動かして、Node.js環境で実際にGraphQLサーバーを構築していきます。サーバーライブラリには、デファクトスタンダードとも言える「Apollo Server」を利用します。"
+---
+
 # 【第2回】実践！Node.jsとApollo ServerでGraphQLサーバーを構築しよう
 
 前回はGraphQLの基本的な概念について学びました。今回は、いよいよ手を動かして、Node.js環境で実際にGraphQLサーバーを構築していきます。サーバーライブラリには、デファクトスタンダードとも言える「Apollo Server」を利用します。

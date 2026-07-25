@@ -1,3 +1,8 @@
+---
+title: "TerraformによるRailsのインフラ管理(IaC)"
+description: "手作業によるインフラ管理は、ヒューマンエラー、再現性の欠如、属人化といった多くの問題を引き起こします。Infrastructure as Code (IaC) は、このような課題を解決するために、インフラの構成をコードで記述・管理するプラクティスです。"
+---
+
 # TerraformによるRailsのインフラ管理(IaC)
 
 ## 概要

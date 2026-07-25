@@ -1,3 +1,8 @@
+---
+title: "TypeScriptの基本構文"
+description: "TypeScriptの基本構文について、変数の宣言と型注釈、基本的な型注釈、let、const、varの使い分け、配列と配列型、オブジェクトと型定義、インライン型定義、インターフェースの定義などを実例とともに解説します。"
+---
+
 # TypeScriptの基本構文
 
 TypeScriptの基本的な構文と型システムの使い方を学びます。

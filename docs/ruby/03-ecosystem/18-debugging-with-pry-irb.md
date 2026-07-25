@@ -1,3 +1,8 @@
+---
+title: "Pry/IRBでのデバッグテクニック"
+description: "Pry/IRBでのデバッグテクニックについて、IRB: Rubyの標準REPL、binding.irb: 実行中のコードに割り込む、Pry： さらに強力なREPL、インストールなどを実例とともに解説します。"
+---
+
 # Pry/IRBでのデバッグテクニック
 
 Rubyのプログラミングにおいて、デバッグは避けて通れないプロセスです。幸い、RubyにはIRB (Interactive Ruby) と、それをさらに強力にしたPryという、優れたREPL (Read-Eval-Print Loop) ツールが付属しており、これらを活用することでデバッグ作業を効率的に進めることができます。

@@ -1,3 +1,8 @@
+---
+title: "46. StimulusReflex入門: Cable-readyを使ったリアクティブな体験"
+description: "SPA (Single Page Application) のようなリッチでインタラクティブなUIを、フルスタックのRailsアプリケーションで実現したい。"
+---
+
 # 46. StimulusReflex入門: Cable-readyを使ったリアクティブな体験
 
 ## はじめに

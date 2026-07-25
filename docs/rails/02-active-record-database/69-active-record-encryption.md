@@ -1,3 +1,8 @@
+---
+title: "Active Record Encryptionを使った機密データの暗号化"
+description: "Active Record Encryptionは、Rails 7で導入された機能で、アプリケーションレベルでデータベースに保存されるデータを透明に暗号化できます。"
+---
+
 # Active Record Encryptionを使った機密データの暗号化
 
 ## はじめに

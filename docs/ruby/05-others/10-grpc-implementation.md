@@ -1,3 +1,8 @@
+---
+title: "RubyでのgRPCサーバー・クライアント実装"
+description: "gRPCは、Googleによって開発された、高性能なオープンソースのRPC（Remote Procedure Call）フレームワークです。本記事では、Rubyを使用してgRPCのサーバーとクライアントを実装する基本的な方法を解説します。"
+---
+
 # RubyでのgRPCサーバー・クライアント実装
 
 ## はじめに

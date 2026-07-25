@@ -1,3 +1,8 @@
+---
+title: "Tailwind CSSをRails 7で使うためのモダンなセットアップ"
+description: "Tailwind CSSは、ユーティリティファースト（Utility-First）のアプローチでUIを構築する、非常に人気のあるCSSフレームワークです。"
+---
+
 # Tailwind CSSをRails 7で使うためのモダンなセットアップ
 
 Tailwind CSSは、ユーティリティファースト（Utility-First）のアプローチでUIを構築する、非常に人気のあるCSSフレームワークです。あらかじめ定義されたクラス（例: `text-lg`, `font-bold`, `p-4`, `flex`）をHTMLに直接記述していくことで、CSSファイルをほとんど書かずに、高速にUIをデザインできます。

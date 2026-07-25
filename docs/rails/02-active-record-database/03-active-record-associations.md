@@ -1,3 +1,8 @@
+---
+title: "Active Recordの基本: `has_many` / `belongs_to` を使って記事とコメント機能を実装する"
+description: "Ruby on Railsの強力な機能の一つであるActive Recordは、データベースのテーブル同士の関係性をオブジェクト指向の形で直感的に扱うことを可能にします。"
+---
+
 # Active Recordの基本: `has_many` / `belongs_to` を使って記事とコメント機能を実装する
 
 ## はじめに

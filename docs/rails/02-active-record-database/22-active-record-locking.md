@@ -1,3 +1,8 @@
+---
+title: "Active Recordのロック機能（Pessimistic/Optimistic Locking）を理解して競合を防ぐ"
+description: "複数のユーザーやプロセスが同時に同じデータを更新しようとするWebアプリケーションでは、「競合状態（Race Condition）」が発生するリスクが常に存在します。"
+---
+
 # Active Recordのロック機能（Pessimistic/Optimistic Locking）を理解して競合を防ぐ
 
 ## はじめに

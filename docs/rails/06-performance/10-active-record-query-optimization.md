@@ -1,3 +1,8 @@
+---
+title: "Active Recordクエリの高速化: `joins`, `preload`, `includes`, `eager_load` の違いと使い分け"
+description: "Ruby on RailsのActive Recordは、データベースとのやり取りを抽象化してくれる非常に強力なORMです。しかし、その便利さの裏で、非効率なクエリを意図せず発行してしまうことがあります。"
+---
+
 # Active Recordクエリの高速化: `joins`, `preload`, `includes`, `eager_load` の違いと使い分け
 
 ## はじめに

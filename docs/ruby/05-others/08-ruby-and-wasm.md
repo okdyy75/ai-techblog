@@ -1,3 +1,8 @@
+---
+title: "RubyにおけるWebAssembly (Wasm) の活用"
+description: "WebAssembly（Wasm）は、ブラウザ内でバイナリコードを高速に実行するための技術です。近年、RubyコミュニティでもWasmへの対応が進んでおり、ブラウザ上でRubyを実行することが可能になりました。"
+---
+
 # RubyにおけるWebAssembly (Wasm) の活用
 
 ## はじめに

@@ -1,3 +1,8 @@
+---
+title: "Rails Active StorageとLaravel Filesystemのファイルアップロード機能比較: 実装方法と特徴の違い"
+description: "モダンなWebアプリケーションにおいて、ファイルアップロード機能は欠かせない要素です。Ruby on RailsのActive StorageとLaravelのFilesystemは、それぞれ異なるアプローチでファイル管理機能を提供しています。"
+---
+
 # Rails Active StorageとLaravel Filesystemのファイルアップロード機能比較: 実装方法と特徴の違い
 
 ## はじめに

@@ -1,3 +1,8 @@
+---
+title: "TypeScript Playground活用法：型パズルからバグ再現まで、ブラウザで完結する開発フロー"
+description: "2026年の現在、TypeScriptのエコシステムはかつてないほど成熟しました。VS Codeなどのエディタ支援も強力ですが、ブラウザ上で動作する公式の TypeScript Playground は、依然として開発者にとって手放せない強力なツールです。"
+---
+
 # TypeScript Playground活用法：型パズルからバグ再現まで、ブラウザで完結する開発フロー
 
 2026年の現在、TypeScriptのエコシステムはかつてないほど成熟しました。VS Codeなどのエディタ支援も強力ですが、ブラウザ上で動作する公式の [TypeScript Playground](https://www.typescriptlang.org/play) は、依然として開発者にとって手放せない強力なツールです。
