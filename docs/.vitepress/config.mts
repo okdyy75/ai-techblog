@@ -43,26 +43,7 @@ const NOINDEX_THIN = [
   'typescript/06-practice/07-error-handling.md'
 ]
 
-// rails/ セクションと主題が重複、または技術ブログの主題から外れている記事。
-// 本来は削除する対象で、それまでの暫定措置として検索結果から外す
-const NOINDEX_DUPLICATE = [
-  'ruby/04-advanced/21-ruby-on-rails-basics.md',
-  'ruby/04-advanced/22-active-record-basics.md',
-  'ruby/04-advanced/23-rails-routing.md',
-  'ruby/04-advanced/24-rails-views-and-templates.md',
-  'ruby/04-advanced/25-rails-controllers.md',
-  'ruby/04-advanced/26-rails-testing-introduction.md',
-  'ruby/04-advanced/27-rails-deployment-strategies.md',
-  'ruby/04-advanced/40-rails-security-best-practices.md',
-  'rails/02-active-record-database/91-rails-laravel-validation-comparison.md',
-  'rails/02-active-record-database/91-with-has-group-pivot-differences.md',
-  'rails/02-active-record-database/92-rails-laravel-migration-comparison.md',
-  'rails/02-active-record-database/93-rails-laravel-file-upload-comparison.md',
-  'api-examples.md',
-  'markdown-examples.md'
-]
-
-const NOINDEX = new Set([...NOINDEX_THIN, ...NOINDEX_DUPLICATE])
+const NOINDEX = new Set(NOINDEX_THIN)
 
 // GitHub Pages は `/foo` と `/foo.html` の両方を 200 で返すため、
 // canonical を出さないと全記事が重複URL扱いになる。出力ファイル名に合わせて `.html` を正とする
@@ -208,7 +189,7 @@ const vitePressSidebarOptions: VitePressSidebarOptions = {
   useFolderLinkFromIndexFile: true,
   hyphenToSpace: true,
   underscoreToSpace: true,
-  excludePattern: ['README.md', 'api-examples.md', 'markdown-examples.md'],
+  excludePattern: ['README.md'],
   sortMenusByFrontmatterOrder: true,
   sortMenusOrderByDescending: false,
   frontmatterOrderDefaultValue: 0,

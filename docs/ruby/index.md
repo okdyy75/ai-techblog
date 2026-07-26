@@ -53,17 +53,9 @@ description: "Ruby技術記事のカテゴリ一覧です。Ruby基礎、Ruby応
 - [x] [RBSによる型定義](./04-advanced/02-rbs-type-definition.md)
 - [x] [Rubyのリフレクション機能](./04-advanced/06-ruby-reflection.md)
 - [x] [RubyのFiberと非同期処理](./04-advanced/10-ruby-fiber.md)
-- [x] [Ruby on Railsの基礎](./04-advanced/21-ruby-on-rails-basics.md)
-- [x] [Active Recordの基礎](./04-advanced/22-active-record-basics.md)
-- [x] [Railsのルーティング](./04-advanced/23-rails-routing.md)
-- [x] [Railsのビューとテンプレート](./04-advanced/24-rails-views-and-templates.md)
-- [x] [Railsのコントローラ](./04-advanced/25-rails-controllers.md)
-- [x] [Railsのテスト入門](./04-advanced/26-rails-testing-introduction.md)
-- [x] [Railsのデプロイ戦略](./04-advanced/27-rails-deployment-strategies.md)
 - [x] [Rubyの非同期処理](./04-advanced/28-ruby-asynchronous-processing.md)
 - [x] [Sorbetを使ったRubyの型付け](./04-advanced/29-sorbet-for-ruby-typing.md)
 - [x] [mruby/CRubyの違い](./04-advanced/30-mruby-vs-cruby.md)
-- [x] [Ruby on Railsのセキュリティベストプラクティス](./04-advanced/40-rails-security-best-practices.md)
 
 ## 5. 実践・その他 {#practice}
 
