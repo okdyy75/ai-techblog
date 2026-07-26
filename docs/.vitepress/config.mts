@@ -16,6 +16,15 @@ function canonicalUrl(relativePath: string) {
   return `${HOSTNAME}/${p}`
 }
 
+// 記事側の frontmatter に `noindex: true` があれば検索対象から外す。
+// robots メタタグの出力と同時にサイトマップからも除外する
+function isNoindex(relativePath: string) {
+  const file = path.join(__dirname, '..', relativePath)
+  if (!fs.existsSync(file)) return false
+  const frontmatter = fs.readFileSync(file, 'utf-8').split(/^---\s*$/m)[1]
+  return /^noindex:\s*true\s*$/m.test(frontmatter ?? '')
+}
+
 function generateNav() {
   const docsDir = path.join(__dirname, '..')
   const categories = [
@@ -57,13 +66,24 @@ const vitePressOptions: UserConfig = {
   // git の最終コミット日を取得し、サイトマップの lastmod と記事下部の最終更新日に反映する
   lastUpdated: true,
   sitemap: {
-    hostname: HOSTNAME
+    hostname: HOSTNAME,
+    // noindex のページをサイトマップに載せると矛盾したシグナルになる
+    transformItems: (items) =>
+      items.filter((item) => {
+        const relativePath = item.url === '' || item.url.endsWith('/')
+          ? `${item.url}index.md`
+          : item.url.replace(/\.html$/, '.md')
+        return !isNoindex(relativePath)
+      })
   },
   transformPageData(pageData) {
     const head = (pageData.frontmatter.head ?? []).filter(
       (h) => !(h[0] === 'link' && h[1]?.rel === 'canonical')
     )
     head.push(['link', { rel: 'canonical', href: canonicalUrl(pageData.relativePath) }])
+    if (pageData.frontmatter.noindex) {
+      head.push(['meta', { name: 'robots', content: 'noindex, follow' }])
+    }
     pageData.frontmatter.head = head
   },
     head: [

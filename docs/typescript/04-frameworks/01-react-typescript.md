@@ -1,6 +1,8 @@
 ---
 title: "React + TypeScript"
 description: "ReactでTypeScriptを使用する際のベストプラクティスと実装方法を解説します。"
+# 解説密度が低いため加筆するまで検索対象から外す（加筆後はこの行を削除）
+noindex: true
 ---
 
 # React + TypeScript

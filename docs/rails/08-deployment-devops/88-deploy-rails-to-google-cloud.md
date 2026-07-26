@@ -1,6 +1,8 @@
 ---
 title: "Google CloudでRailsアプリケーションをデプロイする2025年版ガイド"
 description: "Google Cloud Platform (GCP) は、Googleのインフラストラクチャを活用した包括的なクラウドサービスです。Railsアプリケーションのホスティングにおいて、GCPは高性能、高可用性、そして柔軟なスケーリングを提供します。"
+# 解説密度が低いため加筆するまで検索対象から外す（加筆後はこの行を削除）
+noindex: true
 ---
 
 # Google CloudでRailsアプリケーションをデプロイする2025年版ガイド
