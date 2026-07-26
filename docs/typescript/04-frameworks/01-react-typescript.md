@@ -1,6 +1,8 @@
 ---
 title: "React + TypeScript"
 description: "ReactでTypeScriptを使用する際のベストプラクティスと実装方法を解説します。"
+# 解説が薄いため書き直すまで非公開（公開時はこの2行を削除）
+draft: true
 ---
 
 # React + TypeScript
