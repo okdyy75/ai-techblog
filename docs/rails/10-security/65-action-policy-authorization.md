@@ -1,3 +1,8 @@
+---
+title: "Action Policy: Punditに代わる次世代の認可ライブラリ"
+description: "Railsアプリケーションで認証（Authentication）と並んで重要なのが、認可（Authorization）です。認証が「誰であるか」を確認するのに対し、認可は「その人が何をしてよいか」を決定するプロセスです。"
+---
+
 # Action Policy: Punditに代わる次世代の認可ライブラリ
 
 Railsアプリケーションで認証（Authentication）と並んで重要なのが、**認可（Authorization）**です。認証が「誰であるか」を確認するのに対し、認可は「その人が何をしてよいか」を決定するプロセスです。

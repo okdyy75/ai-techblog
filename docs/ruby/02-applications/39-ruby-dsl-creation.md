@@ -1,3 +1,8 @@
+---
+title: "RubyのDSL（ドメイン固有言語）作成法"
+description: "ドメイン固有言語（Domain-Specific Language, DSL）は、特定のタスクや問題領域（ドメイン）に特化して設計されたプログラミング言語です。"
+---
+
 # RubyのDSL（ドメイン固有言語）作成法
 
 ドメイン固有言語（Domain-Specific Language, DSL）は、特定のタスクや問題領域（ドメイン）に特化して設計されたプログラミング言語です。Rubyは、その柔軟な構文とメタプログラミング機能により、内部DSL（Internal DSL）を非常に作りやすい言語として知られています。

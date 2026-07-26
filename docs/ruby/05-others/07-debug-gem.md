@@ -1,3 +1,8 @@
+---
+title: "debug.gem: Rubyの標準デバッガ"
+description: "Ruby 3.1から、debug.gemが標準のデバッガとしてバンドルされるようになりました。この記事では、debug.gemの基本的な使い方と、その強力な機能について紹介します。"
+---
+
 # debug.gem: Rubyの標準デバッガ
 
 ## はじめに

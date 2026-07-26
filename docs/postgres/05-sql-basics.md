@@ -1,5 +1,6 @@
 ---
 title: SQLの基礎：SELECT, INSERT, UPDATE, DELETE
+description: "SQL (Structured Query Language) は、リレーショナルデータベースを操作するための標準言語です。"
 ---
 
 # SQLの基礎：SELECT, INSERT, UPDATE, DELETE

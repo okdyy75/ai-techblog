@@ -1,3 +1,8 @@
+---
+title: "Active Support Concernを活用してモデルのコードをDRYに保つ"
+description: "Railsアプリケーションの開発を進める中で、複数のモデルに共通のメソッドや振る舞いを持たせたい場面がよくあります。"
+---
+
 # Active Support Concernを活用してモデルのコードをDRYに保つ
 
 ## はじめに

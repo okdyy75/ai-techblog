@@ -1,3 +1,8 @@
+---
+title: "サービスクラス（Service Object）を導入してFat Controllerを解消する"
+description: "Railsアプリケーションの開発を進めていくと、コントローラのアクション内にビジネスロジックがどんどん膨れ上がってしまうことがあります。"
+---
+
 # サービスクラス（Service Object）を導入してFat Controllerを解消する
 
 ## はじめに

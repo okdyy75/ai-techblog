@@ -1,3 +1,8 @@
+---
+title: "Rails 7の`jsbundling-rails`を使ってReactやVue.jsをモダンに統合する方法"
+description: "Rails 7は、フロントエンドの扱い方に大きな変革をもたらしました。かつての標準だったWebpackerは廃止され、よりシンプルでモダンなJavaScriptのエコシステムと直接連携するアプローチが採用されました。"
+---
+
 # Rails 7の`jsbundling-rails`を使ってReactやVue.jsをモダンに統合する方法
 
 ## はじめに

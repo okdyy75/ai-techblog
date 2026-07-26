@@ -1,3 +1,8 @@
+---
+title: "YJITの進化とパフォーマンス向上"
+description: "YJIT（Yet Another JIT）は、Shopifyによって開発され、Ruby 3.1から導入されたインプロセスのJust-In-Timeコンパイラです。"
+---
+
 # YJITの進化とパフォーマンス向上
 
 ## はじめに

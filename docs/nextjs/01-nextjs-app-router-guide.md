@@ -1,3 +1,8 @@
+---
+title: "Next.js App Router完全入門：Pages Routerとの違いと移行ポイント"
+description: "Next.js 13で導入され、現在は標準となった「App Router」。従来のPages Routerで慣れ親しんだ開発手法とは、設計思想から大きく異なります。"
+---
+
 # Next.js App Router完全入門：Pages Routerとの違いと移行ポイント
 
 Next.js 13で導入され、現在は標準となった「App Router」。従来のPages Routerで慣れ親しんだ開発手法とは、設計思想から大きく異なります。

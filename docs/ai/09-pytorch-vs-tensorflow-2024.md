@@ -1,3 +1,8 @@
+---
+title: "PyTorch vs. TensorFlow：2024年版 詳細比較とユースケース別使い分け"
+description: "深層学習の領域において、PyTorchとTensorFlowは長年にわたり二大フレームワークとして君臨してきました。かつては「研究のPyTorch、本番のTensorFlow」と言われましたが、両者ともに進化を続け、その差は縮まりつつあります。"
+---
+
 # PyTorch vs. TensorFlow：2024年版 詳細比較とユースケース別使い分け
 
 ## はじめに
