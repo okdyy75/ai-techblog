@@ -1,3 +1,8 @@
+---
+title: "Next.js × Stripeでサブスク課金を実装する：Webhookと権限管理の実践"
+description: "Next.js App Router 環境で、Stripe を利用したサブスクリプション課金を導入しようとしている中級Webエンジニアの皆さんへ。"
+---
+
 # Next.js × Stripeでサブスク課金を実装する：Webhookと権限管理の実践
 
 Next.js App Router 環境で、Stripe を利用したサブスクリプション課金を導入しようとしている中級Webエンジニアの皆さんへ。本記事では、Stripe のサブスクリプション機能を Next.js の App Router 環境にどのように統合し、堅牢な権限管理システムを構築するかについて、具体的な実装例と運用上の注意点を交えて解説します。

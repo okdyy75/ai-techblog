@@ -1,3 +1,8 @@
+---
+title: "Rails Active RecordとLaravel Eloquentのマイグレーション機能比較: スキーマ管理の違いと実装方法"
+description: "データベーススキーマの管理は、アプリケーションの成長と共に重要性を増す要素です。Ruby on RailsのActive RecordとLaravelのEloquentは、それぞれ独自のマイグレーション機能を提供し、データベースの構造変更を効率的に管理できます。"
+---
+
 # Rails Active RecordとLaravel Eloquentのマイグレーション機能比較: スキーマ管理の違いと実装方法
 
 ## はじめに

@@ -1,3 +1,8 @@
+---
+title: "Ruby製静的サイトジェネレータ"
+description: "静的サイトジェネレータ（Static Site Generator, SSG）は、Markdownなどのテンプレートファイルから、事前に静的なHTML、CSS、JavaScriptファイルを生成するツールです。"
+---
+
 # Ruby製静的サイトジェネレータ
 
 静的サイトジェネレータ（Static Site Generator, SSG）は、Markdownなどのテンプレートファイルから、事前に静的なHTML、CSS、JavaScriptファイルを生成するツールです。生成されたサイトは高速で、安全性が高く、ホスティングも容易です。

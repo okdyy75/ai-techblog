@@ -1,3 +1,8 @@
+---
+title: "ユニオン型とインターセクション型"
+description: "TypeScriptでは、既存の型を組み合わせて新しい型を作成するための強力な機能として、ユニオン型（Union Types）とインターセクション型（Intersection Types）が提供されています。"
+---
+
 # ユニオン型とインターセクション型
 
 TypeScriptでは、既存の型を組み合わせて新しい型を作成するための強力な機能として、ユニオン型（Union Types）とインターセクション型（Intersection Types）が提供されています。

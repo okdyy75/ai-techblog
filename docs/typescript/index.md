@@ -1,3 +1,8 @@
+---
+title: "TypeScript技術記事"
+description: "TypeScript技術記事のカテゴリ一覧です。TypeScript基礎、TypeScript発展、TypeScriptエコシステム、フレームワークとの連携、開発ツールと効率化、実践・応用例などのトピックを扱う記事をまとめています。"
+---
+
 # TypeScript技術記事
 
 ## 1. TypeScript基礎 {#basics}

@@ -1,5 +1,6 @@
 ---
 title: Next.jsのテスト戦略：Unit/E2E（Vitest + Playwright）を最小構成で始める
+description: "Next.jsアプリケーションの品質を担保するためには、適切なテスト戦略が不可欠です。しかし、「何を」「どのように」テストすべきか迷う開発者も多いのではないでしょうか。"
 ---
 
 # Next.jsのテスト戦略：Unit/E2E（Vitist + Playwright）を最小構成で始める

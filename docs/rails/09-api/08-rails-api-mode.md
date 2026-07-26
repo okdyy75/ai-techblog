@@ -1,3 +1,8 @@
+---
+title: "Ruby on RailsのAPIモード"
+description: "Rails 5から導入されたAPIモードは、JSON APIなど、Web APIの開発に特化したRailsアプリケーションを構築するための機能です。HTMLのビュー層やセッション管理など、APIに不要なミドルウェアをそぎ落とし、軽量で高速なAPIサーバーを構築できます。"
+---
+
 # Ruby on RailsのAPIモード
 
 Rails 5から導入されたAPIモードは、JSON APIなど、Web APIの開発に特化したRailsアプリケーションを構築するための機能です。HTMLのビュー層やセッション管理など、APIに不要なミドルウェアをそぎ落とし、軽量で高速なAPIサーバーを構築できます。

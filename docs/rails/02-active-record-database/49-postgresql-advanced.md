@@ -1,3 +1,8 @@
+---
+title: "PostgreSQLの高度な機能（JSONB、Window関数など）をRailsで活用する"
+description: "Railsは多くのデータベースをサポートしていますが、特にPostgreSQL（Postgres）との親和性は非常に高いです。"
+---
+
 # PostgreSQLの高度な機能（JSONB、Window関数など）をRailsで活用する
 
 Railsは多くのデータベースをサポートしていますが、特にPostgreSQL（Postgres）との親和性は非常に高いです。Active Recordの標準機能だけでも強力ですが、PostgreSQLが提供する独自の高度な機能を活用することで、アプリケーションのパフォーマンスや柔軟性をさらに向上させることができます。

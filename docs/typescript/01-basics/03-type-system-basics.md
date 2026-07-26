@@ -1,3 +1,8 @@
+---
+title: "型システムの基礎"
+description: "TypeScript は構造的部分型（structural typing）に基づいた静的型付け言語です。ここでは「型注釈」「型推論」「代入互換性」「トップ/ボトム型」「null/undefined」「絞り込み（narrowing）」の基礎を押さえます。"
+---
+
 # 型システムの基礎
 
 TypeScript は構造的部分型（structural typing）に基づいた静的型付け言語です。ここでは「型注釈」「型推論」「代入互換性」「トップ/ボトム型」「null/undefined」「絞り込み（narrowing）」の基礎を押さえます。

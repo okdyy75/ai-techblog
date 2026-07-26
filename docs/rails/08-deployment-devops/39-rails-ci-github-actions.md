@@ -1,3 +1,8 @@
+---
+title: "39. RailsアプリケーションのCI/CDパイプラインをGitHub Actionsで構築する"
+description: "モダンなWeb開発において、CI/CD (継続的インテグレーション/継続的デリバリー) は、開発プロセスの自動化と品質向上に不可欠なプラクティスです。"
+---
+
 # 39. RailsアプリケーションのCI/CDパイプラインをGitHub Actionsで構築する
 
 ## はじめに

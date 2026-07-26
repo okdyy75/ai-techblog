@@ -1,3 +1,8 @@
+---
+title: "Active RecordのEnumを使いこなす: 型安全で可読性の高いコードへ"
+description: "RailsのActive Recordに備わるenumは、モデルの属性を整数（integer）カラムで管理しつつ、人間が読みやすい名前で扱えるようにするための強力な機能です。"
+---
+
 # Active RecordのEnumを使いこなす: 型安全で可読性の高いコードへ
 
 RailsのActive Recordに備わる`enum`は、モデルの属性を整数（integer）カラムで管理しつつ、人間が読みやすい名前で扱えるようにするための強力な機能です。ステータス管理やカテゴリ分類など、決まった種類の値しか取らない属性に対して絶大な効果を発揮します。

@@ -1,3 +1,8 @@
+---
+title: "Next.js × Supabaseで作る実用Webアプリ：認証・DB・デプロイまで一気通貫"
+description: "現代のWeb開発において、フロントエンドの強力なフレームワークである Next.js と、Backend as a Service (BaaS) の急先鋒である Supabase の組み合わせは、最も生産性が高いスタックの一つです。"
+---
+
 # Next.js × Supabaseで作る実用Webアプリ：認証・DB・デプロイまで一気通貫
 
 現代のWeb開発において、フロントエンドの強力なフレームワークである **Next.js** と、Backend as a Service (BaaS) の急先鋒である **Supabase** の組み合わせは、最も生産性が高いスタックの一つです。

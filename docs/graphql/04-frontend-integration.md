@@ -1,3 +1,8 @@
+---
+title: "【第4回】React/Apollo ClientでGraphQL APIを叩く！フロントエンド実装入門"
+description: "これまでの回で、GraphQLサーバーの概念と構築方法について学んできました。今回は視点をフロントエンドに移し、ReactアプリケーションからGraphQLサーバーと通信する方法を解説します。"
+---
+
 # 【第4回】React/Apollo ClientでGraphQL APIを叩く！フロントエンド実装入門
 
 これまでの回で、GraphQLサーバーの概念と構築方法について学んできました。今回は視点をフロントエンドに移し、ReactアプリケーションからGraphQLサーバーと通信する方法を解説します。そのためのライブラリとして、最も人気のある「Apollo Client」を使用します。

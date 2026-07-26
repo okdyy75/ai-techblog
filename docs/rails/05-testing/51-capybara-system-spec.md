@@ -1,3 +1,8 @@
+---
+title: "System Spec（E2Eテスト）をCapybaraで書く実践ガイド"
+description: "Railsアプリケーションの品質を保証するためには、単体テスト（Model Spec）や結合テスト（Request Spec）だけでなく、ユーザーの操作をシミュレートするシステムテスト（System Spec）が不可欠です。"
+---
+
 # System Spec（E2Eテスト）をCapybaraで書く実践ガイド
 
 Railsアプリケーションの品質を保証するためには、単体テスト（Model Spec）や結合テスト（Request Spec）だけでなく、ユーザーの操作をシミュレートする**システムテスト（System Spec）**が不可欠です。システムテストは、アプリケーション全体が統合された状態で正しく動作するかを確認する、エンドツーエンド（E2E）テストです。

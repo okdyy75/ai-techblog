@@ -1,3 +1,8 @@
+---
+title: "Docker Composeを使ったRails開発環境の構築とメリット"
+description: "「新しいPCに開発環境をセットアップしたら、Rubyのバージョンが違って動かない」「チームメンバーのマシンでだけ発生する謎のエラー」「PostgreSQLやRedisのインストールが面倒」...。"
+---
+
 # Docker Composeを使ったRails開発環境の構築とメリット
 
 ## はじめに

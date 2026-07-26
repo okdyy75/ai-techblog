@@ -1,3 +1,8 @@
+---
+title: "Garnet VM: 次世代Ruby仮想マシン"
+description: "Garnet VMは、Rubyのパフォーマンスを向上させるために研究開発が進められている次世代の仮想マシンです。この記事では、Garnet VMの目標とアーキテクチャについて紹介します。"
+---
+
 # Garnet VM: 次世代Ruby仮想マシン
 
 ## はじめに
