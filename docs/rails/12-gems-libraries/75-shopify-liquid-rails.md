@@ -1,3 +1,10 @@
+---
+title: "Shopify LiquidテンプレートエンジンをRailsで活用する"
+description: "Liquid は、Shopify が開発したセキュアで柔軟なテンプレートエンジンです。Railsの標準ERBテンプレートとは異なり、Liquidはユーザー生成コンテンツや動的なテンプレートに適しており、セキュリティを重視したテンプレート環境を提供します。"
+# 解説が薄いため書き直すまで非公開（公開時はこの2行を削除）
+draft: true
+---
+
 # Shopify LiquidテンプレートエンジンをRailsで活用する
 
 ## はじめに

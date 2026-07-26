@@ -12,11 +12,11 @@
 
 ## 実践編 {#advanced}
 
-- [第6回: GraphQLのパフォーマンス最適化 - N+1問題とDataLoaderの活用](./06-performance-optimization.md)
+- 第6回: GraphQLのパフォーマンス最適化 - N+1問題とDataLoaderの活用（書き直し中）
 - [第7回: GraphQL Subscriptionでリアルタイム機能を実装する](./07-subscriptions.md)
-- [第8回: GraphQLのテスト戦略 - スキーマとリゾルバの効果的なテスト手法](./08-testing-strategies.md)
-- [第9回: GraphQLのセキュリティとベストプラクティス - 脆弱性対策と安全な運用](./09-security-best-practices.md)
-- [第10回: GraphQLの運用・監視・デバッグ - 本番環境での実践的な管理手法](./10-operations-monitoring.md)
+- 第8回: GraphQLのテスト戦略 - スキーマとリゾルバの効果的なテスト手法（書き直し中）
+- 第9回: GraphQLのセキュリティとベストプラクティス - 脆弱性対策と安全な運用（書き直し中）
+- 第10回: GraphQLの運用・監視・デバッグ - 本番環境での実践的な管理手法（書き直し中）
 - [第11回: スキーマ駆動開発を加速するGraphQL Code GeneratorとCI/CD連携](./11-codegen-cicd.md)
 - [第12回: 大規模開発を変えるGraphQL FederationとSupergraph：モノリスからの脱却](./12-federation-supergraph.md)
 - [第13回: GraphQLにおけるエラー処理とデバッグ技法 - エラーフォーマットからトレースまで](./13-error-handling-debugging.md)

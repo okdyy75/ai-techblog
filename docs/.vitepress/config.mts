@@ -16,6 +16,19 @@ function canonicalUrl(relativePath: string) {
   return `${HOSTNAME}/${p}`
 }
 
+// frontmatter に `draft: true` を持つ記事をビルド対象から外す。
+// 解説が薄く書き直しが必要な記事を、公開せず手元に残しておくために使う
+function collectDrafts(dir = path.join(__dirname, '..'), base = ''): string[] {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    if (entry.name.startsWith('.')) return []
+    const rel = base ? `${base}/${entry.name}` : entry.name
+    if (entry.isDirectory()) return collectDrafts(path.join(dir, entry.name), rel)
+    if (!entry.name.endsWith('.md')) return []
+    const frontmatter = fs.readFileSync(path.join(dir, entry.name), 'utf-8').split(/^---\s*$/m)[1]
+    return /^draft:\s*true\s*$/m.test(frontmatter ?? '') ? [rel] : []
+  })
+}
+
 function generateNav() {
   const docsDir = path.join(__dirname, '..')
   const categories = [
@@ -76,6 +89,7 @@ const vitePressOptions: UserConfig = {
             gtag('config', 'G-KV4CN8TQVS');`,
         ],
     ],
+  srcExclude: collectDrafts(),
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: generateNav(),
@@ -103,6 +117,8 @@ const vitePressOptions: UserConfig = {
 const vitePressSidebarOptions: VitePressSidebarOptions = {
   // VitePress Sidebar's options here...
   documentRootPath: '/docs',
+  // srcExclude と揃えて、下書き記事をサイドバーからも外す
+  excludeFilesByFrontmatterFieldName: 'draft',
   collapsed: true,
   capitalizeFirst: true,
   useTitleFromFileHeading: true,
