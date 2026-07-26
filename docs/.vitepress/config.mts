@@ -16,6 +16,19 @@ function canonicalUrl(relativePath: string) {
   return `${HOSTNAME}/${p}`
 }
 
+// frontmatter に `draft: true` を持つ記事をビルド対象から外す。
+// 解説が薄く書き直しが必要な記事を、公開せず手元に残しておくために使う
+function collectDrafts(dir = path.join(__dirname, '..'), base = ''): string[] {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    if (entry.name.startsWith('.')) return []
+    const rel = base ? `${base}/${entry.name}` : entry.name
+    if (entry.isDirectory()) return collectDrafts(path.join(dir, entry.name), rel)
+    if (!entry.name.endsWith('.md')) return []
+    const frontmatter = fs.readFileSync(path.join(dir, entry.name), 'utf-8').split(/^---\s*$/m)[1]
+    return /^draft:\s*true\s*$/m.test(frontmatter ?? '') ? [rel] : []
+  })
+}
+
 function generateNav() {
   const docsDir = path.join(__dirname, '..')
   const categories = [
@@ -56,6 +69,7 @@ const vitePressOptions: UserConfig = {
   description: "Ruby・Rails を中心に、Web 開発の技術記事をまとめたブログです",
   // git の最終コミット日を取得し、サイトマップの lastmod と記事下部の最終更新日に反映する
   lastUpdated: true,
+  srcExclude: collectDrafts(),
   sitemap: {
     hostname: HOSTNAME
   },
@@ -113,6 +127,8 @@ const vitePressSidebarOptions: VitePressSidebarOptions = {
   hyphenToSpace: true,
   underscoreToSpace: true,
   excludePattern: ['README.md'],
+  // srcExclude と揃えて、下書き記事をサイドバーからも外す
+  excludeFilesByFrontmatterFieldName: 'draft',
   sortMenusByFrontmatterOrder: true,
   sortMenusOrderByDescending: false,
   frontmatterOrderDefaultValue: 0,
