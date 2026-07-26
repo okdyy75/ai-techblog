@@ -1,3 +1,8 @@
+---
+title: "Hotwire（Turbo/Stimulus）で作る、SPAのようなUXを持つ動的アプリケーション"
+description: "近年、ReactやVue.jsといったJavaScriptフレームワークを使ったSPA（Single Page Application）がリッチなUI/UXを実現する主流な方法となっています。"
+---
+
 # Hotwire（Turbo/Stimulus）で作る、SPAのようなUXを持つ動的アプリケーション
 
 ## はじめに

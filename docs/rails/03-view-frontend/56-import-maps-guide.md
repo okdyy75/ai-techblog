@@ -1,3 +1,8 @@
+---
+title: "Import mapsを理解する: JavaScriptの依存関係をシンプルに管理"
+description: "Rails 7では、JavaScriptの扱い方が大きく変わりました。これまでのWebpackerやSprocketsによるアセットのビルド・バンドルという考え方に加え、Import mapsという新しいアプローチがデフォルトになりました。"
+---
+
 # Import mapsを理解する: JavaScriptの依存関係をシンプルに管理
 
 Rails 7では、JavaScriptの扱い方が大きく変わりました。これまでのWebpackerやSprocketsによるアセットのビルド・バンドルという考え方に加え、**Import maps**という新しいアプローチがデフォルトになりました。

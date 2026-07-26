@@ -1,3 +1,8 @@
+---
+title: "Motion UIとTurboを連携させたリッチなUIアニメーション"
+description: "Hotwire の Turbo は、RailsアプリケーションにSPAのような高速なユーザー体験をもたらします。しかし、標準の機能だけでは、ページの一部が更新される際の味気ない表示切り替えになりがちです。"
+---
+
 # Motion UIとTurboを連携させたリッチなUIアニメーション
 
 ## 概要

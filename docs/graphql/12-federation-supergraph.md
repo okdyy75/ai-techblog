@@ -1,3 +1,8 @@
+---
+title: "【第12回】大規模開発を変えるGraphQL FederationとSupergraph：モノリスからの脱却"
+description: "GraphQL連載、第12回へようこそ！ 前回は「GraphQL Code Generator」を用いたスキーマ駆動開発について解説しました。単一のチーム、単一のリポジトリで開発している間は、このアプローチで十分に型安全かつ高速な開発が可能です。"
+---
+
 # 【第12回】大規模開発を変えるGraphQL FederationとSupergraph：モノリスからの脱却
 
 GraphQL連載、第12回へようこそ！

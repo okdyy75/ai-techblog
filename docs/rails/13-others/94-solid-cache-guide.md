@@ -1,3 +1,8 @@
+---
+title: "RailsアプリケーションにおけるSolid Cacheの活用法：高パフォーマンスキャッシュ戦略"
+description: "Rails 8から、Railsアプリケーションのキャッシュ層に新しい選択肢が加わりました。それが「Solid Cache」です。"
+---
+
 # RailsアプリケーションにおけるSolid Cacheの活用法：高パフォーマンスキャッシュ戦略
 
 ## はじめに

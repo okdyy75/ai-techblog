@@ -1,3 +1,8 @@
+---
+title: "38. Avo/Administrate/Trestle: Rails製管理画面gemの比較と選択"
+description: "多くのWebアプリケーションでは、開発者や運用者がデータを管理するための管理画面が必要です。これをゼロから作るのは手間がかかりますが、Railsのエコシステムには、管理画面を素早く構築するための優れたgemが多数存在します。"
+---
+
 # 38. Avo/Administrate/Trestle: Rails製管理画面gemの比較と選択
 
 ## はじめに

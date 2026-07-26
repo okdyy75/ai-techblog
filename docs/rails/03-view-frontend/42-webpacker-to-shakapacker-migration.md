@@ -1,3 +1,8 @@
+---
+title: "42. WebpackerからShakapackerへの移行ガイド"
+description: "Rails 5と6の時代、JavaScriptのビルドとバンドルは Webpacker gemによって担われていました。"
+---
+
 # 42. WebpackerからShakapackerへの移行ガイド
 
 ## はじめに

@@ -1,3 +1,8 @@
+---
+title: "45. RailsにおけるAPIドキュメントの自動生成 (RSwag/Committee)"
+description: "RailsでAPIを開発する際、そのAPIが「どのようなエンドポイントを持ち、どのようなパラメータを受け取り、どのようなレスポンスを返すのか」を明確に示すドキュメントは不可欠です。"
+---
+
 # 45. RailsにおけるAPIドキュメントの自動生成 (RSwag/Committee)
 
 ## はじめに

@@ -1,3 +1,8 @@
+---
+title: "Propshaftアセットパイプライン入門: Sprocketsからの移行とメリット"
+description: "Rails 7では、アセットパイプラインの新しい選択肢としてPropshaftが導入されました。これは、長年RailsのデフォルトであったSprocketsに代わる、よりシンプルで高速なアセット管理ライブラリです。"
+---
+
 # Propshaftアセットパイプライン入門: Sprocketsからの移行とメリット
 
 Rails 7では、アセットパイプラインの新しい選択肢として**Propshaft**が導入されました。これは、長年RailsのデフォルトであったSprocketsに代わる、よりシンプルで高速なアセット管理ライブラリです。

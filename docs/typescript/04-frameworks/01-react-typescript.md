@@ -1,3 +1,8 @@
+---
+title: "React + TypeScript"
+description: "ReactでTypeScriptを使用する際のベストプラクティスと実装方法を解説します。"
+---
+
 # React + TypeScript
 
 ReactでTypeScriptを使用する際のベストプラクティスと実装方法を解説します。

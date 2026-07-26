@@ -1,3 +1,8 @@
+---
+title: "Active Recordの基礎"
+description: "Active Recordは、Ruby on Railsに組み込まれたORM（Object-Relational Mapping）ライブラリです。"
+---
+
 # Active Recordの基礎
 
 Active Recordは、Ruby on Railsに組み込まれたORM（Object-Relational Mapping）ライブラリです。データベースのテーブルをRubyのクラスに、テーブルの行をRubyのオブジェクトにマッピングすることで、データベース操作を直感的に行うことができます。

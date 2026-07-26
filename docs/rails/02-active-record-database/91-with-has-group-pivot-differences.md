@@ -1,3 +1,8 @@
+---
+title: "ORM クエリメソッドの違い：with、has、group、pivotの使い分けと実装比較"
+description: "データベースクエリを扱う際、ORM（Object-Relational Mapping）では様々なメソッドが提供されています。特にwith、has、group、pivotは、それぞれ異なる用途で使用される重要なメソッドです。"
+---
+
 # ORM クエリメソッドの違い：with、has、group、pivotの使い分けと実装比較
 
 ## はじめに

@@ -1,3 +1,8 @@
+---
+title: "【第7回】GraphQL Subscriptionでリアルタイム機能を実装する"
+description: "GraphQL Subscriptionを使えば、チャット、通知、ライブアップデートなどのリアルタイム機能を簡単に実装できます。この記事では、シンプルなコード例でSubscriptionの基本的な実装方法を説明します。"
+---
+
 # 【第7回】GraphQL Subscriptionでリアルタイム機能を実装する
 
 GraphQL Subscriptionを使えば、チャット、通知、ライブアップデートなどのリアルタイム機能を簡単に実装できます。この記事では、シンプルなコード例でSubscriptionの基本的な実装方法を説明します。

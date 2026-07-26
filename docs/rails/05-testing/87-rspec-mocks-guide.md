@@ -1,3 +1,8 @@
+---
+title: "RSpec Mocksの高度な使い方: double, spy, stubの活用"
+description: "RSpecは、Railsコミュニティで広く使われているテストフレームワークです。その中でもrspec-mocksは、テスト対象のオブジェクト（SUT, System Under Test）を隔離し、外部の依存関係を模倣するための強力な機能を提供します。"
+---
+
 # RSpec Mocksの高度な使い方: double, spy, stubの活用
 
 ## 概要

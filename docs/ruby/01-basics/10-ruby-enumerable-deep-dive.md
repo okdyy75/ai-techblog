@@ -1,3 +1,8 @@
+---
+title: "RubyのEnumerable完全入門"
+description: "Rubyのプログラミングにおいて、配列(Array)やハッシュ(Hash)などのコレクションを扱う場面は非常に多くあります。Enumerableモジュールは、これらのコレクションオブジェクトを効率的に操作するための強力なメソッド群を提供します。"
+---
+
 # RubyのEnumerable完全入門
 
 ## はじめに

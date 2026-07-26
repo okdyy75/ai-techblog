@@ -1,3 +1,8 @@
+---
+title: "TypeScript AST操作とトランスフォーム"
+description: "TypeScriptの抽象構文木（AST）を扱えるようになると、コードリファクタリングや静的解析、独自ツール開発の幅が一気に広がります。 本記事では、TypeScript中級者向けに Compiler API と ts-morph の実践的な使い方をまとめます。"
+---
+
 # TypeScript AST操作とトランスフォーム
 
 TypeScriptの抽象構文木（AST）を扱えるようになると、コードリファクタリングや静的解析、独自ツール開発の幅が一気に広がります。

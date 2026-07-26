@@ -1,3 +1,8 @@
+---
+title: "Trilogy: 新しいMySQLデータベースアダプタ"
+description: "Trilogyは、GitHubによって開発された新しいMySQL互換データベースクライアントです。Rails 7.1から、mysql2に代わる選択肢としてサポートされるようになりました。"
+---
+
 # Trilogy: 新しいMySQLデータベースアダプタ
 
 ## はじめに
