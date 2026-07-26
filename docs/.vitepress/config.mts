@@ -57,6 +57,8 @@ const vitePressOptions: UserConfig = {
   sitemap: {
     hostname: HOSTNAME
   },
+  // git の最終コミット日を取得し、サイトマップの lastmod と記事下部の最終更新日に反映する
+  lastUpdated: true,
   transformPageData(pageData) {
     const head = (pageData.frontmatter.head ?? []).filter(
       (h) => !(h[0] === 'link' && h[1]?.rel === 'canonical')
