@@ -4,6 +4,7 @@ import taskLists from 'markdown-it-task-lists'
 import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
 import fs from 'fs'
 import path from 'path'
+import { execSync } from 'child_process'
 
 const HOSTNAME = 'https://ai-techblog.okdyy75.com'
 
@@ -15,6 +16,31 @@ function canonicalUrl(relativePath: string) {
     .replace(/\.md$/, '.html')
   return `${HOSTNAME}/${p}`
 }
+
+// git の最終コミット日を1回のログ走査で「docs配下のファイル => ISO日時」に集計する
+function buildLastmodMap(): Record<string, string> {
+  const map: Record<string, string> = {}
+  try {
+    const log = execSync('git log --pretty=format:%cI --name-only --diff-filter=ACMR -- docs', {
+      cwd: path.join(__dirname, '../..'),
+      encoding: 'utf-8',
+      maxBuffer: 256 * 1024 * 1024
+    })
+    let date = ''
+    for (const line of log.split('\n')) {
+      const t = line.trim()
+      if (!t) continue
+      if (/^\d{4}-\d{2}-\d{2}T/.test(t)) { date = t; continue }
+      // git log は新しい順に出力されるので、各ファイルの初出がそのまま最終更新日になる
+      if (t.endsWith('.md') && !map[t]) map[t] = date
+    }
+  } catch {
+    // 履歴を取得できない環境では lastmod を省略する
+  }
+  return map
+}
+
+const lastmodMap = buildLastmodMap()
 
 function generateNav() {
   const docsDir = path.join(__dirname, '..')
@@ -55,7 +81,17 @@ const vitePressOptions: UserConfig = {
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
   sitemap: {
-    hostname: HOSTNAME
+    hostname: HOSTNAME,
+    transformItems: (items) =>
+      items.map((item) => {
+        // canonical と URL 形式を揃える（`graphql/index.html` => `graphql/`）
+        const url = item.url.replace(/(^|\/)index\.html$/, '$1')
+        const relativePath = url === '' || url.endsWith('/')
+          ? `${url}index.md`
+          : url.replace(/\.html$/, '.md')
+        const lastmod = lastmodMap[`docs/${relativePath}`]
+        return lastmod ? { ...item, url, lastmod } : { ...item, url }
+      })
   },
   transformPageData(pageData) {
     const head = (pageData.frontmatter.head ?? []).filter(
