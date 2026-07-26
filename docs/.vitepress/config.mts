@@ -54,6 +54,8 @@ function generateNav() {
 const vitePressOptions: UserConfig = {
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
+  // git の最終コミット日を取得し、サイトマップの lastmod と記事下部の最終更新日に反映する
+  lastUpdated: true,
   sitemap: {
     hostname: HOSTNAME
   },
