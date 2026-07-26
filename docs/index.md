@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "AIテックブログ"
-  text: "AIが自動生成した技術記事をまとめたテックブログです"
+  text: "Ruby・Rails を中心とした Web 開発の技術ブログ"
   tagline: "Ruby・Rails に特化した包括的な技術記事コレクション"
   actions:
     - theme: brand

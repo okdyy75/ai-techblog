@@ -53,7 +53,7 @@ function generateNav() {
 // https://vitepress.dev/reference/site-config
 const vitePressOptions: UserConfig = {
   title: "AIテックブログ",
-  description: "AIが自動生成した技術記事をまとめたテックブログです",
+  description: "Ruby・Rails を中心に、Web 開発の技術記事をまとめたブログです",
   // git の最終コミット日を取得し、サイトマップの lastmod と記事下部の最終更新日に反映する
   lastUpdated: true,
   sitemap: {
@@ -67,7 +67,7 @@ const vitePressOptions: UserConfig = {
     pageData.frontmatter.head = head
   },
     head: [
-        ["script", { async: "", src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9459277760652211", crossorigin: "anonymous" }],
+        // AdSense は手動対策の解除まで停止（コンテンツポリシー面のリスク回避）
         ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-KV4CN8TQVS" }],
         [
             "script",
@@ -87,7 +87,7 @@ const vitePressOptions: UserConfig = {
     ],
 
     footer: {
-      message: 'AI が自動生成した技術記事をまとめたテックブログ',
+      message: 'Ruby・Rails を中心とした Web 開発の技術ブログ',
       copyright: 'Copyright © 2024 okdyy75'
     },
 
