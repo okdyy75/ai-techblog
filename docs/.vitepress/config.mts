@@ -112,7 +112,7 @@ const vitePressSidebarOptions: VitePressSidebarOptions = {
   useFolderLinkFromIndexFile: true,
   hyphenToSpace: true,
   underscoreToSpace: true,
-  excludePattern: ['README.md', 'api-examples.md', 'markdown-examples.md'],
+  excludePattern: ['README.md'],
   sortMenusByFrontmatterOrder: true,
   sortMenusOrderByDescending: false,
   frontmatterOrderDefaultValue: 0,
