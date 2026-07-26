@@ -5,6 +5,17 @@ import { VitePressSidebarOptions } from 'vitepress-sidebar/types'
 import fs from 'fs'
 import path from 'path'
 
+const HOSTNAME = 'https://ai-techblog.okdyy75.com'
+
+// GitHub Pages は `/foo` と `/foo.html` の両方を 200 で返すため、
+// canonical を出さないと全記事が重複URL扱いになる。出力ファイル名に合わせて `.html` を正とする
+function canonicalUrl(relativePath: string) {
+  const p = relativePath
+    .replace(/(^|\/)index\.md$/, '$1')
+    .replace(/\.md$/, '.html')
+  return `${HOSTNAME}/${p}`
+}
+
 function generateNav() {
   const docsDir = path.join(__dirname, '..')
   const categories = [
@@ -44,7 +55,14 @@ const vitePressOptions: UserConfig = {
   title: "AIテックブログ",
   description: "AIが自動生成した技術記事をまとめたテックブログです",
   sitemap: {
-    hostname: 'https://ai-techblog.okdyy75.com'
+    hostname: HOSTNAME
+  },
+  transformPageData(pageData) {
+    const head = (pageData.frontmatter.head ?? []).filter(
+      (h) => !(h[0] === 'link' && h[1]?.rel === 'canonical')
+    )
+    head.push(['link', { rel: 'canonical', href: canonicalUrl(pageData.relativePath) }])
+    pageData.frontmatter.head = head
   },
     head: [
         ["script", { async: "", src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9459277760652211", crossorigin: "anonymous" }],
