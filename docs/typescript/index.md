@@ -7,8 +7,8 @@ description: "TypeScript技術記事のカテゴリ一覧です。TypeScript基�
 
 ## 1. TypeScript基礎 {#basics}
 
-- [x] [TypeScriptのインストールとセットアップ](./01-basics/01-typescript-setup.md)
-- [x] [TypeScriptの基本構文](./01-basics/02-typescript-syntax.md)
+- [ ] [TypeScriptのインストールとセットアップ]（書き直し中）
+- [ ] [TypeScriptの基本構文]（書き直し中）
 - [x] [型システムの基礎](./01-basics/03-type-system-basics.md)
 - [x] [プリミティブ型とリテラル型](./01-basics/04-primitive-and-literal-types.md)
 - [x] [オブジェクト型とインターフェース](./01-basics/05-object-types-and-interfaces.md)
@@ -45,7 +45,7 @@ description: "TypeScript技術記事のカテゴリ一覧です。TypeScript基�
 
 ## 4. フレームワークとの連携 {#frameworks}
 
-- [x] [React + TypeScript](./04-frameworks/01-react-typescript.md)
+- [ ] [React + TypeScript]（書き直し中）
 - [ ] [Vue.js + TypeScript]
 - [ ] [Angular TypeScript]
 - [ ] [Next.js + TypeScript]
@@ -63,7 +63,7 @@ description: "TypeScript技術記事のカテゴリ一覧です。TypeScript基�
 - [ ] [TypeScript デバッグ手法]
 - [ ] [TypeScript リファクタリング]
 - [ ] [type-fest: 便利なユーティリティ型]
-- [x] [Zod: ランタイム型検証](./05-tools/06-zod-runtime-validation.md)
+- [ ] [Zod: ランタイム型検証]（書き直し中）
 - [ ] [io-ts: 関数型アプローチの型検証]
 - [x] [TypeScript AST操作とトランスフォーム](./05-tools/08-typescript-ast-transform.md)
 - [x] [TypeScript Playground活用法](./05-tools/09-typescript-playground-guide.md)
@@ -72,11 +72,11 @@ description: "TypeScript技術記事のカテゴリ一覧です。TypeScript基�
 ## 6. 実践・応用例 {#practice}
 
 - [ ] [型安全なAPI設計パターン]
-- [x] [TypeScriptでのエラーハンドリング](./06-practice/07-error-handling.md)
+- [ ] [TypeScriptでのエラーハンドリング]（書き直し中）
 - [ ] [型安全な状態管理]
 - [ ] [TypeScriptでの関数型プログラミング]
 - [ ] [TypeScript設計パターン]
-- [x] [大規模TypeScriptプロジェクトの構成](./06-practice/06-large-project-structure.md)
+- [ ] [大規模TypeScriptプロジェクトの構成]（書き直し中）
 - [ ] [TypeScriptでのパフォーマンス最適化]
 - [ ] [TypeScriptでのセキュリティベストプラクティス]
 - [ ] [TypeScriptでのテスト戦略]
