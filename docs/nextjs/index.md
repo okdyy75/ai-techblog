@@ -19,3 +19,5 @@ description: "Next.jsのカテゴリ一覧です。入門などのトピック�
 - [ ] Next.jsで多言語サイトを作る：i18n設計とルーティング実装のベストプラクティス
 - [x] [Next.jsのテスト戦略：Unit/E2E（Vitest + Playwright）を最小構成で始める](./06-nextjs-testing-vitest-playwright.md)
 - [x] [Next.js × Stripeでサブスク課金を実装する：Webhookと権限管理の実践](./04-nextjs-stripe-subscription-webhook-authorization.md)
+- [Next.js 15 App Router 完全ガイド：React 19 時代のモダン開発を極める](/nextjs/07-next-js-15-app-router.md)
+- [2026年のNext.jsテスト戦略：App RouterとRSC時代の堅牢な開発ガイド](/nextjs/08-next-js.md)
