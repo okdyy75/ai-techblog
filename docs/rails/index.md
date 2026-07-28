@@ -129,3 +129,4 @@ Ruby on Railsに関する技術記事をトピック別にまとめました。
 - [x] [Railsアプリケーションにおける設定ファイルのベストプラクティス](/rails/13-others/89-rails-settings-best-practices)
 - [x] [RailsにおけるAPIバージョニング戦略](/rails/13-others/90-api-versioning-strategies)
 - [x] [RailsアプリケーションにおけるSolid Cacheの活用法：高パフォーマンスキャッシュ戦略](/rails/13-others/94-solid-cache-guide)
+- [Rails 8新機能徹底解説：Redis不要の「脱・外部依存」で加速するモダン開発](/rails/14-rails-8.md)
