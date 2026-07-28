@@ -1,3 +1,8 @@
+---
+title: "Ruby技術記事"
+description: "Ruby技術記事のカテゴリ一覧です。Ruby基礎、Ruby応用、Rubyエコシステム、発展トピック、実践・その他などのトピックを扱う記事をまとめています。"
+---
+
 # Ruby技術記事
 
 ## 1. Ruby基礎 {#basics}

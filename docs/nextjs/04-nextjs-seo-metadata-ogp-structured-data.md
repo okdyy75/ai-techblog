@@ -1,3 +1,8 @@
+---
+title: "Next.jsのSEO最適化：metadata API・OGP・構造化データの実践テクニック"
+description: "Next.jsのApp Routerは、アプリケーションのルーティングとレンダリングのパラダイムを大きく変えました。それに伴い、検索エンジン最適化（SEO）戦略も進化させる必要があります。"
+---
+
 # Next.jsのSEO最適化：metadata API・OGP・構造化データの実践テクニック
 
 ## 1. 概要

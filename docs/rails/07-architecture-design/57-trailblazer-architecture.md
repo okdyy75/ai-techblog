@@ -1,3 +1,8 @@
+---
+title: "Trailblazerアーキテクチャを導入して大規模Railsアプリケーションを構築する"
+description: "Railsは「設定より規約（Convention over Configuration）」の原則に基づき、迅速なアプリケーション開発を可能にします。"
+---
+
 # Trailblazerアーキテクチャを導入して大規模Railsアプリケーションを構築する
 
 Railsは「設定より規約（Convention over Configuration）」の原則に基づき、迅速なアプリケーション開発を可能にします。しかし、アプリケーションが成長し、ビジネスロジックが複雑化するにつれて、いわゆる「Fat Model, Skinny Controller」というRailsの伝統的なパターンだけでは、コードの置き場所に悩むことが増えてきます。

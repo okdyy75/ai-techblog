@@ -1,3 +1,8 @@
+---
+title: "ChatGPT完全ガイド：OpenAIの革新的AIモデルの全貌"
+description: "ChatGPTは、OpenAIが開発した大規模言語モデル（LLM）ベースのチャットボットです。2022年11月にGPT-3.5を基盤とした初版がリリースされ、その後GPT-4、GPT-4 Turbo、GPT-4oなど次々と進化を遂げています。"
+---
+
 # ChatGPT完全ガイド：OpenAIの革新的AIモデルの全貌
 
 ## 概要

@@ -1,3 +1,8 @@
+---
+title: "Kamal (旧MRSK) を使ったRailsアプリケーションのデプロイ戦略"
+description: "Railsアプリケーションのデプロイには、HerokuやRenderのようなPaaS、Capistranoのようなデプロイスクリプト、あるいはCI/CDパイプラインからの手動デプロイなど、様々な選択肢があります。"
+---
+
 # Kamal (旧MRSK) を使ったRailsアプリケーションのデプロイ戦略
 
 Railsアプリケーションのデプロイには、HerokuやRenderのようなPaaS、Capistranoのようなデプロイスクリプト、あるいはCI/CDパイプラインからの手動デプロイなど、様々な選択肢があります。

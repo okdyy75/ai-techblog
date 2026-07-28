@@ -1,3 +1,8 @@
+---
+title: "Rails技術記事"
+description: "Rails技術記事のカテゴリ一覧です。Rails基礎、Active Record / データベース、View / フロントエンド、Controller / ルーティング、テスト、パフォーマンスなどのトピックを扱う記事をまとめています。"
+---
+
 # Rails技術記事
 
 Ruby on Railsに関する技術記事をトピック別にまとめました。

@@ -1,3 +1,8 @@
+---
+title: "Universal Symbol: Ruby 3.3での変更点"
+description: "Ruby 3.3では、Symbolの挙動に重要な変更が加えられました。すべてのSymbolが不変（immutable）かつfrozenとして扱われるようになり、これを「Universal Symbol」と呼びます。"
+---
+
 # Universal Symbol: Ruby 3.3での変更点
 
 ## はじめに

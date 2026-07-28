@@ -1,3 +1,8 @@
+---
+title: "RAG（Retrieval-Augmented Generation）の仕組みと活用法"
+description: "大規模言語モデル（LLM）は、その膨大な知識量と自然な文章生成能力で、私たちの情報収集やコンテンツ作成の方法を大きく変えつつあります。しかし、LLMには「学習データにない最新情報に対応できない」「ハルシネーション（誤情報生成）のリスクがある」といった課題も存在します。"
+---
+
 # RAG（Retrieval-Augmented Generation）の仕組みと活用法
 
 ## はじめに

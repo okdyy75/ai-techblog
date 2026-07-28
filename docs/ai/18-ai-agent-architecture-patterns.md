@@ -1,5 +1,6 @@
 ---
 title: AIエージェントアーキテクチャの設計パターン：ReAct、Plan-and-Solve、Multi-Agent
+description: "ChatGPTやClaudeといったAIとの対話が日常化した今、次の一手として注目されているのが「AIエージェント」です。単なる質問応答を超え、外部ツールを使いこなし、複雑なタスクを自律的に遂行するAIエージェントは、Webアプリケーションの可能性を大きく広げます。"
 ---
 
 # AIエージェントアーキテクチャの設計パターン：ReAct、Plan-and-Solve、Multi-Agent

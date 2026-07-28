@@ -1,3 +1,8 @@
+---
+title: "Heroku基礎知識：クラウドプラットフォームの入門"
+description: "Herokuは、開発者がアプリケーションを簡単にデプロイ・管理できるPaaS（Platform as a Service）プラットフォームです。2007年に創業され、現在はSalesforceの子会社として運営されています。"
+---
+
 # Heroku基礎知識：クラウドプラットフォームの入門
 
 ## 概要

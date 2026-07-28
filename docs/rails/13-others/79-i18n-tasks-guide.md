@@ -1,3 +1,8 @@
+---
+title: "i18n-tasks gemでRailsの多言語対応を効率化する"
+description: "Railsの国際化（i18n）機能は、アプリケーションを多言語対応させるための強力な仕組みです。しかし、プロジェクトが成長するにつれて、config/localesディレクトリ内のYAMLファイルは肥大化し、管理が困難になります。"
+---
+
 # i18n-tasks gemでRailsの多言語対応を効率化する
 
 ## 概要

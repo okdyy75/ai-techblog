@@ -1,3 +1,8 @@
+---
+title: "Rackの基礎とミドルウェア"
+description: "Rackは、RubyのWebサーバーとWebフレームワーク（Rails, Sinatraなど）の間の標準的なインターフェースを提供するライブラリです。"
+---
+
 # Rackの基礎とミドルウェア
 
 Rackは、RubyのWebサーバーとWebフレームワーク（Rails, Sinatraなど）の間の標準的なインターフェースを提供するライブラリです。ほとんどのRuby製WebフレームワークはRackをベースにしており、Rackを理解することは、Webアプリケーションがどのように動作しているかを深く知る上で非常に重要です。

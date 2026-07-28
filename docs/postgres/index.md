@@ -1,5 +1,6 @@
 ---
 title: PostgreSQL
+description: "PostgreSQLのカテゴリ一覧です。記事一覧、PostgreSQL基礎、インデックス・パフォーマンス、トランザクション・データベース設計、高度なデータ型・機能、運用・管理、大規模データ・統合などのトピックを扱う記事をまとめています。"
 ---
 
 # PostgreSQL

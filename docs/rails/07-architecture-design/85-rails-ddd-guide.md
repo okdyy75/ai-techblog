@@ -1,3 +1,8 @@
+---
+title: "Railsにおけるドメイン駆動設計(DDD)入門"
+description: "Railsは「設定より規約（CoC）」の思想に基づき、Active Recordパターンを中心とした迅速な開発を可能にします。"
+---
+
 # Railsにおけるドメイン駆動設計(DDD)入門
 
 ## 概要

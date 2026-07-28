@@ -1,3 +1,8 @@
+---
+title: "主要LLM（GPT、Gemini、Claude）の比較"
+description: "近年、大規模言語モデル（LLM）の進化は目覚ましく、OpenAIのGPTシリーズ、GoogleのGemini、AnthropicのClaudeなど、様々な高性能モデルが登場しています。"
+---
+
 # 主要LLM（GPT、Gemini、Claude）の比較
 
 ## はじめに

@@ -1,3 +1,8 @@
+---
+title: "NamespaceとModule"
+description: "TypeScriptでは、コードを整理し、グローバルスコープの汚染を防ぐために、モジュール（Modules） と 名前空間（Namespaces） という2つの主要な方法が提供されています。"
+---
+
 # NamespaceとModule
 
 TypeScriptでは、コードを整理し、グローバルスコープの汚染を防ぐために、**モジュール（Modules）** と **名前空間（Namespaces）** という2つの主要な方法が提供されています。現代のTypeScript開発では、**モジュールが標準的で推奨されるアプローチ**です。

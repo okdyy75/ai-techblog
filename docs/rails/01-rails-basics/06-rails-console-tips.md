@@ -1,3 +1,8 @@
+---
+title: "Rails開発が捗る！`rails console`の便利な使い方10選"
+description: "rails console（またはrails c）は、Rails開発者にとって最も強力なツールの一つです。アプリケーションのコードやデータを対話的に操作できるこの環境を使いこなすことで、デバッグの効率や開発スピードは飛躍的に向上します。"
+---
+
 # Rails開発が捗る！`rails console`の便利な使い方10選
 
 ## はじめに

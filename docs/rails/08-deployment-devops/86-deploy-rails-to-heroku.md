@@ -1,3 +1,8 @@
+---
+title: "HerokuへRailsアプリケーションをデプロイする2025年版ガイド"
+description: "Herokuは、2007年に設立されたPaaS（Platform as a Service）の代表格であり、長年にわたってRailsアプリケーションのデプロイメントにおいて最も人気のあるプラットフォームの一つでした。"
+---
+
 # HerokuへRailsアプリケーションをデプロイする2025年版ガイド
 
 ## はじめに
