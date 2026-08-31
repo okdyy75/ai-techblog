@@ -25,3 +25,4 @@ description: "GraphQL チュートリアルのカテゴリ一覧です。基礎�
 - [第11回: スキーマ駆動開発を加速するGraphQL Code GeneratorとCI/CD連携](./11-codegen-cicd.md)
 - [第12回: 大規模開発を変えるGraphQL FederationとSupergraph：モノリスからの脱却](./12-federation-supergraph.md)
 - [第13回: GraphQLにおけるエラー処理とデバッグ技法 - エラーフォーマットからトレースまで](./13-error-handling-debugging.md)
+- [【2026年版】GraphQLコード生成ツール徹底比較：開発効率と型安全性を最大化する選択肢](/graphql/14-graphql.md)
